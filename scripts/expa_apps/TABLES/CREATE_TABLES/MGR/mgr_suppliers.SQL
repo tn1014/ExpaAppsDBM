@@ -18,8 +18,6 @@ CREATE TABLE IF NOT EXISTS mgr_suppliers
 
 ALTER TABLE IF EXISTS mgr_suppliers OWNER to expa_apps;
 
-
-
 COMMENT ON TABLE mgr_suppliers
 	IS '【データ移行用】旧仕入先マスタ';
 COMMENT ON COLUMN mgr_suppliers.maker_id IS 'メーカーID';
