@@ -31,6 +31,7 @@ CREATE TABLE IF NOT EXISTS prd_products
 	,	kiracs_item_name02 TEXT NOT NULL
 	,	kiracs_item_name_kana TEXT NOT NULL
 	,	master_size TEXT NOT NULL
+	,	master_weight TEXT NOT NULL
 	,	division_l_code TEXT NOT NULL
 	,	division_m_code TEXT NOT NULL
 	,	division_s_code TEXT NOT NULL
@@ -43,25 +44,7 @@ CREATE TABLE IF NOT EXISTS prd_products
 	,	expa_pricing_unit_code TEXT NOT NULL
 	,	picking_description TEXT NOT NULL
 	,	purchase_description TEXT NOT NULL
-	,	body_depth_outer NUMERIC
-	,	body_width_outer NUMERIC
-	,	body_height_outer NUMERIC
-	,	body_length_outer NUMERIC
-	,	body_depth_inner NUMERIC
-	,	body_width_inner NUMERIC
-	,	body_height_inner NUMERIC
-	,	body_length_inner NUMERIC
-	,	top_height_outer NUMERIC
-	,	top_length_outer NUMERIC
-	,	top_height_inner NUMERIC
-	,	top_length_inner NUMERIC
-	,	thickness NUMERIC
-	,	capacity NUMERIC
-	,	capacity_unit TEXT NOT NULL
-	,	materials TEXT NOT NULL
-	,	weight NUMERIC
-	,	is_heat_resisted BOOLEAN NOT NULL DEFAULT FALSE
-	,	heat_resist_degrees TEXT NOT NULL
+	,	summary TEXT NOT NULL
 	,	note TEXT NOT NULL
 	,	rank INT
 	,	created_user_code TEXT NOT NULL
@@ -110,6 +93,7 @@ COMMENT ON COLUMN prd_products.kiracs_item_name01 IS 'キラックス商品名1'
 COMMENT ON COLUMN prd_products.kiracs_item_name02 IS 'キラックス商品名2';
 COMMENT ON COLUMN prd_products.kiracs_item_name_kana IS '(マスタ申請用)キラックス商品名カナ';
 COMMENT ON COLUMN prd_products.master_size IS '(マスタ申請用)サイズ';
+COMMENT ON COLUMN prd_products.master_weight IS '(マスタ申請用)重量';
 COMMENT ON COLUMN prd_products.division_l_code IS '(マスタ申請用)大分類コード';
 COMMENT ON COLUMN prd_products.division_m_code IS '(マスタ申請用)中分類コード';
 COMMENT ON COLUMN prd_products.division_s_code IS '(マスタ申請用)小分類コード';
@@ -123,25 +107,7 @@ COMMENT ON COLUMN prd_products.expa_pricing_unit_code IS '(マスタ申請用)�
 COMMENT ON COLUMN prd_products.expa_pricing_unit_code IS '(マスタ申請用)エクス→キラックス値決め単位コード';
 COMMENT ON COLUMN prd_products.picking_description IS 'ピッキング備考';
 COMMENT ON COLUMN prd_products.purchase_description IS '発注備考';
-COMMENT ON COLUMN prd_products.body_depth_outer IS '(本体外寸)縦幅(mm)';
-COMMENT ON COLUMN prd_products.body_width_outer IS '(本体外寸)横幅(mm)';
-COMMENT ON COLUMN prd_products.body_height_outer IS '(本体外寸)高さ(深さ)(mm)';
-COMMENT ON COLUMN prd_products.body_length_outer IS '(本体外寸)直径(π)';
-COMMENT ON COLUMN prd_products.body_depth_inner IS '(本体内寸)縦幅(mm)';
-COMMENT ON COLUMN prd_products.body_width_inner IS '(本体内寸)横幅(mm)';
-COMMENT ON COLUMN prd_products.body_height_inner IS '(本体内寸)高さ(深さ)(mm)';
-COMMENT ON COLUMN prd_products.body_length_inner IS '(本体内寸)直径(π)';
-COMMENT ON COLUMN prd_products.top_height_outer IS '(蓋外寸)高さ(深さ)(mm)';
-COMMENT ON COLUMN prd_products.top_length_outer IS '(蓋外寸)直径(π)';
-COMMENT ON COLUMN prd_products.top_height_inner IS '(蓋内寸)高さ(深さ)(mm)';
-COMMENT ON COLUMN prd_products.top_length_inner IS '(蓋内寸)直径(π)';
-COMMENT ON COLUMN prd_products.thickness IS '厚み(mm)';
-COMMENT ON COLUMN prd_products.capacity IS '容量';
-COMMENT ON COLUMN prd_products.capacity_unit IS '容量単位';
-COMMENT ON COLUMN prd_products.materials IS '材質/材料';
-COMMENT ON COLUMN prd_products.weight IS '重量(g)';
-COMMENT ON COLUMN prd_products.is_heat_resisted IS '耐熱対応区分';
-COMMENT ON COLUMN prd_products.heat_resist_degrees IS '耐熱温度';
+COMMENT ON COLUMN prd_products.summary IS '製品概要';
 COMMENT ON COLUMN prd_products.note IS 'メモ';
 COMMENT ON COLUMN prd_products.rank IS '表示順';
 COMMENT ON COLUMN prd_products.created_user_code IS '作成ユーザコード';
@@ -190,6 +156,7 @@ CREATE TABLE IF NOT EXISTS prd_products_history
 	,	kiracs_item_name02 TEXT NOT NULL
 	,	kiracs_item_name_kana TEXT NOT NULL
 	,	master_size TEXT NOT NULL
+	,	master_weight TEXT NOT NULL
 	,	division_l_code TEXT NOT NULL
 	,	division_m_code TEXT NOT NULL
 	,	division_s_code TEXT NOT NULL
@@ -202,25 +169,7 @@ CREATE TABLE IF NOT EXISTS prd_products_history
 	,	expa_pricing_unit_code TEXT NOT NULL
 	,	picking_description TEXT NOT NULL
 	,	purchase_description TEXT NOT NULL
-	,	body_depth_outer NUMERIC
-	,	body_width_outer NUMERIC
-	,	body_height_outer NUMERIC
-	,	body_length_outer NUMERIC
-	,	body_depth_inner NUMERIC
-	,	body_width_inner NUMERIC
-	,	body_height_inner NUMERIC
-	,	body_length_inner NUMERIC
-	,	top_height_outer NUMERIC
-	,	top_length_outer NUMERIC
-	,	top_height_inner NUMERIC
-	,	top_length_inner NUMERIC
-	,	thickness NUMERIC
-	,	capacity NUMERIC
-	,	capacity_unit TEXT NOT NULL
-	,	materials TEXT NOT NULL
-	,	weight NUMERIC
-	,	is_heat_resisted BOOLEAN NOT NULL DEFAULT FALSE
-	,	heat_resist_degrees TEXT NOT NULL
+	,	summary TEXT NOT NULL
 	,	note TEXT NOT NULL
 	,	rank INT
 	,	created_user_code TEXT NOT NULL
@@ -269,6 +218,7 @@ COMMENT ON COLUMN prd_products_history.kiracs_item_name01 IS 'キラックス商
 COMMENT ON COLUMN prd_products_history.kiracs_item_name02 IS 'キラックス商品名2';
 COMMENT ON COLUMN prd_products_history.kiracs_item_name_kana IS '(マスタ申請用)キラックス商品名カナ';
 COMMENT ON COLUMN prd_products_history.master_size IS '(マスタ申請用)サイズ';
+COMMENT ON COLUMN prd_products_history.master_weight IS '(マスタ申請用)重量';
 COMMENT ON COLUMN prd_products_history.division_l_code IS '(マスタ申請用)大分類コード';
 COMMENT ON COLUMN prd_products_history.division_m_code IS '(マスタ申請用)中分類コード';
 COMMENT ON COLUMN prd_products_history.division_s_code IS '(マスタ申請用)小分類コード';
@@ -281,25 +231,7 @@ COMMENT ON COLUMN prd_products_history.kiracs_pricing_unit_code IS '(マスタ�
 COMMENT ON COLUMN prd_products_history.expa_pricing_unit_code IS '(マスタ申請用)エクス→キラックス値決め単位コード';
 COMMENT ON COLUMN prd_products_history.picking_description IS 'ピッキング備考';
 COMMENT ON COLUMN prd_products_history.purchase_description IS '発注備考';
-COMMENT ON COLUMN prd_products_history.body_depth_outer IS '(本体外寸)縦幅(mm)';
-COMMENT ON COLUMN prd_products_history.body_width_outer IS '(本体外寸)横幅(mm)';
-COMMENT ON COLUMN prd_products_history.body_height_outer IS '(本体外寸)高さ(深さ)(mm)';
-COMMENT ON COLUMN prd_products_history.body_length_outer IS '(本体外寸)直径(π)';
-COMMENT ON COLUMN prd_products_history.body_depth_inner IS '(本体内寸)縦幅(mm)';
-COMMENT ON COLUMN prd_products_history.body_width_inner IS '(本体内寸)横幅(mm)';
-COMMENT ON COLUMN prd_products_history.body_height_inner IS '(本体内寸)高さ(深さ)(mm)';
-COMMENT ON COLUMN prd_products_history.body_length_inner IS '(本体内寸)直径(π)';
-COMMENT ON COLUMN prd_products_history.top_height_outer IS '(蓋外寸)高さ(深さ)(mm)';
-COMMENT ON COLUMN prd_products_history.top_length_outer IS '(蓋外寸)直径(π)';
-COMMENT ON COLUMN prd_products_history.top_height_inner IS '(蓋内寸)高さ(深さ)(mm)';
-COMMENT ON COLUMN prd_products_history.top_length_inner IS '(蓋内寸)直径(π)';
-COMMENT ON COLUMN prd_products_history.thickness IS '厚み(mm)';
-COMMENT ON COLUMN prd_products_history.capacity IS '容量';
-COMMENT ON COLUMN prd_products_history.capacity_unit IS '容量単位';
-COMMENT ON COLUMN prd_products_history.materials IS '材質/材料';
-COMMENT ON COLUMN prd_products_history.weight IS '重量(g)';
-COMMENT ON COLUMN prd_products_history.is_heat_resisted IS '耐熱対応区分';
-COMMENT ON COLUMN prd_products_history.heat_resist_degrees IS '耐熱温度';
+COMMENT ON COLUMN prd_products_history.summary IS '製品概要';
 COMMENT ON COLUMN prd_products_history.note IS 'メモ';
 COMMENT ON COLUMN prd_products_history.rank IS '表示順';
 COMMENT ON COLUMN prd_products_history.created_user_code IS '作成ユーザコード';

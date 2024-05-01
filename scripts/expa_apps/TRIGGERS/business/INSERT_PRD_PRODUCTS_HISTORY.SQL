@@ -43,6 +43,7 @@ BEGIN
 		,	kiracs_item_name02
 		,	kiracs_item_name_kana
 		,	master_size
+		,	master_weight
 		,	division_l_code
 		,	division_m_code
 		,	division_s_code
@@ -55,25 +56,7 @@ BEGIN
 		,	expa_pricing_unit_code
 		,	picking_description
 		,	purchase_description
-		,	body_depth_outer
-		,	body_width_outer
-		,	body_height_outer
-		,	body_length_outer
-		,	body_depth_inner
-		,	body_width_inner
-		,	body_height_inner
-		,	body_length_inner
-		,	top_height_outer
-		,	top_length_outer
-		,	top_height_inner
-		,	top_length_inner
-		,	thickness
-		,	capacity
-		,	capacity_unit
-		,	materials
-		,	weight
-		,	is_heat_resisted
-		,	heat_resist_degrees
+		,	summary
 		,	note
 		,	rank
 		,	created_user_code
@@ -117,6 +100,7 @@ BEGIN
 		,	NEW.kiracs_item_name02
 		,	NEW.kiracs_item_name_kana
 		,	NEW.master_size
+		,	NEW.master_weight
 		,	NEW.division_l_code
 		,	NEW.division_m_code
 		,	NEW.division_s_code
@@ -129,25 +113,7 @@ BEGIN
 		,	NEW.expa_pricing_unit_code
 		,	NEW.picking_description
 		,	NEW.purchase_description
-		,	NEW.body_depth_outer
-		,	NEW.body_width_outer
-		,	NEW.body_height_outer
-		,	NEW.body_length_outer
-		,	NEW.body_depth_inner
-		,	NEW.body_width_inner
-		,	NEW.body_height_inner
-		,	NEW.body_length_inner
-		,	NEW.top_height_outer
-		,	NEW.top_length_outer
-		,	NEW.top_height_inner
-		,	NEW.top_length_inner
-		,	NEW.thickness
-		,	NEW.capacity
-		,	NEW.capacity_unit
-		,	NEW.materials
-		,	NEW.weight
-		,	NEW.is_heat_resisted
-		,	NEW.heat_resist_degrees
+		,	NEW.summary
 		,	NEW.note
 		,	NEW.rank
 		,	NEW.created_user_code
