@@ -13,7 +13,6 @@ CREATE TABLE IF NOT EXISTS prd_product_purchase_prices
 	,	lot_quantity INTEGER
 	,	kiracs_purchase_unit_price NUMERIC
 	,	expa_purchase_unit_price NUMERIC
-	,	recommend_unit_price NUMERIC
 	,	created_user_code TEXT NOT NULL
 	,	created_terminal TEXT NOT NULL
 	,	created_function_code TEXT NOT NULL
@@ -42,7 +41,6 @@ COMMENT ON COLUMN prd_product_purchase_prices.lot_seq IS 'ロット管理番号'
 COMMENT ON COLUMN prd_product_purchase_prices.lot_quantity IS 'ロット数';
 COMMENT ON COLUMN prd_product_purchase_prices.kiracs_purchase_unit_price IS 'キラックス仕入単価';
 COMMENT ON COLUMN prd_product_purchase_prices.expa_purchase_unit_price IS 'エクス仕入単価';
-COMMENT ON COLUMN prd_product_purchase_prices.recommend_unit_price IS '上代単価';
 COMMENT ON COLUMN prd_product_purchase_prices.created_user_code IS '作成ユーザコード';
 COMMENT ON COLUMN prd_product_purchase_prices.created_terminal IS '作成端末';
 COMMENT ON COLUMN prd_product_purchase_prices.created_function_code IS '作成機能コード';
@@ -70,7 +68,6 @@ CREATE TABLE IF NOT EXISTS prd_product_purchase_prices_history
 	,	lot_quantity INTEGER
 	,	kiracs_purchase_unit_price NUMERIC
 	,	expa_purchase_unit_price NUMERIC
-	,	recommend_unit_price NUMERIC
 	,	created_user_code TEXT NOT NULL
 	,	created_terminal TEXT NOT NULL
 	,	created_function_code TEXT NOT NULL
@@ -98,7 +95,6 @@ COMMENT ON COLUMN prd_product_purchase_prices_history.lot_seq IS 'ロット管�
 COMMENT ON COLUMN prd_product_purchase_prices_history.lot_quantity IS 'ロット数';
 COMMENT ON COLUMN prd_product_purchase_prices_history.kiracs_purchase_unit_price IS 'キラックス仕入単価';
 COMMENT ON COLUMN prd_product_purchase_prices_history.expa_purchase_unit_price IS 'エクス仕入単価';
-COMMENT ON COLUMN prd_product_purchase_prices_history.recommend_unit_price IS '上代単価';
 COMMENT ON COLUMN prd_product_purchase_prices_history.created_user_code IS '作成ユーザコード';
 COMMENT ON COLUMN prd_product_purchase_prices_history.created_terminal IS '作成端末';
 COMMENT ON COLUMN prd_product_purchase_prices_history.created_function_code IS '作成機能コード';

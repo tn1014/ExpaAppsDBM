@@ -12,6 +12,7 @@ CREATE TABLE IF NOT EXISTS prd_item_sales_price_store_relations
 	,	store_code TEXT NOT NULL
 	,	sales_price NUMERIC NOT NULL DEFAULT 0
 	,	sales_price_intax NUMERIC NOT NULL DEFAULT 0
+	,	point_rate NUMERIC NOT NULL DEFAULT 0
 	,	created_user_code TEXT NOT NULL
 	,	created_terminal TEXT NOT NULL
 	,	created_function_code TEXT NOT NULL
@@ -39,6 +40,7 @@ COMMENT ON COLUMN prd_item_sales_price_store_relations.start_on IS '適用日';
 COMMENT ON COLUMN prd_item_sales_price_store_relations.store_code IS '店舗コード';
 COMMENT ON COLUMN prd_item_sales_price_store_relations.sales_price IS '販売単価';
 COMMENT ON COLUMN prd_item_sales_price_store_relations.sales_price_intax IS '税込販売単価';
+COMMENT ON COLUMN prd_item_sales_price_store_relations.point_rate IS 'ポイント付与率';
 COMMENT ON COLUMN prd_item_sales_price_store_relations.created_user_code IS '作成ユーザコード';
 COMMENT ON COLUMN prd_item_sales_price_store_relations.created_terminal IS '作成端末';
 COMMENT ON COLUMN prd_item_sales_price_store_relations.created_function_code IS '作成機能コード';
@@ -65,6 +67,7 @@ CREATE TABLE IF NOT EXISTS prd_item_sales_price_store_relations_history
 	,	store_code TEXT NOT NULL
 	,	sales_price NUMERIC NOT NULL DEFAULT 0
 	,	sales_price_intax NUMERIC NOT NULL DEFAULT 0
+	,	point_rate NUMERIC NOT NULL DEFAULT 0
 	,	created_user_code TEXT NOT NULL
 	,	created_terminal TEXT NOT NULL
 	,	created_function_code TEXT NOT NULL
@@ -91,6 +94,7 @@ COMMENT ON COLUMN prd_item_sales_price_store_relations_history.start_on IS '適�
 COMMENT ON COLUMN prd_item_sales_price_store_relations_history.store_code IS '店舗コード';
 COMMENT ON COLUMN prd_item_sales_price_store_relations_history.sales_price IS '販売単価';
 COMMENT ON COLUMN prd_item_sales_price_store_relations_history.sales_price_intax IS '税込販売単価';
+COMMENT ON COLUMN prd_item_sales_price_store_relations_history.point_rate IS 'ポイント付与率';
 COMMENT ON COLUMN prd_item_sales_price_store_relations_history.created_user_code IS '作成ユーザコード';
 COMMENT ON COLUMN prd_item_sales_price_store_relations_history.created_terminal IS '作成端末';
 COMMENT ON COLUMN prd_item_sales_price_store_relations_history.created_function_code IS '作成機能コード';

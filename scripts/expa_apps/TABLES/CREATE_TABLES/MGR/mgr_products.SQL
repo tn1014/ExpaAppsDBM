@@ -65,7 +65,7 @@ CREATE TABLE IF NOT EXISTS mgr_products
 	,	kiracs_item_code TEXT
 	,	spec TEXT
 	,	master_size TEXT
-	,	master_weight NUMERIC
+	,	master_weight TEXT
 	,	case_size  INTEGER
 	,	itf_code TEXT
 	,	jan_code TEXT
@@ -78,6 +78,7 @@ CREATE TABLE IF NOT EXISTS mgr_products
 	,	catalog_serial_num TEXT
 	,	stock_product_id INTEGER
 	,	description TEXT
+	,	new_product_code TEXT
 	,	CONSTRAINT mgr_products_pkey PRIMARY KEY (product_id)
 );
 
@@ -159,3 +160,4 @@ COMMENT ON COLUMN mgr_products.catalog_info IS 'カタログ情報';
 COMMENT ON COLUMN mgr_products.catalog_serial_num IS 'カタログ連番';
 COMMENT ON COLUMN mgr_products.stock_product_id IS '在庫管理商品ID';
 COMMENT ON COLUMN mgr_products.description IS '備考';
+COMMENT ON COLUMN mgr_products.new_product_code IS '新システム製品コード';

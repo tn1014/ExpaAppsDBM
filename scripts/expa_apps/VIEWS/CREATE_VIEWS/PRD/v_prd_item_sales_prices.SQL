@@ -22,9 +22,13 @@ COMMENT ON COLUMN v_prd_item_sales_prices.min_sales_price_intax IS '最安税込
 COMMENT ON COLUMN v_prd_item_sales_prices.max_sales_price_intax IS '最高税込販売単価';
 COMMENT ON COLUMN v_prd_item_sales_prices.honten_sales_price IS '本店販売単価';
 COMMENT ON COLUMN v_prd_item_sales_prices.honten_sales_price_intax IS '本店税込販売単価';
+COMMENT ON COLUMN v_prd_item_sales_prices.honten_point_rate IS '本店ポイント付与率';
 COMMENT ON COLUMN v_prd_item_sales_prices.rakuten_sales_price IS '楽天市場販売単価';
 COMMENT ON COLUMN v_prd_item_sales_prices.rakuten_sales_price_intax IS '楽天市場税込販売単価';
+COMMENT ON COLUMN v_prd_item_sales_prices.rakuten_point_rate IS '楽天市場ポイント付与率';
 COMMENT ON COLUMN v_prd_item_sales_prices.yahoo_sales_price IS 'Yahoo!ショッピング販売単価';
 COMMENT ON COLUMN v_prd_item_sales_prices.yahoo_sales_price_intax IS 'Yahoo!ショッピング税込販売単価';
+COMMENT ON COLUMN v_prd_item_sales_prices.yahoo_point_rate IS 'Yahoo!ポイント付与率';
 COMMENT ON COLUMN v_prd_item_sales_prices.fax_sales_price IS 'FAX販売単価';
 COMMENT ON COLUMN v_prd_item_sales_prices.fax_sales_price_intax IS 'FAX税込販売単価';
+COMMENT ON COLUMN v_prd_item_sales_prices.fax_point_rate IS 'FAXポイント付与率';

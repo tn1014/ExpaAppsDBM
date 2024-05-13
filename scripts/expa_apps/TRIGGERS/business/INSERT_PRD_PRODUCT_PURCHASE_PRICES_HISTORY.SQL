@@ -19,7 +19,6 @@ BEGIN
 		,	lot_quantity
 		,	kiracs_purchase_unit_price
 		,	expa_purchase_unit_price
-		,	recommend_unit_price
 		,	created_user_code
 		,	created_terminal
 		,	created_function_code
@@ -42,7 +41,6 @@ BEGIN
 		,	NEW.lot_quantity
 		,	NEW.kiracs_purchase_unit_price
 		,	NEW.expa_purchase_unit_price
-		,	NEW.recommend_unit_price
 		,	NEW.created_user_code
 		,	NEW.created_function_code
 		,	NEW.created_terminal

@@ -18,6 +18,7 @@ BEGIN
 		,	store_code
 		,	sales_price
 		,	sales_price_intax
+		,	point_rate
 		,	created_user_code
 		,	created_terminal
 		,	created_function_code
@@ -39,6 +40,7 @@ BEGIN
 		,	NEW.store_code
 		,	NEW.sales_price
 		,	NEW.sales_price_intax
+		,	NEW.point_rate
 		,	NEW.created_user_code
 		,	NEW.created_function_code
 		,	NEW.created_terminal

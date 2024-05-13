@@ -57,6 +57,7 @@ BEGIN
 		,	picking_description
 		,	purchase_description
 		,	summary
+		,	unit_list
 		,	note
 		,	rank
 		,	created_user_code
@@ -114,6 +115,7 @@ BEGIN
 		,	NEW.picking_description
 		,	NEW.purchase_description
 		,	NEW.summary
+		,	NEW.unit_list
 		,	NEW.note
 		,	NEW.rank
 		,	NEW.created_user_code

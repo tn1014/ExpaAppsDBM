@@ -13,12 +13,16 @@ RETURNS TABLE (
 	,	max_sales_price_intax		NUMERIC
 	,	honten_sales_price		NUMERIC
 	,	honten_sales_price_intax	NUMERIC
+	,	honten_point_rate		NUMERIC
 	,	rakuten_sales_price		NUMERIC
 	,	rakuten_sales_price_intax	NUMERIC
+	,	rakuten_point_rate		NUMERIC
 	,	yahoo_sales_price		NUMERIC
 	,	yahoo_sales_price_intax	NUMERIC
+	,	yahoo_point_rate		NUMERIC
 	,	fax_sales_price			NUMERIC
 	,	fax_sales_price_intax		NUMERIC
+	,	fax_point_rate			NUMERIC
 ) AS $BODY$
 BEGIN
 	RETURN QUERY
@@ -33,12 +37,16 @@ BEGIN
 		,			prd_item_sales_price_summary.max_sales_price_intax	AS	out_max_sales_price_intax
 		,			honten.sales_price							AS	out_honten_sales_price
 		,			honten.sales_price_intax						AS	out_honten_sales_price_intax
+		,			honten.point_rate							AS	out_honten_point_rate
 		,			rakuten.sales_price							AS	out_rakuten_sales_price
 		,			rakuten.sales_price_intax						AS	out_rakuten_sales_price_intax
+		,			rakuten.point_rate							AS	out_rakuten_point_rate
 		,			yahoo.sales_price							AS	out_yahoo_sales_price
 		,			yahoo.sales_price_intax						AS	out_yahoo_sales_price_intax
+		,			yahoo.point_rate								AS	out_yahoo_point_rate
 		,			fax.sales_price								AS	out_fax_sales_price
 		,			fax.sales_price_intax							AS	out_fax_sales_price_intax
+		,			fax.point_rate								AS	out_fax_point_rate
 		FROM		prd_item_sales_prices
 		INNER JOIN	(
 						SELECT		target_prices.item_code

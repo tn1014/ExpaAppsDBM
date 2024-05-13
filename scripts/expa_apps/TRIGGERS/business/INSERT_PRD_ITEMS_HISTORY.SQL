@@ -24,9 +24,11 @@ BEGIN
 		,	item_type
 		,	is_sales_ended
 		,	is_allowed_stock_unlimited
+		,	is_kiracs_csv_disabled
 		,	order_limit_count
 		,	set_div
 		,	catch_copy
+		,	sales_description
 		,	shipment_size_div
 		,	shipment_div
 		,	shipment_packing_quantity
@@ -54,9 +56,11 @@ BEGIN
 		,	NEW.item_type
 		,	NEW.is_sales_ended
 		,	NEW.is_allowed_stock_unlimited
+		,	NEW.is_kiracs_csv_disabled
 		,	NEW.order_limit_count
 		,	NEW.set_div
 		,	NEW.catch_copy
+		,	NEW.sales_description
 		,	NEW.shipment_size_div
 		,	NEW.shipment_div
 		,	NEW.shipment_packing_quantity

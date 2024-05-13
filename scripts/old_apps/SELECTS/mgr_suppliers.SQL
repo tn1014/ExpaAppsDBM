@@ -1,3 +1,4 @@
+--仕入先一覧を取得する
 SELECT		dtb_maker.maker_id					AS	"メーカーID"
 ,			dtb_maker.name						AS	"仕入先名"
 ,			dtb_maker.short_name				AS	"仕入先略称名"

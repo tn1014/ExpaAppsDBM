@@ -9,7 +9,6 @@ RETURNS TABLE (
 	,	lot_quantity			INTEGER
 	,	kiracs_purchase_unit_price	NUMERIC
 	,	expa_purchase_unit_price	NUMERIC
-	,	recommend_unit_price	NUMERIC
 ) AS $BODY$
 BEGIN
 	RETURN QUERY
@@ -20,7 +19,6 @@ BEGIN
 		,			prd_product_purchase_prices.lot_quantity				AS	out_lot_quantity
 		,			prd_product_purchase_prices.kiracs_purchase_unit_price	AS	out_kiracs_purchase_unit_price
 		,			prd_product_purchase_prices.expa_purchase_unit_price		AS	out_expa_purchase_unit_price
-		,			prd_product_purchase_prices.recommend_unit_price		AS	out_recommend_unit_price
 		FROM		prd_products
 		INNER JOIN	(
 						SELECT		prd_product_purchase_prices.product_code

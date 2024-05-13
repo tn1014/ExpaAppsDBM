@@ -12,9 +12,11 @@ CREATE TABLE IF NOT EXISTS prd_items
 	,	item_type TEXT NOT NULL
 	,	is_sales_ended BOOLEAN NOT NULL DEFAULT FALSE
 	,	is_allowed_stock_unlimited BOOLEAN NOT NULL DEFAULT FALSE
+	,	is_kiracs_csv_disabled BOOLEAN NOT NULL DEFAULT FALSE
 	,	order_limit_count NUMERIC
 	,	set_div TEXT NOT NULL
 	,	catch_copy TEXT NOT NULL
+	,	sales_description TEXT NOT NULL
 	,	shipment_size_div TEXT NOT NULL
 	,	shipment_div TEXT NOT NULL
 	,	shipment_packing_quantity NUMERIC
@@ -47,8 +49,10 @@ COMMENT ON COLUMN prd_items.item_name IS '商品名';
 COMMENT ON COLUMN prd_items.item_type IS '商品種別';
 COMMENT ON COLUMN prd_items.is_sales_ended IS '販売終了フラグ';
 COMMENT ON COLUMN prd_items.is_allowed_stock_unlimited IS '在庫無制限フラグ';
+COMMENT ON COLUMN prd_items.is_kiracs_csv_disabled IS 'キラックス売上CSV無効フラグ';
 COMMENT ON COLUMN prd_items.order_limit_count IS '購入制限件数';
 COMMENT ON COLUMN prd_items.catch_copy IS 'キャッチコピー';
+COMMENT ON COLUMN prd_items.sales_description IS '商品販売説明文';
 COMMENT ON COLUMN prd_items.shipment_size_div IS '出荷サイズ区分';
 COMMENT ON COLUMN prd_items.shipment_div IS '出荷区分';
 COMMENT ON COLUMN prd_items.shipment_packing_quantity IS '出荷単送個口数';
@@ -81,9 +85,11 @@ CREATE TABLE IF NOT EXISTS prd_items_history
 	,	item_type TEXT NOT NULL
 	,	is_sales_ended  BOOLEAN NOT NULL
 	,	is_allowed_stock_unlimited BOOLEAN NOT NULL
+	,	is_kiracs_csv_disabled BOOLEAN NOT NULL
 	,	order_limit_count NUMERIC
 	,	set_div TEXT NOT NULL
 	,	catch_copy TEXT NOT NULL
+	,	sales_description TEXT NOT NULL
 	,	shipment_size_div TEXT NOT NULL
 	,	shipment_div TEXT NOT NULL
 	,	shipment_packing_quantity NUMERIC
@@ -116,8 +122,10 @@ COMMENT ON COLUMN prd_items_history.item_name IS '商品名';
 COMMENT ON COLUMN prd_items_history.item_type IS '商品種別';
 COMMENT ON COLUMN prd_items_history.is_sales_ended IS '販売終了フラグ';
 COMMENT ON COLUMN prd_items_history.is_allowed_stock_unlimited IS '在庫無制限フラグ';
+COMMENT ON COLUMN prd_items_history.is_kiracs_csv_disabled IS 'キラックス売上CSV無効フラグ';
 COMMENT ON COLUMN prd_items_history.order_limit_count IS '購入制限件数';
 COMMENT ON COLUMN prd_items_history.catch_copy IS 'キャッチコピー';
+COMMENT ON COLUMN prd_items_history.sales_description IS '商品販売説明文';
 COMMENT ON COLUMN prd_items_history.shipment_size_div IS '出荷サイズ区分';
 COMMENT ON COLUMN prd_items_history.shipment_div IS '出荷区分';
 COMMENT ON COLUMN prd_items_history.shipment_packing_quantity IS '出荷単送個口数';

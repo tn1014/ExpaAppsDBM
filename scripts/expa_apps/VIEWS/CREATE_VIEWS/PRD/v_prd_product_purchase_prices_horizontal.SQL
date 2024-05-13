@@ -30,4 +30,3 @@ COMMENT ON COLUMN v_prd_product_purchase_prices_horizontal.lot_seq4 IS '仕入�
 COMMENT ON COLUMN v_prd_product_purchase_prices_horizontal.lot_quantity4 IS '仕入ロット数4';
 COMMENT ON COLUMN v_prd_product_purchase_prices_horizontal.kiracs_purchase_unit_price4 IS 'キラックス仕入単価4';
 COMMENT ON COLUMN v_prd_product_purchase_prices_horizontal.expa_purchase_unit_price4 IS 'エクスパッケージ仕入単価4';
-COMMENT ON COLUMN v_prd_product_purchase_prices_horizontal.recommend_unit_price IS '上代単価';

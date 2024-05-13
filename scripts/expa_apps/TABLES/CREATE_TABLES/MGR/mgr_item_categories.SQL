@@ -5,6 +5,7 @@ DROP TABLE IF EXISTS mgr_item_categories;
 CREATE TABLE IF NOT EXISTS mgr_item_categories
 (
 		id BIGSERIAL
+	,	category_div TEXT
 	,	parent_category_id INTEGER
 	,	parent_category_name TEXT
 	,	category_id INTEGER
@@ -23,6 +24,7 @@ ALTER TABLE IF EXISTS mgr_item_categories OWNER to expa_apps;
 COMMENT ON TABLE mgr_item_categories
 	IS '【データ移行用】旧商品カテゴリマスタ';
 COMMENT ON COLUMN mgr_item_categories.id IS '移行ID';
+COMMENT ON COLUMN mgr_item_categories.category_div IS 'カテゴリ区分';
 COMMENT ON COLUMN mgr_item_categories.parent_category_id IS '親カテゴリID';
 COMMENT ON COLUMN mgr_item_categories.parent_category_name IS '親カテゴリ名';
 COMMENT ON COLUMN mgr_item_categories.category_id IS '子カテゴリID';

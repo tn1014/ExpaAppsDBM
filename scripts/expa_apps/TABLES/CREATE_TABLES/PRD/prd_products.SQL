@@ -45,6 +45,7 @@ CREATE TABLE IF NOT EXISTS prd_products
 	,	picking_description TEXT NOT NULL
 	,	purchase_description TEXT NOT NULL
 	,	summary TEXT NOT NULL
+	,	unit_list TEXT NOT NULL
 	,	note TEXT NOT NULL
 	,	rank INT
 	,	created_user_code TEXT NOT NULL
@@ -108,6 +109,7 @@ COMMENT ON COLUMN prd_products.expa_pricing_unit_code IS '(マスタ申請用)�
 COMMENT ON COLUMN prd_products.picking_description IS 'ピッキング備考';
 COMMENT ON COLUMN prd_products.purchase_description IS '発注備考';
 COMMENT ON COLUMN prd_products.summary IS '製品概要';
+COMMENT ON COLUMN prd_products.unit_list IS '単位リスト';
 COMMENT ON COLUMN prd_products.note IS 'メモ';
 COMMENT ON COLUMN prd_products.rank IS '表示順';
 COMMENT ON COLUMN prd_products.created_user_code IS '作成ユーザコード';
@@ -170,6 +172,7 @@ CREATE TABLE IF NOT EXISTS prd_products_history
 	,	picking_description TEXT NOT NULL
 	,	purchase_description TEXT NOT NULL
 	,	summary TEXT NOT NULL
+	,	unit_list TEXT NOT NULL
 	,	note TEXT NOT NULL
 	,	rank INT
 	,	created_user_code TEXT NOT NULL
@@ -232,6 +235,7 @@ COMMENT ON COLUMN prd_products_history.expa_pricing_unit_code IS '(マスタ申�
 COMMENT ON COLUMN prd_products_history.picking_description IS 'ピッキング備考';
 COMMENT ON COLUMN prd_products_history.purchase_description IS '発注備考';
 COMMENT ON COLUMN prd_products_history.summary IS '製品概要';
+COMMENT ON COLUMN prd_products_history.unit_list IS '単位リスト';
 COMMENT ON COLUMN prd_products_history.note IS 'メモ';
 COMMENT ON COLUMN prd_products_history.rank IS '表示順';
 COMMENT ON COLUMN prd_products_history.created_user_code IS '作成ユーザコード';
