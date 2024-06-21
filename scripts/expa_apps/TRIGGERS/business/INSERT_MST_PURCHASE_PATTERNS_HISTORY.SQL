@@ -22,6 +22,7 @@ BEGIN
 		,	purchase_pattern_name
 		,	purchase_method_div
 		,	last_arrival_location_code
+		,	is_required_print_transfer_request_form
 		,	rank
 		,	is_enabled
 		,	created_user_code
@@ -44,6 +45,7 @@ BEGIN
 		,	NEW.purchase_pattern_name
 		,	NEW.purchase_method_div
 		,	NEW.last_arrival_location_code
+		,	NEW.is_required_print_transfer_request_form
 		,	NEW.rank
 		,	NEW.is_enabled
 		,	NEW.created_user_code

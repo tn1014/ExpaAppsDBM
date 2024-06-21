@@ -11,8 +11,8 @@ CREATE TABLE IF NOT EXISTS prd_product_purchase_prices
 	,	start_on DATE NOT NULL
 	,	lot_seq SMALLINT NOT NULL
 	,	lot_quantity INTEGER
-	,	kiracs_purchase_unit_price NUMERIC
-	,	expa_purchase_unit_price NUMERIC
+	,	kiracs_purchase_unit_price NUMERIC(7, 2)
+	,	expa_purchase_unit_price NUMERIC(7, 2)
 	,	created_user_code TEXT NOT NULL
 	,	created_terminal TEXT NOT NULL
 	,	created_function_code TEXT NOT NULL

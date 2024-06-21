@@ -15,6 +15,7 @@ CREATE TABLE IF NOT EXISTS mst_suppliers
 	,	kiracs_supplier_name TEXT NOT NULL
 	,	short_name TEXT NOT NULL
 	,	short_name_kana TEXT NOT NULL
+	,	is_required_print_purchase_form BOOLEAN NOT NULL DEFAULT FALSE
 	,	office_zip_code01 TEXT NOT NULL
 	,	office_zip_code02 TEXT NOT NULL
 	,	office_pref_code TEXT NOT NULL
@@ -76,6 +77,7 @@ COMMENT ON COLUMN mst_suppliers.supplier_name IS '仕入先名';
 COMMENT ON COLUMN mst_suppliers.kiracs_supplier_name IS 'キラックス仕入先名';
 COMMENT ON COLUMN mst_suppliers.short_name IS '仕入先名略称';
 COMMENT ON COLUMN mst_suppliers.short_name_kana IS '仕入先名略称(カナ)';
+COMMENT ON COLUMN mst_suppliers.is_required_print_purchase_form IS '発注書印刷要否';
 COMMENT ON COLUMN mst_suppliers.office_zip_code01 IS '郵便番号1';
 COMMENT ON COLUMN mst_suppliers.office_zip_code02 IS '郵便番号2';
 COMMENT ON COLUMN mst_suppliers.office_pref_code IS '都道府県コード';
@@ -135,6 +137,7 @@ CREATE TABLE IF NOT EXISTS mst_suppliers_history
 	,	kiracs_supplier_name TEXT NOT NULL
 	,	short_name TEXT NOT NULL
 	,	short_name_kana TEXT NOT NULL
+	,	is_required_print_purchase_form BOOLEAN NOT NULL DEFAULT FALSE
 	,	office_zip_code01 TEXT NOT NULL
 	,	office_zip_code02 TEXT NOT NULL
 	,	office_pref_code TEXT NOT NULL
@@ -195,6 +198,7 @@ COMMENT ON COLUMN mst_suppliers_history.supplier_name IS '仕入先名';
 COMMENT ON COLUMN mst_suppliers_history.kiracs_supplier_name IS 'キラックス仕入先名';
 COMMENT ON COLUMN mst_suppliers_history.short_name IS '仕入先名略称';
 COMMENT ON COLUMN mst_suppliers_history.short_name_kana IS '仕入先名略称(カナ)';
+COMMENT ON COLUMN mst_suppliers_history.is_required_print_purchase_form IS '発注書印刷要否';
 COMMENT ON COLUMN mst_suppliers_history.office_zip_code01 IS '郵便番号1';
 COMMENT ON COLUMN mst_suppliers_history.office_zip_code02 IS '郵便番号2';
 COMMENT ON COLUMN mst_suppliers_history.office_pref_code IS '都道府県コード';

@@ -2,25 +2,25 @@ DROP FUNCTION IF EXISTS GET_PRODUCT_PURCHASE_PRICE_HORIZONTAL_TABLE;
 -- 製品仕入単価テーブル取得(横持ち)
 CREATE OR REPLACE FUNCTION GET_PRODUCT_PURCHASE_PRICE_HORIZONTAL_TABLE(targetDate DATE) 
 RETURNS TABLE (
-		product_code			TEXT
-	,	start_on				DATE
-	,	id					BIGINT
-	,	lot_seq1				SMALLINT
-	,	lot_quantity1			INTEGER
-	,	kiracs_purchase_unit_price1	NUMERIC
-	,	expa_purchase_unit_price1	NUMERIC
-	,	lot_seq2				SMALLINT
-	,	lot_quantity2			INTEGER
-	,	kiracs_purchase_unit_price2	NUMERIC
-	,	expa_purchase_unit_price2	NUMERIC
-	,	lot_seq3				SMALLINT
-	,	lot_quantity3			INTEGER
-	,	kiracs_purchase_unit_price3	NUMERIC
-	,	expa_purchase_unit_price3	NUMERIC
-	,	lot_seq4				SMALLINT
-	,	lot_quantity4			INTEGER
-	,	kiracs_purchase_unit_price4	NUMERIC
-	,	expa_purchase_unit_price4	NUMERIC
+		product_code				TEXT
+	,	start_on					DATE
+	,	id						BIGINT
+	,	lot_seq01					SMALLINT
+	,	lot_quantity01				INTEGER
+	,	kiracs_purchase_unit_price01	NUMERIC
+	,	expa_purchase_unit_price01	NUMERIC
+	,	lot_seq02					SMALLINT
+	,	lot_quantity02				INTEGER
+	,	kiracs_purchase_unit_price02	NUMERIC
+	,	expa_purchase_unit_price02	NUMERIC
+	,	lot_seq03					SMALLINT
+	,	lot_quantity03				INTEGER
+	,	kiracs_purchase_unit_price03	NUMERIC
+	,	expa_purchase_unit_price03	NUMERIC
+	,	lot_seq04					SMALLINT
+	,	lot_quantity04				INTEGER
+	,	kiracs_purchase_unit_price04	NUMERIC
+	,	expa_purchase_unit_price04	NUMERIC
 ) AS $BODY$
 BEGIN
 	RETURN QUERY

@@ -25,6 +25,7 @@ BEGIN
 		,	kiracs_supplier_name
 		,	short_name
 		,	short_name_kana
+		,	is_required_print_purchase_form
 		,	office_zip_code01
 		,	office_zip_code02
 		,	office_pref_code
@@ -80,6 +81,7 @@ BEGIN
 		,	NEW.kiracs_supplier_name
 		,	NEW.short_name
 		,	NEW.short_name_kana
+		,	NEW.is_required_print_purchase_form
 		,	NEW.office_zip_code01
 		,	NEW.office_zip_code02
 		,	NEW.office_pref_code

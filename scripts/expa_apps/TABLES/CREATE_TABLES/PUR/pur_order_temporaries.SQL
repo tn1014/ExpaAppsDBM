@@ -5,11 +5,11 @@ DROP TABLE IF EXISTS pur_order_temporaries;
 CREATE TABLE IF NOT EXISTS pur_order_temporaries
 (
 		id BIGSERIAL
-	,	stock_transaction_temp_id BIGINT NOT NULL
-	,	order_scheduled_on DATE NOT NULL
-	,	arrival_scheduled_on DATE NOT NULL
-	,	arrival_type_id BIGINT
-	,	arrival_location_code TEXT NOT NULL
+	,	stock_transaction_temporary_id BIGINT NOT NULL
+	,	order_scheduled_on DATE
+	,	arrival_scheduled_on DATE
+	,	purchase_pattern_id BIGINT
+	,	location_code TEXT NOT NULL
 	,	product_code TEXT NOT NULL
 	,	inventory_seq INTEGER NOT NULL DEFAULT 0
 	,	purchase_quantity NUMERIC NOT NULL DEFAULT 0
@@ -32,11 +32,11 @@ ALTER TABLE IF EXISTS pur_order_temporaries OWNER to expa_apps;
 COMMENT ON TABLE pur_order_temporaries
 	IS '製品仮発注テーブル';
 COMMENT ON COLUMN pur_order_temporaries.id IS '仮発注ID';
-COMMENT ON COLUMN pur_order_temporaries.stock_transaction_temp_id IS '仮受払ID';
+COMMENT ON COLUMN pur_order_temporaries.stock_transaction_temporary_id IS '仮受払ID';
 COMMENT ON COLUMN pur_order_temporaries.order_scheduled_on IS '発注予定日';
 COMMENT ON COLUMN pur_order_temporaries.arrival_scheduled_on IS '入荷予定日';
-COMMENT ON COLUMN pur_order_temporaries.arrival_type_id IS '入庫方法ID';
-COMMENT ON COLUMN pur_order_temporaries.arrival_location_code IS '入庫場所コード';
+COMMENT ON COLUMN pur_order_temporaries.purchase_pattern_id IS '発注パターンID';
+COMMENT ON COLUMN pur_order_temporaries.location_code IS '場所コード';
 COMMENT ON COLUMN pur_order_temporaries.product_code IS '製品コード';
 COMMENT ON COLUMN pur_order_temporaries.inventory_seq IS '在庫管理番号';
 COMMENT ON COLUMN pur_order_temporaries.purchase_quantity IS '発注数量';

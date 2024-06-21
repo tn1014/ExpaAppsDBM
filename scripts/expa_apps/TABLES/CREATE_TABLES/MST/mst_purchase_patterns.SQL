@@ -10,6 +10,7 @@ CREATE TABLE IF NOT EXISTS mst_purchase_patterns
 	,	purchase_pattern_name TEXT NOT NULL
 	,	purchase_method_div TEXT NOT NULL
 	,	last_arrival_location_code TEXT NOT NULL
+	,	is_required_print_transfer_request_form BOOLEAN NOT NULL
 	,	rank INT
 	,	is_enabled BOOLEAN NOT NULL DEFAULT FALSE
 	,	created_user_code TEXT NOT NULL
@@ -37,6 +38,7 @@ COMMENT ON COLUMN mst_purchase_patterns.id IS '発注パターンID';
 COMMENT ON COLUMN mst_purchase_patterns.purchase_pattern_name IS '発注パターン名';
 COMMENT ON COLUMN mst_purchase_patterns.purchase_method_div IS '発注方法区分(発注・使用依頼)';
 COMMENT ON COLUMN mst_purchase_patterns.last_arrival_location_code IS '最終入庫場所コード';
+COMMENT ON COLUMN mst_purchase_patterns.is_required_print_transfer_request_form IS '移動依頼書印刷要否';
 COMMENT ON COLUMN mst_purchase_patterns.rank IS '表示順';
 COMMENT ON COLUMN mst_purchase_patterns.is_enabled IS '使用可能区分';
 COMMENT ON COLUMN mst_purchase_patterns.created_user_code IS '作成ユーザコード';
@@ -63,6 +65,7 @@ CREATE TABLE IF NOT EXISTS mst_purchase_patterns_history
 	,	purchase_pattern_name TEXT NOT NULL
 	,	purchase_method_div TEXT NOT NULL
 	,	last_arrival_location_code TEXT NOT NULL
+	,	is_required_print_transfer_request_form BOOLEAN NOT NULL DEFAULT FALSE
 	,	rank INT
 	,	is_enabled BOOLEAN NOT NULL DEFAULT FALSE
 	,	created_user_code TEXT NOT NULL
@@ -92,6 +95,7 @@ COMMENT ON COLUMN mst_purchase_patterns_history.history_count IS '更新回数';
 COMMENT ON COLUMN mst_purchase_patterns_history.purchase_pattern_name IS '発注パターン名';
 COMMENT ON COLUMN mst_purchase_patterns_history.purchase_method_div IS '発注方法区分(発注・使用依頼)';
 COMMENT ON COLUMN mst_purchase_patterns_history.last_arrival_location_code IS '最終入庫場所コード';
+COMMENT ON COLUMN mst_purchase_patterns_history.is_required_print_transfer_request_form IS '移動依頼書印刷要否';
 COMMENT ON COLUMN mst_purchase_patterns_history.rank IS '表示順';
 COMMENT ON COLUMN mst_purchase_patterns_history.is_enabled IS '使用可能区分';
 COMMENT ON COLUMN mst_purchase_patterns_history.created_user_code IS '作成ユーザコード';
