@@ -4,7 +4,7 @@ DROP VIEW IF EXISTS v_inv_monthly_stocks;
 
 CREATE VIEW	v_inv_monthly_stocks AS 
 SELECT		inv_monthly_stocks.id
-,			inv_monthly_stocks.target_on
+,			inv_monthly_stocks.closing_on
 ,			inv_monthly_stocks.location_code
 ,			inv_monthly_stocks.product_code
 ,			inv_monthly_stocks.inventory_seq
@@ -19,7 +19,7 @@ INNER JOIN	(
 				GROUP BY		monthly_stock_id
 			)	inv_monthly_stock_quantities
 ON			inv_monthly_stocks.id			=	inv_monthly_stock_quantities.monthly_stock_id
-ORDER BY		inv_monthly_stocks.target_on
+ORDER BY		inv_monthly_stocks.closing_on
 ,			inv_monthly_stocks.location_code
 ,			inv_monthly_stocks.product_code
 ,			inv_monthly_stocks.inventory_seq
@@ -29,7 +29,7 @@ ALTER VIEW IF EXISTS v_inv_monthly_stocks OWNER to expa_apps;
 COMMENT ON VIEW v_inv_monthly_stocks
 	IS '【VIEW】月末在庫テーブル';
 COMMENT ON COLUMN v_inv_monthly_stocks.id IS '月末在庫ID';
-COMMENT ON COLUMN v_inv_monthly_stocks.target_on IS '対象年月日';
+COMMENT ON COLUMN v_inv_monthly_stocks.closing_on IS '在庫締日';
 COMMENT ON COLUMN v_inv_monthly_stocks.location_code IS '在庫場所コード';
 COMMENT ON COLUMN v_inv_monthly_stocks.product_code IS '製品コード';
 COMMENT ON COLUMN v_inv_monthly_stocks.inventory_seq IS '在庫管理番号';

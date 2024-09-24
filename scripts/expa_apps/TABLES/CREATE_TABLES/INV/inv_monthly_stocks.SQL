@@ -5,7 +5,7 @@ DROP TABLE IF EXISTS inv_monthly_stocks;
 CREATE TABLE IF NOT EXISTS inv_monthly_stocks
 (
 		id BIGSERIAL
-	,	target_on DATE NOT NULL
+	,	closing_on DATE NOT NULL
 	,	location_code TEXT NOT NULL
 	,	product_code TEXT NOT NULL
 	,	inventory_seq INTEGER NOT NULL DEFAULT 0
@@ -25,7 +25,7 @@ ALTER TABLE IF EXISTS inv_monthly_stocks OWNER to expa_apps;
 COMMENT ON TABLE inv_monthly_stocks
 	IS '製品月末在庫テーブル';
 COMMENT ON COLUMN inv_monthly_stocks.id IS '月末在庫ID';
-COMMENT ON COLUMN inv_monthly_stocks.target_on IS '対象年月日';
+COMMENT ON COLUMN inv_monthly_stocks.closing_on IS '在庫締日';
 COMMENT ON COLUMN inv_monthly_stocks.location_code IS '在庫場所コード';
 COMMENT ON COLUMN inv_monthly_stocks.product_code IS '製品コード';
 COMMENT ON COLUMN inv_monthly_stocks.inventory_seq IS '在庫管理番号';

@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS pur_arrival_schedules
 	,	location_code TEXT NOT NULL
 	,	product_code TEXT NOT NULL
 	,	inventory_seq INTEGER NOT NULL DEFAULT 0
-	,	arrival_scheduled_on DATE NOT NULL
+	,	arrival_scheduled_on DATE
 	,	arrival_scheduled_quantity NUMERIC NOT NULL DEFAULT 0
 	,	arrival_unit_code TEXT NOT NULL
 	,	arrival_unit_quantity NUMERIC NOT NULL DEFAULT 0
@@ -86,7 +86,7 @@ CREATE TABLE IF NOT EXISTS pur_arrival_schedules_history
 	,	location_code TEXT NOT NULL
 	,	product_code TEXT NOT NULL
 	,	inventory_seq INTEGER NOT NULL DEFAULT 0
-	,	arrival_scheduled_on DATE NOT NULL
+	,	arrival_scheduled_on DATE
 	,	arrival_scheduled_quantity NUMERIC NOT NULL DEFAULT 0
 	,	arrival_unit_code TEXT NOT NULL
 	,	arrival_unit_quantity NUMERIC NOT NULL DEFAULT 0

@@ -11,9 +11,10 @@ CREATE TABLE IF NOT EXISTS inv_stock_transactions
 	,	traded_at TIMESTAMP(3) WITHOUT TIME ZONE NOT NULL
 	,	inout_div TEXT NOT NULL
 	,	transaction_div TEXT NOT NULL
-	,	transaction_user_code TEXT NOT NULL
+	,	transaction_employee_code TEXT NOT NULL
 	,	description TEXT NOT NULL
 	,	is_corrected BOOLEAN NOT NULL DEFAULT FALSE
+	,	closing_on DATE
 	,	created_user_code TEXT NOT NULL
 	,	created_terminal TEXT NOT NULL
 	,	created_function_code TEXT NOT NULL
@@ -36,9 +37,10 @@ COMMENT ON COLUMN inv_stock_transactions.inventory_seq IS '在庫管理番号';
 COMMENT ON COLUMN inv_stock_transactions.traded_at IS '受払日時';
 COMMENT ON COLUMN inv_stock_transactions.inout_div IS '入出庫区分';
 COMMENT ON COLUMN inv_stock_transactions.transaction_div IS '受払区分';
-COMMENT ON COLUMN inv_stock_transactions.transaction_user_code IS '受払ユーザコード';
+COMMENT ON COLUMN inv_stock_transactions.transaction_employee_code IS '受払社員コード';
 COMMENT ON COLUMN inv_stock_transactions.description IS '備考';
 COMMENT ON COLUMN inv_stock_transactions.is_corrected IS '訂正フラグ';
+COMMENT ON COLUMN inv_stock_transactions.closing_on IS '在庫締日';
 COMMENT ON COLUMN inv_stock_transactions.created_user_code IS '作成ユーザコード';
 COMMENT ON COLUMN inv_stock_transactions.created_terminal IS '作成端末';
 COMMENT ON COLUMN inv_stock_transactions.created_function_code IS '作成機能コード';

@@ -6,7 +6,7 @@ CREATE OR REPLACE PROCEDURE inv_purchase_unit_price_corrects(
 	, inProductCode IN TEXT
 	, inInventorySeq IN INTEGER
 	, inTradedAt IN TIMESTAMP(3) WITHOUT TIME ZONE
-	, inTransactionUserCode IN TEXT
+	, inTransactionEmployeeCode IN TEXT
 	, inTransactionQuantity IN NUMERIC
 	, inPrevPurchaseUnitPrice IN NUMERIC
 	, inNewPurchaseUnitPrice IN NUMERIC
@@ -61,7 +61,7 @@ BEGIN
 		,	traded_at
 		,	inout_div
 		,	transaction_div
-		,	transaction_user_code
+		,	transaction_employee_code
 		,	is_corrected
 		,	description
 		,	created_user_code
@@ -77,7 +77,7 @@ BEGIN
 		,	inTradedAt
 		,	'OUT'
 		,	''
-		,	inTransactionUserCode
+		,	inTransactionEmployeeCode
 		,	TRUE
 		,	'仕入単価訂正(元値)'
 		,	inUserCode
@@ -123,7 +123,7 @@ BEGIN
 		,	traded_at
 		,	inout_div
 		,	transaction_div
-		,	transaction_user_code
+		,	transaction_employee_code
 		,	is_corrected
 		,	description
 		,	created_user_code
@@ -139,7 +139,7 @@ BEGIN
 		,	inTradedAt
 		,	'IN'
 		,	''
-		,	inTransactionUserCode
+		,	inTransactionEmployeeCode
 		,	TRUE
 		,	'仕入単価訂正(新値)'
 		,	inUserCode
@@ -192,7 +192,7 @@ ALTER PROCEDURE inv_purchase_unit_price_corrects(
 	, inProductCode IN TEXT
 	, inInventorySeq IN INTEGER
 	, inTradedAt IN TIMESTAMP(3) WITHOUT TIME ZONE
-	, inTransactionUserCode IN TEXT
+	, inTransactionEmployeeCode IN TEXT
 	, inTransactionQuantity IN NUMERIC
 	, inPrevPurchaseUnitPrice IN NUMERIC
 	, inNewPurchaseUnitPrice IN NUMERIC

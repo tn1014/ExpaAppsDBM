@@ -5,7 +5,7 @@ DROP TABLE IF EXISTS inv_stock_transaction_quantities;
 CREATE TABLE IF NOT EXISTS inv_stock_transaction_quantities
 (
 		id BIGSERIAL
-	,	transaction_id	BIGINT NOT NULL
+	,	stock_transaction_id	BIGINT NOT NULL
 	,	purchase_unit_price NUMERIC NOT NULL
 	,	transaction_quantity NUMERIC NOT NULL DEFAULT 0
 	,	created_user_code TEXT NOT NULL
@@ -24,7 +24,7 @@ ALTER TABLE IF EXISTS inv_stock_transaction_quantities OWNER to expa_apps;
 COMMENT ON TABLE inv_stock_transaction_quantities
 	IS '在庫受払数量テーブル';
 COMMENT ON COLUMN inv_stock_transaction_quantities.id IS '在庫受払数量ID';
-COMMENT ON COLUMN inv_stock_transaction_quantities.transaction_id IS '在庫受払ID';
+COMMENT ON COLUMN inv_stock_transaction_quantities.stock_transaction_id IS '在庫受払ID';
 COMMENT ON COLUMN inv_stock_transaction_quantities.purchase_unit_price IS '仕入単価';
 COMMENT ON COLUMN inv_stock_transaction_quantities.transaction_quantity IS '受払数量';
 COMMENT ON COLUMN inv_stock_transaction_quantities.created_user_code IS '作成ユーザコード';

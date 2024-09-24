@@ -15,6 +15,7 @@ CREATE TABLE IF NOT EXISTS pur_order_details
 	,	purchase_unit_quantity NUMERIC NOT NULL DEFAULT 0
 	,	purchase_unit_price NUMERIC NOT NULL DEFAULT 0	
 	,	detail_description TEXT NOT NULL
+	,	is_canceled BOOLEAN NOT NULL DEFAULT FALSE
 	,	created_user_code TEXT NOT NULL
 	,	created_terminal TEXT NOT NULL
 	,	created_function_code TEXT NOT NULL
@@ -39,6 +40,7 @@ COMMENT ON COLUMN pur_order_details.purchase_unit_code IS '発注単位コード
 COMMENT ON COLUMN pur_order_details.purchase_unit_quantity IS '発注単位数';
 COMMENT ON COLUMN pur_order_details.purchase_unit_price IS '発注単価';
 COMMENT ON COLUMN pur_order_details.detail_description IS '明細備考';
+COMMENT ON COLUMN pur_order_details.is_canceled IS '明細取消フラグ';
 COMMENT ON COLUMN pur_order_details.created_user_code IS '作成ユーザコード';
 COMMENT ON COLUMN pur_order_details.created_terminal IS '作成端末';
 COMMENT ON COLUMN pur_order_details.created_function_code IS '作成機能コード';
@@ -62,6 +64,7 @@ CREATE TABLE IF NOT EXISTS pur_order_details_history
 	,	purchase_unit_quantity NUMERIC NOT NULL DEFAULT 0
 	,	purchase_unit_price NUMERIC NOT NULL DEFAULT 0	
 	,	detail_description TEXT NOT NULL
+	,	is_canceled BOOLEAN NOT NULL DEFAULT FALSE
 	,	created_user_code TEXT NOT NULL
 	,	created_terminal TEXT NOT NULL
 	,	created_function_code TEXT NOT NULL
@@ -88,6 +91,7 @@ COMMENT ON COLUMN pur_order_details_history.purchase_unit_code IS '発注単位�
 COMMENT ON COLUMN pur_order_details_history.purchase_unit_quantity IS '発注単位数';
 COMMENT ON COLUMN pur_order_details_history.purchase_unit_price IS '発注単価';
 COMMENT ON COLUMN pur_order_details_history.detail_description IS '明細備考';
+COMMENT ON COLUMN pur_order_details_history.is_canceled IS '明細取消フラグ';
 COMMENT ON COLUMN pur_order_details_history.created_user_code IS '作成ユーザコード';
 COMMENT ON COLUMN pur_order_details_history.created_terminal IS '作成端末';
 COMMENT ON COLUMN pur_order_details_history.created_function_code IS '作成機能コード';

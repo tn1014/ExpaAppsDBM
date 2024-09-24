@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS inv_stock_transaction_temporaries
 	,	inout_div TEXT NOT NULL
 	,	transaction_div TEXT NOT NULL
 	,	transaction_quantity NUMERIC NOT NULL
-	,	transaction_user_code TEXT NOT NULL
+	,	transaction_employee_code TEXT NOT NULL
 	,	description TEXT NOT NULL
 	,	created_user_code TEXT NOT NULL
 	,	created_terminal TEXT NOT NULL
@@ -39,7 +39,7 @@ COMMENT ON COLUMN inv_stock_transaction_temporaries.confirmed_at IS '受払確�
 COMMENT ON COLUMN inv_stock_transaction_temporaries.inout_div IS '入出庫区分';
 COMMENT ON COLUMN inv_stock_transaction_temporaries.transaction_div IS '受払区分';
 COMMENT ON COLUMN inv_stock_transaction_temporaries.transaction_quantity IS '受払数';
-COMMENT ON COLUMN inv_stock_transaction_temporaries.transaction_user_code IS '受払ユーザコード';
+COMMENT ON COLUMN inv_stock_transaction_temporaries.transaction_employee_code IS '受払社員コード';
 COMMENT ON COLUMN inv_stock_transaction_temporaries.description IS '備考';
 COMMENT ON COLUMN inv_stock_transaction_temporaries.created_user_code IS '作成ユーザコード';
 COMMENT ON COLUMN inv_stock_transaction_temporaries.created_terminal IS '作成端末';

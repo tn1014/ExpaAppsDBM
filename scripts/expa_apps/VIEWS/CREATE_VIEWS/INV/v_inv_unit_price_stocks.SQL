@@ -1,8 +1,8 @@
--- VIEW: v_inv_stock_prices;
+-- VIEW: v_inv_unit_price_stocks;
 
-DROP VIEW IF EXISTS v_inv_stock_prices;
+DROP VIEW IF EXISTS v_inv_unit_price_stocks;
 
-CREATE VIEW	v_inv_stock_prices AS 
+CREATE VIEW	v_inv_unit_price_stocks AS 
 SELECT		inv_stocks.location_code
 ,			inv_stocks.product_code
 ,			inv_stocks.inventory_seq
@@ -25,8 +25,9 @@ FROM		(
 				,			inv_stock_transaction_quantities.transaction_quantity
 				FROM		inv_stock_transactions
 				INNER JOIN	inv_stock_transaction_quantities
-				ON			inv_stock_transactions.id		=	inv_stock_transaction_quantities.transaction_id
+				ON			inv_stock_transactions.id		=	inv_stock_transaction_quantities.stock_transaction_id
 				WHERE		inv_stock_transactions.inout_div	=	'IN'
+				AND			inv_stock_transactions.closing_on	IS 	NULL
 				UNION ALL
 				SELECT		inv_stock_transactions.location_code
 				,			inv_stock_transactions.product_code
@@ -35,8 +36,9 @@ FROM		(
 				,			(-1 * inv_stock_transaction_quantities.transaction_quantity)
 				FROM		inv_stock_transactions
 				INNER JOIN	inv_stock_transaction_quantities
-				ON			inv_stock_transactions.id		=	inv_stock_transaction_quantities.transaction_id
+				ON			inv_stock_transactions.id		=	inv_stock_transaction_quantities.stock_transaction_id
 				WHERE		inv_stock_transactions.inout_div	=	'OUT'
+				AND			inv_stock_transactions.closing_on	IS 	NULL
 			)	inv_stocks
 GROUP BY		inv_stocks.location_code
 ,			inv_stocks.product_code
@@ -48,12 +50,12 @@ ORDER BY		inv_stocks.location_code
 ,			inv_stocks.inventory_seq
 ,			inv_stocks.purchase_unit_price
 ;
-ALTER VIEW IF EXISTS v_inv_stock_prices OWNER to expa_apps;
+ALTER VIEW IF EXISTS v_inv_unit_price_stocks OWNER to expa_apps;
 
-COMMENT ON VIEW v_inv_stock_prices
-	IS '【VIEW】仕入単価別現在庫テーブル';
-COMMENT ON COLUMN v_inv_stock_prices.location_code IS '在庫場所コード';
-COMMENT ON COLUMN v_inv_stock_prices.product_code IS '製品コード';
-COMMENT ON COLUMN v_inv_stock_prices.inventory_seq IS '在庫管理番号';
-COMMENT ON COLUMN v_inv_stock_prices.purchase_unit_price IS '仕入単価';
-COMMENT ON COLUMN v_inv_stock_prices.stock_quantity IS '現在庫';
+COMMENT ON VIEW v_inv_unit_price_stocks
+	IS '【VIEW】単価別現在庫テーブル';
+COMMENT ON COLUMN v_inv_unit_price_stocks.location_code IS '在庫場所コード';
+COMMENT ON COLUMN v_inv_unit_price_stocks.product_code IS '製品コード';
+COMMENT ON COLUMN v_inv_unit_price_stocks.inventory_seq IS '在庫管理番号';
+COMMENT ON COLUMN v_inv_unit_price_stocks.purchase_unit_price IS '仕入単価';
+COMMENT ON COLUMN v_inv_unit_price_stocks.stock_quantity IS '現在庫';

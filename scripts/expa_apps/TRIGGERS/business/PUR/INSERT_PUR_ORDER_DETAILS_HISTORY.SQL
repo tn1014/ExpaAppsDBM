@@ -22,6 +22,7 @@ BEGIN
 		,	purchase_unit_quantity
 		,	purchase_unit_price
 		,	detail_description
+		,	is_canceled
 		,	created_user_code
 		,	created_terminal
 		,	created_function_code
@@ -41,6 +42,7 @@ BEGIN
 		,	NEW.purchase_unit_quantity
 		,	NEW.purchase_unit_price
 		,	NEW.detail_description
+		,	NEW.is_canceled
 		,	NEW.created_user_code
 		,	NEW.created_function_code
 		,	NEW.created_terminal

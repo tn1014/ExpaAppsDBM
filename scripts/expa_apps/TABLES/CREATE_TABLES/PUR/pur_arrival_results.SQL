@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS pur_arrival_results
 	,	arrived_unit_quantity NUMERIC NOT NULL DEFAULT 0
 	,	arrived_quantity NUMERIC NOT NULL DEFAULT 0
 	,	arrived_description TEXT NOT NULL
-	,	arrived_user_code TEXT NOT NULL
+	,	arrived_employee_code TEXT NOT NULL
 	,	created_user_code TEXT NOT NULL
 	,	created_terminal TEXT NOT NULL
 	,	created_function_code TEXT NOT NULL
@@ -44,7 +44,7 @@ COMMENT ON COLUMN pur_arrival_results.arrived_unit_code IS '入庫単位コー�
 COMMENT ON COLUMN pur_arrival_results.arrived_unit_quantity IS '入庫単位数';
 COMMENT ON COLUMN pur_arrival_results.arrived_quantity IS '入庫数';
 COMMENT ON COLUMN pur_arrival_results.arrived_description IS '入庫備考';
-COMMENT ON COLUMN pur_arrival_results.arrived_user_code IS '入庫担当ユーザコード';
+COMMENT ON COLUMN pur_arrival_results.arrived_employee_code IS '入庫担当社員コード';
 COMMENT ON COLUMN pur_arrival_results.created_user_code IS '作成ユーザコード';
 COMMENT ON COLUMN pur_arrival_results.created_terminal IS '作成端末';
 COMMENT ON COLUMN pur_arrival_results.created_function_code IS '作成機能コード';
@@ -74,7 +74,7 @@ CREATE TABLE IF NOT EXISTS pur_arrival_results_history
 	,	arrived_unit_quantity NUMERIC
 	,	arrived_quantity NUMERIC
 	,	arrived_description TEXT
-	,	arrived_user_code TEXT
+	,	arrived_employee_code TEXT
 	,	created_user_code TEXT NOT NULL
 	,	created_terminal TEXT NOT NULL
 	,	created_function_code TEXT NOT NULL
@@ -106,7 +106,7 @@ COMMENT ON COLUMN pur_arrival_results_history.arrived_unit_code IS '入庫単位
 COMMENT ON COLUMN pur_arrival_results_history.arrived_unit_quantity IS '入庫単位数';
 COMMENT ON COLUMN pur_arrival_results_history.arrived_quantity IS '入庫数';
 COMMENT ON COLUMN pur_arrival_results_history.arrived_description IS '入庫備考';
-COMMENT ON COLUMN pur_arrival_results_history.arrived_user_code IS '入庫担当ユーザコード';
+COMMENT ON COLUMN pur_arrival_results_history.arrived_employee_code IS '入庫担当社員コード';
 COMMENT ON COLUMN pur_arrival_results_history.created_user_code IS '作成ユーザコード';
 COMMENT ON COLUMN pur_arrival_results_history.created_terminal IS '作成端末';
 COMMENT ON COLUMN pur_arrival_results_history.created_function_code IS '作成機能コード';

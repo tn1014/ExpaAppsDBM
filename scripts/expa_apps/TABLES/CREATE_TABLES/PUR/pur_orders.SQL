@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS pur_orders
 		slip_no TEXT NOT NULL
 	,	purchase_on DATE NOT NULL
 	,	arrival_scheduled_on DATE NOT NULL
-	,	purchase_user_code TEXT NOT NULL
+	,	purchase_employee_code TEXT NOT NULL
 	,	purchase_pattern_id BIGINT NOT NULL
 	,	supplier_code TEXT NOT NULL
 	,	location_code TEXT NOT NULL
@@ -44,7 +44,7 @@ COMMENT ON TABLE pur_orders
 COMMENT ON COLUMN pur_orders.slip_no IS '伝票番号';
 COMMENT ON COLUMN pur_orders.purchase_on IS '発注日';
 COMMENT ON COLUMN pur_orders.arrival_scheduled_on IS '入荷予定日';
-COMMENT ON COLUMN pur_orders.purchase_user_code IS '発注ユーザコード';
+COMMENT ON COLUMN pur_orders.purchase_employee_code IS '発注社員コード';
 COMMENT ON COLUMN pur_orders.purchase_pattern_id IS '発注パターンID';
 COMMENT ON COLUMN pur_orders.supplier_code IS '仕入先コード';
 COMMENT ON COLUMN pur_orders.location_code IS '場所コード';
@@ -78,7 +78,7 @@ CREATE TABLE IF NOT EXISTS pur_orders_history
 	,	history_count INTEGER NOT NULL DEFAULT 0
 	,	purchase_on DATE NOT NULL
 	,	arrival_scheduled_on DATE NOT NULL
-	,	purchase_user_code TEXT NOT NULL
+	,	purchase_employee_code TEXT NOT NULL
 	,	purchase_pattern_id BIGINT NOT NULL
 	,	supplier_code TEXT NOT NULL
 	,	location_code TEXT NOT NULL
@@ -117,7 +117,7 @@ COMMENT ON COLUMN pur_orders_history.slip_no IS '伝票番号';
 COMMENT ON COLUMN pur_orders_history.history_count IS '更新回数';
 COMMENT ON COLUMN pur_orders_history.purchase_on IS '発注日';
 COMMENT ON COLUMN pur_orders_history.arrival_scheduled_on IS '入荷予定日';
-COMMENT ON COLUMN pur_orders_history.purchase_user_code IS '発注ユーザコード';
+COMMENT ON COLUMN pur_orders_history.purchase_employee_code IS '発注社員コード';
 COMMENT ON COLUMN pur_orders_history.purchase_pattern_id IS '発注パターンID';
 COMMENT ON COLUMN pur_orders_history.supplier_code IS '仕入先コード';
 COMMENT ON COLUMN pur_orders_history.location_code IS '場所コード';

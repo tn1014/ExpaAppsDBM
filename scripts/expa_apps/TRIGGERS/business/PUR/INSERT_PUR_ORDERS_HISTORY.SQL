@@ -21,7 +21,7 @@ BEGIN
 		,	history_count
 		,	purchase_on
 		,	arrival_scheduled_on
-		,	purchase_user_code
+		,	purchase_employee_code
 		,	purchase_pattern_id
 		,	supplier_code
 		,	location_code
@@ -51,7 +51,7 @@ BEGIN
 		,	historyCount
 		,	NEW.purchase_on
 		,	NEW.arrival_scheduled_on
-		,	NEW.purchase_user_code
+		,	NEW.purchase_employee_code
 		,	NEW.purchase_pattern_id
 		,	NEW.supplier_code
 		,	NEW.location_code

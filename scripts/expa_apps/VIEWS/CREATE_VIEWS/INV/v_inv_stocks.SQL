@@ -31,14 +31,15 @@ FROM		(
 				,			inv_stock_transaction_quantities.purchase_unit_price
 				FROM		inv_stock_transactions
 				INNER JOIN	(
-								SELECT		transaction_id
+								SELECT		stock_transaction_id
 								,			SUM(transaction_quantity * purchase_unit_price)	AS	purchase_unit_price
 								,			SUM(transaction_quantity)					AS	transaction_quantity
 								FROM		inv_stock_transaction_quantities
-								GROUP BY		transaction_id
+								GROUP BY		stock_transaction_id
 							) inv_stock_transaction_quantities
-				ON			inv_stock_transactions.id		=	inv_stock_transaction_quantities.transaction_id
+				ON			inv_stock_transactions.id		=	inv_stock_transaction_quantities.stock_transaction_id
 				WHERE		inv_stock_transactions.inout_div	=	'IN'
+				AND			inv_stock_transactions.closing_on	IS	NULL
 				UNION ALL
 				SELECT		inv_stock_transactions.location_code
 				,			inv_stock_transactions.product_code
@@ -47,14 +48,15 @@ FROM		(
 				,			(-1 * inv_stock_transaction_quantities.purchase_unit_price)
 				FROM		inv_stock_transactions
 				INNER JOIN	(
-								SELECT		transaction_id
+								SELECT		stock_transaction_id
 								,			SUM(transaction_quantity * purchase_unit_price)	AS	purchase_unit_price
 								,			SUM(transaction_quantity)					AS	transaction_quantity
 								FROM		inv_stock_transaction_quantities
-								GROUP BY		transaction_id
+								GROUP BY		stock_transaction_id
 							) inv_stock_transaction_quantities
-				ON			inv_stock_transactions.id		=	inv_stock_transaction_quantities.transaction_id
+				ON			inv_stock_transactions.id		=	inv_stock_transaction_quantities.stock_transaction_id
 				WHERE		inv_stock_transactions.inout_div	=	'OUT'
+				AND			inv_stock_transactions.closing_on	IS	NULL
 			)	inv_stocks
 GROUP BY		inv_stocks.location_code
 ,			inv_stocks.product_code

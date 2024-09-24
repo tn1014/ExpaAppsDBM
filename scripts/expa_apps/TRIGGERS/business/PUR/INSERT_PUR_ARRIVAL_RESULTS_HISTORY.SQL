@@ -26,7 +26,7 @@ BEGIN
 		,	arrived_unit_quantity
 		,	arrived_quantity
 		,	arrived_description
-		,	arrived_user_code
+		,	arrived_employee_code
 		,	created_user_code
 		,	created_terminal
 		,	created_function_code
@@ -51,7 +51,7 @@ BEGIN
 		,	NEW.arrived_unit_quantity
 		,	NEW.arrived_quantity
 		,	NEW.arrived_description
-		,	NEW.arrived_user_code
+		,	NEW.arrived_employee_code
 		,	NEW.created_user_code
 		,	NEW.created_terminal
 		,	NEW.created_function_code
