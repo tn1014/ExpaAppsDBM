@@ -34,12 +34,6 @@ BEGIN
 		,	updated_terminal
 		,	updated_function_code
 		,	updated_at
-		,	is_deleted
-		,	deleted_user_code
-		,	deleted_terminal
-		,	deleted_function_code
-		,	deleted_at
-		,	deleted_description
 	) VALUES (
 			NEW.order_id
 		,	NEW.id
@@ -63,12 +57,6 @@ BEGIN
 		,	NEW.updated_terminal
 		,	NEW.updated_function_code
 		,	NEW.updated_at
-		,	NEW.is_deleted
-		,	NEW.deleted_user_code
-		,	NEW.deleted_terminal
-		,	NEW.deleted_function_code
-		,	NEW.deleted_at
-		,	NEW.deleted_description
 	);
 
 	RETURN NEW;

@@ -4,8 +4,7 @@ DROP TABLE IF EXISTS ord_slip_timestamps;
 
 CREATE TABLE IF NOT EXISTS ord_slip_timestamps
 (
-		id BIGSERIAL
-	,	order_id BIGINT
+		order_id BIGINT
 	,	ordered_at TIMESTAMP(3) WITHOUT TIME ZONE NOT NULL
 	,	confirmed_at TIMESTAMP(3) WITHOUT TIME ZONE
 	,	approved_at TIMESTAMP(3) WITHOUT TIME ZONE
@@ -21,14 +20,13 @@ CREATE TABLE IF NOT EXISTS ord_slip_timestamps
 	,	updated_terminal TEXT NOT NULL
 	,	updated_function_code TEXT NOT NULL
 	,	updated_at TIMESTAMP(3) WITHOUT TIME ZONE NOT NULL
-	,	CONSTRAINT ord_slip_timestamps_pkey PRIMARY KEY (id)
+	,	CONSTRAINT ord_slip_timestamps_pkey PRIMARY KEY (order_id)
 );
 
 ALTER TABLE IF EXISTS ord_slip_timestamps OWNER to expa_apps;
 
 COMMENT ON TABLE ord_slip_timestamps
 	IS '受注伝票テーブル';
-COMMENT ON COLUMN ord_slip_timestamps.id IS 'タイムスタンプID';
 COMMENT ON COLUMN ord_slip_timestamps.order_id IS '受注伝票ID';
 COMMENT ON COLUMN ord_slip_timestamps.ordered_at IS '受注日時';
 COMMENT ON COLUMN ord_slip_timestamps.confirmed_at IS '受注確認日時';

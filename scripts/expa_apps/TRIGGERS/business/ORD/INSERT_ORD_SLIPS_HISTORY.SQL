@@ -34,7 +34,7 @@ BEGIN
 		,	is_sent_fax_invoice
 		,	fax_email
 		,	store_member_no
-		,	payment_code
+		,	payment_method_code
 		,	payment_method
 		,	order_item_price
 		,	order_item_excluded_tax
@@ -84,7 +84,7 @@ BEGIN
 		,	NEW.is_sent_fax_invoice
 		,	NEW.fax_email
 		,	NEW.store_member_no
-		,	NEW.payment_code
+		,	NEW.payment_method_code
 		,	NEW.payment_method
 		,	NEW.order_item_price
 		,	NEW.order_item_excluded_tax

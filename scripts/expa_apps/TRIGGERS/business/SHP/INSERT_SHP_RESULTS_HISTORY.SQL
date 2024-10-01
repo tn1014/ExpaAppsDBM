@@ -27,8 +27,8 @@ BEGIN
 		,	is_isolated_island
 		,	is_partical_shipment
 		,	packages_count
-		,	deliv_company_code
-		,	deliv_company_name
+		,	delivery_method_code
+		,	delivery_method
 		,	delivery_slip_printed_count
 		,	invoice_slip_printed_count
 		,	sender_name
@@ -66,8 +66,8 @@ BEGIN
 		,	NEW.is_isolated_island
 		,	NEW.is_partical_shipment
 		,	NEW.packages_count
-		,	NEW.deliv_company_code
-		,	NEW.deliv_company_name
+		,	NEW.delivery_method_code
+		,	NEW.delivery_method
 		,	NEW.delivery_slip_printed_count
 		,	NEW.invoice_slip_printed_count
 		,	NEW.sender_name

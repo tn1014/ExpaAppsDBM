@@ -63,13 +63,6 @@ COMMENT ON COLUMN ord_slip_orderers.updated_user_code IS '更新ユーザコー�
 COMMENT ON COLUMN ord_slip_orderers.updated_terminal IS '更新端末';
 COMMENT ON COLUMN ord_slip_orderers.updated_function_code IS '更新機能コード';
 COMMENT ON COLUMN ord_slip_orderers.updated_at IS '更新日時';
-COMMENT ON COLUMN ord_slip_orderers.is_deleted IS '削除区分';
-COMMENT ON COLUMN ord_slip_orderers.deleted_description IS '削除備考';
-COMMENT ON COLUMN ord_slip_orderers.deleted_user_code IS '削除ユーザコード';
-COMMENT ON COLUMN ord_slip_orderers.deleted_terminal IS '削除端末';
-COMMENT ON COLUMN ord_slip_orderers.deleted_function_code IS '削除機能コード';
-COMMENT ON COLUMN ord_slip_orderers.deleted_at IS '削除日時';
-
 
 --履歴テーブル
 CREATE TABLE IF NOT EXISTS ord_slip_orderers_history
@@ -98,12 +91,6 @@ CREATE TABLE IF NOT EXISTS ord_slip_orderers_history
 	,	updated_terminal TEXT NOT NULL
 	,	updated_function_code TEXT NOT NULL
 	,	updated_at TIMESTAMP(3) WITHOUT TIME ZONE NOT NULL
-	,	is_deleted BOOLEAN NOT NULL DEFAULT FALSE
-	,	deleted_user_code TEXT
-	,	deleted_terminal TEXT
-	,	deleted_function_code TEXT
-	,	deleted_at TIMESTAMP(3) WITHOUT TIME ZONE
-	,	deleted_description TEXT
 	,	CONSTRAINT ord_slip_orderers_history_pkey PRIMARY KEY (id)
 );
 
@@ -135,12 +122,6 @@ COMMENT ON COLUMN ord_slip_orderers_history.updated_user_code IS '更新ユー�
 COMMENT ON COLUMN ord_slip_orderers_history.updated_terminal IS '更新端末';
 COMMENT ON COLUMN ord_slip_orderers_history.updated_function_code IS '更新機能コード';
 COMMENT ON COLUMN ord_slip_orderers_history.updated_at IS '更新日時';
-COMMENT ON COLUMN ord_slip_orderers_history.is_deleted IS '削除区分';
-COMMENT ON COLUMN ord_slip_orderers_history.deleted_description IS '削除備考';
-COMMENT ON COLUMN ord_slip_orderers_history.deleted_user_code IS '削除ユーザコード';
-COMMENT ON COLUMN ord_slip_orderers_history.deleted_terminal IS '削除端末';
-COMMENT ON COLUMN ord_slip_orderers_history.deleted_function_code IS '削除機能コード';
-COMMENT ON COLUMN ord_slip_orderers_history.deleted_at IS '削除日時';
 
 --更新日時更新トリガー
 CREATE TRIGGER set_updated_at_trigger BEFORE INSERT OR UPDATE ON ord_slip_orderers FOR EACH ROW EXECUTE FUNCTION set_updated_at();

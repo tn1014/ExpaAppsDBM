@@ -34,8 +34,8 @@ BEGIN
 		,	is_isolated_island
 		,	is_partical_shipment
 		,	packages_count
-		,	deliv_company_code
-		,	deliv_company_name
+		,	delivery_method_code
+		,	delivery_method
 		,	is_required_delivery_slip
 		,	is_required_invoice_slip
 		,	picking_description
@@ -82,8 +82,8 @@ BEGIN
 		,	NEW.is_isolated_island
 		,	NEW.is_partical_shipment
 		,	NEW.packages_count
-		,	NEW.deliv_company_code
-		,	NEW.deliv_company_name
+		,	NEW.delivery_method_code
+		,	NEW.delivery_method
 		,	NEW.is_required_delivery_slip
 		,	NEW.is_required_invoice_slip
 		,	NEW.picking_description

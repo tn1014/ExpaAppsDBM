@@ -1,13 +1,13 @@
--- 直送出荷予定テーブル更新履歴登録
-CREATE OR REPLACE FUNCTION INSERT_SHP_DIRECT_SCHEDULES_HISTORY() RETURNS TRIGGER AS $BODY$
+-- 直送出荷実績テーブル更新履歴登録
+CREATE OR REPLACE FUNCTION INSERT_SHP_DIRECT_RESULTS_HISTORY() RETURNS TRIGGER AS $BODY$
 DECLARE
 	historyCount INTEGER;
 BEGIN
 	--更新回数を取得
 	SELECT	MAX(history_count)
 	INTO		historyCount
-	FROM	shp_direct_schedules_history
-	WHERE	direct_schedule_id	=	NEW.id;
+	FROM	shp_direct_results_history
+	WHERE	direct_result_id	=	NEW.id;
 	
 	IF historyCount IS NULL OR historyCount = 0 THEN
 		historyCount := 1;
@@ -16,29 +16,22 @@ BEGIN
 	END IF;
 	
 
-	INSERT INTO shp_direct_schedules_history
+	INSERT INTO shp_direct_results_history
 	(
-			direct_schedule_id
+			direct_result_id
 		,	history_count
-		,	order_id
-		,	package_id
+		,	direct_schedule_id
+		,	purchase_slip_no
 		,	supplier_code
 		,	supplier_name
-		,	shipment_instructed_on
-		,	delivery_instructed_on
-		,	delivery_time_id
-		,	delivery_time
-		,	shipment_referenced_on
-		,	purchase_scheduled_on
-		,	approved_at
-		,	completed_at
+		,	shipment_at
 		,	is_isolated_island
 		,	is_partical_shipment
 		,	packages_count
 		,	delivery_method_code
 		,	delivery_method
-		,	is_required_delivery_slip
-		,	is_required_invoice_slip
+		,	delivery_slip_printed_count
+		,	invoice_slip_printed_count
 		,	sender_name
 		,	sender_charge_name
 		,	sender_tel01
@@ -67,25 +60,18 @@ BEGIN
 	) VALUES (
 			NEW.id
 		,	historyCount
-		,	NEW.order_id
-		,	NEW.package_id
+		,	NEW.direct_schedule_id
+		,	NEW.purchase_slip_no
 		,	NEW.supplier_code
 		,	NEW.supplier_name
-		,	NEW.shipment_instructed_on
-		,	NEW.delivery_instructed_on
-		,	NEW.delivery_time_id
-		,	NEW.delivery_time
-		,	NEW.shipment_referenced_on
-		,	NEW.purchase_scheduled_on
-		,	NEW.approved_at
-		,	NEW.completed_at
+		,	NEW.shipment_at
 		,	NEW.is_isolated_island
 		,	NEW.is_partical_shipment
 		,	NEW.packages_count
 		,	NEW.delivery_method_code
 		,	NEW.delivery_method
-		,	NEW.is_required_delivery_slip
-		,	NEW.is_required_invoice_slip
+		,	NEW.delivery_slip_printed_count
+		,	NEW.invoice_slip_printed_count
 		,	NEW.sender_name
 		,	NEW.sender_charge_name
 		,	NEW.sender_tel01
@@ -118,4 +104,4 @@ END;
 $BODY$
 LANGUAGE plpgsql;
 
-ALTER FUNCTION INSERT_SHP_DIRECT_SCHEDULES_HISTORY OWNER TO expa_apps;
+ALTER FUNCTION INSERT_SHP_DIRECT_RESULTS_HISTORY OWNER TO expa_apps;

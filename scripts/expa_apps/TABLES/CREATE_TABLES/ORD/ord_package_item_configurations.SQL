@@ -24,12 +24,6 @@ CREATE TABLE IF NOT EXISTS ord_package_item_configurations
 	,	updated_terminal TEXT NOT NULL
 	,	updated_function_code TEXT NOT NULL
 	,	updated_at TIMESTAMP(3) WITHOUT TIME ZONE NOT NULL
-	,	is_deleted BOOLEAN NOT NULL DEFAULT FALSE
-	,	deleted_user_code TEXT
-	,	deleted_terminal TEXT
-	,	deleted_function_code TEXT
-	,	deleted_at TIMESTAMP(3) WITHOUT TIME ZONE
-	,	deleted_description TEXT
 	,	CONSTRAINT ord_package_item_configurations_pkey PRIMARY KEY (id)
 );
 
@@ -55,12 +49,6 @@ COMMENT ON COLUMN ord_package_item_configurations.updated_user_code IS '更新�
 COMMENT ON COLUMN ord_package_item_configurations.updated_terminal IS '更新端末';
 COMMENT ON COLUMN ord_package_item_configurations.updated_function_code IS '更新機能コード';
 COMMENT ON COLUMN ord_package_item_configurations.updated_at IS '更新日時';
-COMMENT ON COLUMN ord_package_item_configurations.is_deleted IS '削除区分';
-COMMENT ON COLUMN ord_package_item_configurations.deleted_description IS '削除備考';
-COMMENT ON COLUMN ord_package_item_configurations.deleted_user_code IS '削除ユーザコード';
-COMMENT ON COLUMN ord_package_item_configurations.deleted_terminal IS '削除端末';
-COMMENT ON COLUMN ord_package_item_configurations.deleted_function_code IS '削除機能コード';
-COMMENT ON COLUMN ord_package_item_configurations.deleted_at IS '削除日時';
 
 
 --履歴テーブル
@@ -86,12 +74,6 @@ CREATE TABLE IF NOT EXISTS ord_package_item_configurations_history
 	,	updated_terminal TEXT NOT NULL
 	,	updated_function_code TEXT NOT NULL
 	,	updated_at TIMESTAMP(3) WITHOUT TIME ZONE NOT NULL
-	,	is_deleted BOOLEAN NOT NULL DEFAULT FALSE
-	,	deleted_user_code TEXT
-	,	deleted_terminal TEXT
-	,	deleted_function_code TEXT
-	,	deleted_at TIMESTAMP(3) WITHOUT TIME ZONE
-	,	deleted_description TEXT
 	,	CONSTRAINT ord_package_item_configurations_history_pkey PRIMARY KEY (id)
 );
 
@@ -119,12 +101,6 @@ COMMENT ON COLUMN ord_package_item_configurations_history.updated_user_code IS '
 COMMENT ON COLUMN ord_package_item_configurations_history.updated_terminal IS '更新端末';
 COMMENT ON COLUMN ord_package_item_configurations_history.updated_function_code IS '更新機能コード';
 COMMENT ON COLUMN ord_package_item_configurations_history.updated_at IS '更新日時';
-COMMENT ON COLUMN ord_package_item_configurations_history.is_deleted IS '削除区分';
-COMMENT ON COLUMN ord_package_item_configurations_history.deleted_description IS '削除備考';
-COMMENT ON COLUMN ord_package_item_configurations_history.deleted_user_code IS '削除ユーザコード';
-COMMENT ON COLUMN ord_package_item_configurations_history.deleted_terminal IS '削除端末';
-COMMENT ON COLUMN ord_package_item_configurations_history.deleted_function_code IS '削除機能コード';
-COMMENT ON COLUMN ord_package_item_configurations_history.deleted_at IS '削除日時';
 
 --更新日時更新トリガー
 CREATE TRIGGER set_updated_at_trigger BEFORE INSERT OR UPDATE ON ord_package_item_configurations FOR EACH ROW EXECUTE FUNCTION set_updated_at();

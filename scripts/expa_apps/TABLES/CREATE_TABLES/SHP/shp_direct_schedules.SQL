@@ -22,8 +22,8 @@ CREATE TABLE IF NOT EXISTS shp_direct_schedules
 	,	is_isolated_island BOOLEAN NOT NULL DEFAULT FALSE
 	,	is_partical_shipment BOOLEAN NOT NULL DEFAULT FALSE
 	,	packages_count INTEGER NOT NULL DEFAULT 0
-	,	deliv_company_code TEXT NOT NULL
-	,	deliv_company_name TEXT NOT NULL
+	,	delivery_method_code TEXT NOT NULL
+	,	delivery_method TEXT NOT NULL
 	,	is_required_delivery_slip BOOLEAN NOT NULL DEFAULT FALSE
 	,	is_required_invoice_slip BOOLEAN NOT NULL DEFAULT FALSE
 	,	sender_name TEXT NOT NULL
@@ -74,8 +74,8 @@ COMMENT ON COLUMN shp_direct_schedules.completed_at IS '全商品出荷完了日
 COMMENT ON COLUMN shp_direct_schedules.is_isolated_island IS '離島送付先フラグ';
 COMMENT ON COLUMN shp_direct_schedules.is_partical_shipment IS '分納フラグ';
 COMMENT ON COLUMN shp_direct_schedules.packages_count IS '出荷個口数';
-COMMENT ON COLUMN shp_direct_schedules.deliv_company_code IS '配送業者コード';
-COMMENT ON COLUMN shp_direct_schedules.deliv_company_name IS '配送業者名';
+COMMENT ON COLUMN shp_direct_schedules.delivery_method_code IS '配送方法コード';
+COMMENT ON COLUMN shp_direct_schedules.delivery_method IS '配送方法';
 COMMENT ON COLUMN shp_direct_schedules.is_required_delivery_slip IS '納品書印刷要否';
 COMMENT ON COLUMN shp_direct_schedules.is_required_invoice_slip IS '領収書印刷要否';
 COMMENT ON COLUMN shp_direct_schedules.sender_name IS '送付者名';
@@ -126,8 +126,8 @@ CREATE TABLE IF NOT EXISTS shp_direct_schedules_history
 	,	is_isolated_island BOOLEAN NOT NULL DEFAULT FALSE
 	,	is_partical_shipment BOOLEAN NOT NULL DEFAULT FALSE
 	,	packages_count INTEGER NOT NULL DEFAULT 0
-	,	deliv_company_code TEXT NOT NULL
-	,	deliv_company_name TEXT NOT NULL
+	,	delivery_method_code TEXT NOT NULL
+	,	delivery_method TEXT NOT NULL
 	,	is_required_delivery_slip BOOLEAN NOT NULL DEFAULT FALSE
 	,	is_required_invoice_slip BOOLEAN NOT NULL DEFAULT FALSE
 	,	sender_name TEXT NOT NULL
@@ -180,8 +180,8 @@ COMMENT ON COLUMN shp_direct_schedules_history.completed_at IS '全商品出荷�
 COMMENT ON COLUMN shp_direct_schedules_history.is_isolated_island IS '離島送付先フラグ';
 COMMENT ON COLUMN shp_direct_schedules_history.is_partical_shipment IS '分納フラグ';
 COMMENT ON COLUMN shp_direct_schedules_history.packages_count IS '出荷個口数';
-COMMENT ON COLUMN shp_direct_schedules_history.deliv_company_code IS '配送業者コード';
-COMMENT ON COLUMN shp_direct_schedules_history.deliv_company_name IS '配送業者名';
+COMMENT ON COLUMN shp_direct_schedules_history.delivery_method_code IS '配送方法コード';
+COMMENT ON COLUMN shp_direct_schedules_history.delivery_method IS '配送方法';
 COMMENT ON COLUMN shp_direct_schedules_history.is_required_delivery_slip IS '納品書印刷要否';
 COMMENT ON COLUMN shp_direct_schedules_history.is_required_invoice_slip IS '領収書印刷要否';
 COMMENT ON COLUMN shp_direct_schedules_history.sender_name IS '送付者名';

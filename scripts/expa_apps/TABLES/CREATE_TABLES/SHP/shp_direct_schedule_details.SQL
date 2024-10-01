@@ -2,7 +2,7 @@
 -- Table: shp_direct_schedule_details_history
 
 DROP TABLE IF EXISTS shp_direct_schedule_details;
-DROP TABLE IF EXISTS shp_direct_schedule_details;
+DROP TABLE IF EXISTS shp_direct_schedule_details_history;
 
 CREATE TABLE IF NOT EXISTS shp_direct_schedule_details
 (
@@ -24,12 +24,6 @@ CREATE TABLE IF NOT EXISTS shp_direct_schedule_details
 	,	updated_terminal TEXT NOT NULL
 	,	updated_function_code TEXT NOT NULL
 	,	updated_at TIMESTAMP(3) WITHOUT TIME ZONE NOT NULL
-	,	is_deleted BOOLEAN NOT NULL DEFAULT FALSE
-	,	deleted_user_code TEXT
-	,	deleted_terminal TEXT
-	,	deleted_function_code TEXT
-	,	deleted_at TIMESTAMP(3) WITHOUT TIME ZONE
-	,	deleted_description TEXT
 	,	CONSTRAINT shp_direct_schedule_details_pkey PRIMARY KEY (id)
 );
 
@@ -55,12 +49,6 @@ COMMENT ON COLUMN shp_direct_schedule_details.updated_user_code IS '更新ユー
 COMMENT ON COLUMN shp_direct_schedule_details.updated_terminal IS '更新端末';
 COMMENT ON COLUMN shp_direct_schedule_details.updated_function_code IS '更新機能コード';
 COMMENT ON COLUMN shp_direct_schedule_details.updated_at IS '更新日時';
-COMMENT ON COLUMN shp_direct_schedule_details.is_deleted IS '削除区分';
-COMMENT ON COLUMN shp_direct_schedule_details.deleted_description IS '削除備考';
-COMMENT ON COLUMN shp_direct_schedule_details.deleted_user_code IS '削除ユーザコード';
-COMMENT ON COLUMN shp_direct_schedule_details.deleted_terminal IS '削除端末';
-COMMENT ON COLUMN shp_direct_schedule_details.deleted_function_code IS '削除機能コード';
-COMMENT ON COLUMN shp_direct_schedule_details.deleted_at IS '削除日時';
 
 
 --履歴テーブル
@@ -86,12 +74,6 @@ CREATE TABLE IF NOT EXISTS shp_direct_schedule_details_history
 	,	updated_terminal TEXT NOT NULL
 	,	updated_function_code TEXT NOT NULL
 	,	updated_at TIMESTAMP(3) WITHOUT TIME ZONE NOT NULL
-	,	is_deleted BOOLEAN NOT NULL DEFAULT FALSE
-	,	deleted_user_code TEXT
-	,	deleted_terminal TEXT
-	,	deleted_function_code TEXT
-	,	deleted_at TIMESTAMP(3) WITHOUT TIME ZONE
-	,	deleted_description TEXT
 	,	CONSTRAINT shp_direct_schedule_details_history_pkey PRIMARY KEY (id)
 );
 
@@ -119,12 +101,6 @@ COMMENT ON COLUMN shp_direct_schedule_details_history.updated_user_code IS '更�
 COMMENT ON COLUMN shp_direct_schedule_details_history.updated_terminal IS '更新端末';
 COMMENT ON COLUMN shp_direct_schedule_details_history.updated_function_code IS '更新機能コード';
 COMMENT ON COLUMN shp_direct_schedule_details_history.updated_at IS '更新日時';
-COMMENT ON COLUMN shp_direct_schedule_details_history.is_deleted IS '削除区分';
-COMMENT ON COLUMN shp_direct_schedule_details_history.deleted_description IS '削除備考';
-COMMENT ON COLUMN shp_direct_schedule_details_history.deleted_user_code IS '削除ユーザコード';
-COMMENT ON COLUMN shp_direct_schedule_details_history.deleted_terminal IS '削除端末';
-COMMENT ON COLUMN shp_direct_schedule_details_history.deleted_function_code IS '削除機能コード';
-COMMENT ON COLUMN shp_direct_schedule_details_history.deleted_at IS '削除日時';
 
 --更新日時更新トリガー
 CREATE TRIGGER set_updated_at_trigger BEFORE INSERT OR UPDATE ON shp_direct_schedule_details FOR EACH ROW EXECUTE FUNCTION set_updated_at();

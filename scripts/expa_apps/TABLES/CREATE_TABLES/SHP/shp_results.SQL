@@ -14,8 +14,8 @@ CREATE TABLE IF NOT EXISTS shp_results
 	,	is_isolated_island BOOLEAN NOT NULL DEFAULT FALSE
 	,	is_partical_shipment BOOLEAN NOT NULL DEFAULT FALSE
 	,	packages_count INTEGER NOT NULL DEFAULT 0
-	,	deliv_company_code TEXT NOT NULL
-	,	deliv_company_name TEXT NOT NULL
+	,	delivery_method_code TEXT NOT NULL
+	,	delivery_method TEXT NOT NULL
 	,	delivery_slip_printed_count INTEGER NOT NULL DEFAULT 0
 	,	invoice_slip_printed_count INTEGER NOT NULL DEFAULT 0
 	,	sender_name TEXT NOT NULL
@@ -58,8 +58,8 @@ COMMENT ON COLUMN shp_results.shipment_at IS '出荷日時';
 COMMENT ON COLUMN shp_results.is_isolated_island IS '離島フラグ';
 COMMENT ON COLUMN shp_results.is_partical_shipment IS '分納フラグ';
 COMMENT ON COLUMN shp_results.packages_count IS '出荷個口数';
-COMMENT ON COLUMN shp_results.deliv_company_code IS '配送業者コード';
-COMMENT ON COLUMN shp_results.deliv_company_name IS '配送業者';
+COMMENT ON COLUMN shp_results.delivery_method_code IS '配送方法コード';
+COMMENT ON COLUMN shp_results.delivery_method IS '配送方法';
 COMMENT ON COLUMN shp_results.delivery_slip_printed_count IS '納品書出力回数';
 COMMENT ON COLUMN shp_results.invoice_slip_printed_count IS '領収書出力回数';
 COMMENT ON COLUMN shp_results.sender_name IS '送付者名';
@@ -102,8 +102,8 @@ CREATE TABLE IF NOT EXISTS shp_results_history
 	,	is_isolated_island BOOLEAN NOT NULL DEFAULT FALSE
 	,	is_partical_shipment BOOLEAN NOT NULL DEFAULT FALSE
 	,	packages_count INTEGER NOT NULL DEFAULT 0
-	,	deliv_company_code TEXT NOT NULL
-	,	deliv_company_name TEXT NOT NULL
+	,	delivery_method_code TEXT NOT NULL
+	,	delivery_method TEXT NOT NULL
 	,	delivery_slip_printed_count INTEGER NOT NULL DEFAULT 0
 	,	invoice_slip_printed_count INTEGER NOT NULL DEFAULT 0
 	,	sender_name TEXT NOT NULL
@@ -148,8 +148,8 @@ COMMENT ON COLUMN shp_results_history.shipment_at IS '出荷日時';
 COMMENT ON COLUMN shp_results_history.is_isolated_island IS '離島フラグ';
 COMMENT ON COLUMN shp_results_history.is_partical_shipment IS '分納フラグ';
 COMMENT ON COLUMN shp_results_history.packages_count IS '出荷個口数';
-COMMENT ON COLUMN shp_results_history.deliv_company_code IS '配送業者コード';
-COMMENT ON COLUMN shp_results_history.deliv_company_name IS '配送業者';
+COMMENT ON COLUMN shp_results_history.delivery_method_code IS '配送方法コード';
+COMMENT ON COLUMN shp_results_history.delivery_method IS '配送方法';
 COMMENT ON COLUMN shp_results_history.delivery_slip_printed_count IS '納品書出力回数';
 COMMENT ON COLUMN shp_results_history.invoice_slip_printed_count IS '領収書出力回数';
 COMMENT ON COLUMN shp_results_history.sender_name IS '送付者名';

@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS ord_slips
 	,	is_sent_fax_invoice BOOLEAN NOT NULL DEFAULT FALSE
 	,	fax_email TEXT NOT NULL
 	,	store_member_no TEXT
-	,	payment_code TEXT NOT NULL
+	,	payment_method_code TEXT NOT NULL
 	,	payment_method TEXT NOT NULL
 	,	order_item_price NUMERIC NOT NULL DEFAULT 0
 	,	order_item_excluded_tax NUMERIC NOT NULL DEFAULT 0
@@ -77,7 +77,7 @@ COMMENT ON COLUMN ord_slips.is_isolated_island IS '離島送付フラグ';
 COMMENT ON COLUMN ord_slips.is_sent_fax_invoice IS '注文請書FAX送信フラグ';
 COMMENT ON COLUMN ord_slips.fax_email IS 'FAX送信先メールアドレス';
 COMMENT ON COLUMN ord_slips.store_member_no IS '店舗別会員No.';
-COMMENT ON COLUMN ord_slips.payment_code IS '支払方法コード';
+COMMENT ON COLUMN ord_slips.payment_method_code IS '支払方法コード';
 COMMENT ON COLUMN ord_slips.payment_method IS '支払方法';
 COMMENT ON COLUMN ord_slips.order_item_price IS '商品合計金額';
 COMMENT ON COLUMN ord_slips.order_item_excluded_tax IS '商品消費税額(外税)';
@@ -132,7 +132,7 @@ CREATE TABLE IF NOT EXISTS ord_slips_history
 	,	is_sent_fax_invoice BOOLEAN NOT NULL DEFAULT FALSE
 	,	fax_email TEXT NOT NULL
 	,	store_member_no TEXT
-	,	payment_code TEXT NOT NULL
+	,	payment_method_code TEXT NOT NULL
 	,	payment_method TEXT NOT NULL
 	,	order_item_price NUMERIC NOT NULL DEFAULT 0
 	,	order_item_excluded_tax NUMERIC NOT NULL DEFAULT 0
@@ -189,7 +189,7 @@ COMMENT ON COLUMN ord_slips_history.is_isolated_island IS '離島送付フラグ
 COMMENT ON COLUMN ord_slips_history.is_sent_fax_invoice IS '注文請書FAX送信フラグ';
 COMMENT ON COLUMN ord_slips_history.fax_email IS 'FAX送信先メールアドレス';
 COMMENT ON COLUMN ord_slips_history.store_member_no IS '店舗別会員No.';
-COMMENT ON COLUMN ord_slips_history.payment_code IS '支払方法コード';
+COMMENT ON COLUMN ord_slips_history.payment_method_code IS '支払方法コード';
 COMMENT ON COLUMN ord_slips_history.payment_method IS '支払方法';
 COMMENT ON COLUMN ord_slips_history.order_item_price IS '商品合計金額';
 COMMENT ON COLUMN ord_slips_history.order_item_excluded_tax IS '商品消費税額(外税)';

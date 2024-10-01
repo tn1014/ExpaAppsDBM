@@ -1,28 +1,28 @@
--- 受注送付先商品構成テーブル更新履歴登録
-CREATE OR REPLACE FUNCTION INSERT_ORD_PACKAGE_ITEM_CONFIGURATIONS_HISTORY() RETURNS TRIGGER AS $BODY$
+-- 直送出荷実績明細テーブル更新履歴登録
+CREATE OR REPLACE FUNCTION INSERT_SHP_DIRECT_RESULT_DETAILS_HISTORY() RETURNS TRIGGER AS $BODY$
 DECLARE
 	historyCount INTEGER;
 BEGIN
 	--更新回数を取得
 	SELECT	MAX(history_count)
 	INTO		historyCount
-	FROM	ord_slips_history
-	WHERE	order_id	=	NEW.order_id;
+	FROM	shp_direct_results_history
+	WHERE	direct_result_id	=	NEW.direct_result_id;
 	
 
-	INSERT INTO ord_package_item_configurations_history
+	INSERT INTO shp_direct_result_details_history
 	(
-			order_id
-		,	package_item_configuration_id
+			direct_result_id
+		,	direct_result_detail_id
 		,	history_count
-		,	package_id
-		,	package_item_id
+		,	package_item_configuration_id
 		,	item_code
 		,	product_code
 		,	inventory_seq
 		,	configuration_parts_div
 		,	lot_quantity
-		,	rank
+		,	shipment_scheduled_unit_quantity
+		,	shipment_scheduled_quantity
 		,	created_user_code
 		,	created_terminal
 		,	created_function_code
@@ -32,17 +32,19 @@ BEGIN
 		,	updated_function_code
 		,	updated_at
 	) VALUES (
-			NEW.order_id
+			NEW.direct_result_id
 		,	NEW.id
 		,	historyCount
-		,	NEW.package_id
-		,	NEW.package_item_id
+		,	NEW.direct_schedule_detail_id
+		,	NEW.purchase_slip_no
+		,	NEW.detail_no
 		,	NEW.item_code
 		,	NEW.product_code
 		,	NEW.inventory_seq
 		,	NEW.configuration_parts_div
 		,	NEW.lot_quantity
-		,	NEW.rank
+		,	NEW.shipment_unit_quantity
+		,	NEW.shipment_quantity
 		,	NEW.created_user_code
 		,	NEW.created_terminal
 		,	NEW.created_function_code
@@ -58,4 +60,4 @@ END;
 $BODY$
 LANGUAGE plpgsql;
 
-ALTER FUNCTION INSERT_ORD_PACKAGE_ITEM_CONFIGURATIONS_HISTORY OWNER TO expa_apps;
+ALTER FUNCTION INSERT_SHP_DIRECT_RESULT_DETAILS_HISTORY OWNER TO expa_apps;
