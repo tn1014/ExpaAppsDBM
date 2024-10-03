@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS shp_direct_schedules
 	,	supplier_name TEXT NOT NULL
 	,	shipment_instructed_on DATE
 	,	delivery_instructed_on DATE
-	,	delivery_time_id INTEGER
+	,	delivery_time_code TEXT NOT NULL
 	,	delivery_time TEXT NOT NULL
 	,	shipment_referenced_on DATE
 	,	purchase_scheduled_on DATE
@@ -65,7 +65,7 @@ COMMENT ON COLUMN shp_direct_schedules.supplier_code IS '仕入先コード';
 COMMENT ON COLUMN shp_direct_schedules.supplier_name IS '仕入先名';
 COMMENT ON COLUMN shp_direct_schedules.shipment_instructed_on IS '出荷日指定';
 COMMENT ON COLUMN shp_direct_schedules.delivery_instructed_on IS '着日指定';
-COMMENT ON COLUMN shp_direct_schedules.delivery_time_id IS '着時間指定ID';
+COMMENT ON COLUMN shp_direct_schedules.delivery_time_code IS '着時間指定コード';
 COMMENT ON COLUMN shp_direct_schedules.delivery_time IS '着時間指定';
 COMMENT ON COLUMN shp_direct_schedules.shipment_referenced_on IS '参考出荷日';
 COMMENT ON COLUMN shp_direct_schedules.purchase_scheduled_on IS '発注予定日';
@@ -117,7 +117,7 @@ CREATE TABLE IF NOT EXISTS shp_direct_schedules_history
 	,	supplier_name TEXT NOT NULL
 	,	shipment_instructed_on DATE
 	,	delivery_instructed_on DATE
-	,	delivery_time_id INTEGER
+	,	delivery_time_code TEXT NOT NULL
 	,	delivery_time TEXT NOT NULL
 	,	shipment_referenced_on DATE
 	,	purchase_scheduled_on DATE
@@ -171,7 +171,7 @@ COMMENT ON COLUMN shp_direct_schedules_history.supplier_code IS '仕入先コー
 COMMENT ON COLUMN shp_direct_schedules_history.supplier_name IS '仕入先名';
 COMMENT ON COLUMN shp_direct_schedules_history.shipment_instructed_on IS '出荷日指定';
 COMMENT ON COLUMN shp_direct_schedules_history.delivery_instructed_on IS '着日指定';
-COMMENT ON COLUMN shp_direct_schedules_history.delivery_time_id IS '着時間指定ID';
+COMMENT ON COLUMN shp_direct_schedules_history.delivery_time_code IS '着時間指定コード';
 COMMENT ON COLUMN shp_direct_schedules_history.delivery_time IS '着時間指定';
 COMMENT ON COLUMN shp_direct_schedules_history.shipment_referenced_on IS '参考出荷日';
 COMMENT ON COLUMN shp_direct_schedules_history.purchase_scheduled_on IS '発注予定日';

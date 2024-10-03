@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS shp_schedules
 	,	shipment_location_name TEXT NOT NULL
 	,	shipment_instructed_on DATE
 	,	delivery_instructed_on DATE
-	,	delivery_time_id INTEGER
+	,	delivery_time_code TEXT NOT NULL
 	,	delivery_time TEXT NOT NULL
 	,	shipment_referenced_on DATE
 	,	approved_at TIMESTAMP(3) WITHOUT TIME ZONE
@@ -66,7 +66,7 @@ COMMENT ON COLUMN shp_schedules.shipment_location_code IS '出荷場所コード
 COMMENT ON COLUMN shp_schedules.shipment_location_name IS '出荷場所';
 COMMENT ON COLUMN shp_schedules.shipment_instructed_on IS '出荷日指定';
 COMMENT ON COLUMN shp_schedules.delivery_instructed_on IS '着日指定';
-COMMENT ON COLUMN shp_schedules.delivery_time_id IS '着時間指定ID';
+COMMENT ON COLUMN shp_schedules.delivery_time_code IS '着時間指定コード';
 COMMENT ON COLUMN shp_schedules.delivery_time IS '着時間指定';
 COMMENT ON COLUMN shp_schedules.shipment_referenced_on IS '参考出荷日';
 COMMENT ON COLUMN shp_schedules.approved_at IS '出荷承認日時';
@@ -119,7 +119,7 @@ CREATE TABLE IF NOT EXISTS shp_schedules_history
 	,	shipment_location_name TEXT NOT NULL
 	,	shipment_instructed_on DATE
 	,	delivery_instructed_on DATE
-	,	delivery_time_id INTEGER
+	,	delivery_time_code TEXT NOT NULL
 	,	delivery_time TEXT NOT NULL
 	,	shipment_referenced_on DATE
 	,	approved_at TIMESTAMP(3) WITHOUT TIME ZONE
@@ -174,7 +174,7 @@ COMMENT ON COLUMN shp_schedules_history.shipment_location_code IS '出荷場所�
 COMMENT ON COLUMN shp_schedules_history.shipment_location_name IS '出荷場所';
 COMMENT ON COLUMN shp_schedules_history.shipment_instructed_on IS '出荷日指定';
 COMMENT ON COLUMN shp_schedules_history.delivery_instructed_on IS '着日指定';
-COMMENT ON COLUMN shp_schedules_history.delivery_time_id IS '着時間指定ID';
+COMMENT ON COLUMN shp_schedules_history.delivery_time_code IS '着時間指定コード';
 COMMENT ON COLUMN shp_schedules_history.delivery_time IS '着時間指定';
 COMMENT ON COLUMN shp_schedules_history.shipment_referenced_on IS '参考出荷日';
 COMMENT ON COLUMN shp_schedules_history.approved_at IS '出荷承認日時';

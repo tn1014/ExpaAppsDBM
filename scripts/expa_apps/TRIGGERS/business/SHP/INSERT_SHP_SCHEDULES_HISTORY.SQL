@@ -26,7 +26,7 @@ BEGIN
 		,	shipment_location_name
 		,	shipment_instructed_on
 		,	delivery_instructed_on
-		,	delivery_time_id
+		,	delivery_time_code
 		,	delivery_time
 		,	shipment_recerenced_on
 		,	approved_at
@@ -74,7 +74,7 @@ BEGIN
 		,	NEW.shipment_location_name
 		,	NEW.shipment_instructed_on
 		,	NEW.delivery_instructed_on
-		,	NEW.delivery_time_id
+		,	NEW.delivery_time_code
 		,	NEW.delivery_time
 		,	NEW.shipment_recerenced_on
 		,	NEW.approved_at

@@ -10,7 +10,6 @@ CREATE TABLE IF NOT EXISTS pur_direct_orders
 	,	direct_schedule_id BIGINT NOT NULL
 	,	purchase_on DATE NOT NULL
 	,	delivery_instructed_on DATE NOT NULL
-	,	delivery_time_id INTEGER
 	,	delivery_time TEXT NOT NULL
 	,	purchase_employee_code TEXT NOT NULL
 	,	supplier_code TEXT NOT NULL
@@ -47,7 +46,6 @@ COMMENT ON COLUMN pur_direct_orders.slip_no IS '伝票番号';
 COMMENT ON COLUMN pur_direct_orders.direct_schedule_id IS '直送出荷予定ID';
 COMMENT ON COLUMN pur_direct_orders.purchase_on IS '発注日';
 COMMENT ON COLUMN pur_direct_orders.delivery_instructed_on IS '到着指定日';
-COMMENT ON COLUMN pur_direct_orders.delivery_time_id IS '到着指定時間ID';
 COMMENT ON COLUMN pur_direct_orders.delivery_time IS '到着指定時間';
 COMMENT ON COLUMN pur_direct_orders.purchase_employee_code IS '発注社員コード';
 COMMENT ON COLUMN pur_direct_orders.supplier_code IS '仕入先コード';
@@ -83,7 +81,6 @@ CREATE TABLE IF NOT EXISTS pur_direct_orders_history
 	,	direct_schedule_id BIGINT NOT NULL
 	,	purchase_on DATE NOT NULL
 	,	delivery_instructed_on DATE NOT NULL
-	,	delivery_time_id INTEGER
 	,	delivery_time TEXT NOT NULL
 	,	purchase_employee_code TEXT NOT NULL
 	,	supplier_code TEXT NOT NULL
@@ -123,7 +120,6 @@ COMMENT ON COLUMN pur_direct_orders_history.history_count IS '更新回数';
 COMMENT ON COLUMN pur_direct_orders_history.direct_schedule_id IS '直送出荷予定ID';
 COMMENT ON COLUMN pur_direct_orders_history.purchase_on IS '発注日';
 COMMENT ON COLUMN pur_direct_orders_history.delivery_instructed_on IS '到着指定日';
-COMMENT ON COLUMN pur_direct_orders_history.delivery_time_id IS '到着指定時間ID';
 COMMENT ON COLUMN pur_direct_orders_history.delivery_time IS '到着指定時間';
 COMMENT ON COLUMN pur_direct_orders_history.purchase_employee_code IS '発注社員コード';
 COMMENT ON COLUMN pur_direct_orders_history.supplier_code IS '仕入先コード';

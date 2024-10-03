@@ -5,7 +5,7 @@ DROP TABLE IF EXISTS mng_payment_methods;
 CREATE TABLE IF NOT EXISTS mng_payment_methods
 (
 		id BIGSERIAL
-	,	peyment_method_code TEXT NOT NULL
+	,	payment_method_code TEXT NOT NULL
 	,	payment_method TEXT NOT NULL
 	,	short_name TEXT NOT NULL
 	,	honten_relation_code TEXT NOT NULL
@@ -46,7 +46,7 @@ ALTER TABLE IF EXISTS mng_payment_methods OWNER to expa_apps;
 COMMENT ON TABLE mng_payment_methods
 	IS '決済方法マスタ';
 COMMENT ON COLUMN mng_payment_methods.id IS '決済方法ID';
-COMMENT ON COLUMN mng_payment_methods.peyment_method_code IS '決済方法コード';
+COMMENT ON COLUMN mng_payment_methods.payment_method_code IS '決済方法コード';
 COMMENT ON COLUMN mng_payment_methods.payment_method IS '決済方法';
 COMMENT ON COLUMN mng_payment_methods.short_name IS '略称';
 COMMENT ON COLUMN mng_payment_methods.honten_relation_code IS '本店連携コード';

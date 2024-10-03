@@ -26,7 +26,7 @@ BEGIN
 		,	supplier_name
 		,	shipment_instructed_on
 		,	delivery_instructed_on
-		,	delivery_time_id
+		,	delivery_time_code
 		,	delivery_time
 		,	shipment_referenced_on
 		,	purchase_scheduled_on
@@ -73,7 +73,7 @@ BEGIN
 		,	NEW.supplier_name
 		,	NEW.shipment_instructed_on
 		,	NEW.delivery_instructed_on
-		,	NEW.delivery_time_id
+		,	NEW.delivery_time_code
 		,	NEW.delivery_time
 		,	NEW.shipment_referenced_on
 		,	NEW.purchase_scheduled_on

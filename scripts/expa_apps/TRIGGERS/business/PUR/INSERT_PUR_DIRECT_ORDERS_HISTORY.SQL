@@ -22,7 +22,6 @@ BEGIN
 		,	direct_schedule_id
 		,	purchase_on
 		,	delivery_instructed_on
-		,	delivery_time_id
 		,	delivery_time
 		,	purchase_employee_code
 		,	supplier_code
@@ -54,7 +53,6 @@ BEGIN
 		,	NEW.direct_schedule_id
 		,	NEW.purchase_on
 		,	NEW.delivery_instructed_on
-		,	NEW.delivery_time_id
 		,	NEW.delivery_time
 		,	NEW.purchase_employee_code
 		,	NEW.supplier_code
