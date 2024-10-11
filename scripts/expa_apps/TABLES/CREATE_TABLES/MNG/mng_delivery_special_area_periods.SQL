@@ -7,9 +7,7 @@ CREATE TABLE IF NOT EXISTS mng_delivery_special_area_periods
 		id BIGSERIAL
 	,	caption TEXT NOT NULL
 	,	start_month TEXT NOT NULL
-	,	start_day TEXT NOT NULL
 	,	end_month TEXT NOT NULL
-	,	end_day TEXT NOT NULL
 	,	is_enabled BOOLEAN NOT NULL DEFAULT FALSE
 	,	created_user_code TEXT NOT NULL
 	,	created_terminal TEXT NOT NULL
@@ -35,9 +33,7 @@ COMMENT ON TABLE mng_delivery_special_area_periods
 COMMENT ON COLUMN mng_delivery_special_area_periods.id IS '期間別配達特別地域ID';
 COMMENT ON COLUMN mng_delivery_special_area_periods.caption IS '期間名称';
 COMMENT ON COLUMN mng_delivery_special_area_periods.start_month IS '開始月';
-COMMENT ON COLUMN mng_delivery_special_area_periods.start_day IS '開始日';
 COMMENT ON COLUMN mng_delivery_special_area_periods.end_month IS '終了月';
-COMMENT ON COLUMN mng_delivery_special_area_periods.end_day IS '終了日';
 COMMENT ON COLUMN mng_delivery_special_area_periods.is_enabled IS '使用可能区分';
 COMMENT ON COLUMN mng_delivery_special_area_periods.created_user_code IS '作成ユーザコード';
 COMMENT ON COLUMN mng_delivery_special_area_periods.created_terminal IS '作成端末';

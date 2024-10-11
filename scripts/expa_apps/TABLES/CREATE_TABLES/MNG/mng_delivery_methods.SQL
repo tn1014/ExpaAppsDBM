@@ -13,6 +13,7 @@ CREATE TABLE IF NOT EXISTS mng_delivery_methods
 	,	honten_relation_code TEXT NOT NULL
 	,	rakuten_relation_code TEXT NOT NULL
 	,	yahoo_relation_code TEXT NOT NULL
+	,	deliv_company_relation_code TEXT NOT NULL
 	,	rank INT
 	,	is_enabled BOOLEAN NOT NULL DEFAULT FALSE
 	,	created_user_code TEXT NOT NULL
@@ -45,6 +46,7 @@ COMMENT ON COLUMN mng_delivery_methods.delivery_service_div IS '配送便区分'
 COMMENT ON COLUMN mng_delivery_methods.honten_relation_code IS '本店連携コード';
 COMMENT ON COLUMN mng_delivery_methods.rakuten_relation_code IS '楽天市場連携コード';
 COMMENT ON COLUMN mng_delivery_methods.yahoo_relation_code IS 'Yahoo!ショッピング連携コード';
+COMMENT ON COLUMN mng_delivery_methods.deliv_company_relation_code IS '配送業者連携コード';
 COMMENT ON COLUMN mng_delivery_methods.rank IS '表示順';
 COMMENT ON COLUMN mng_delivery_methods.is_enabled IS '使用可能区分';
 COMMENT ON COLUMN mng_delivery_methods.created_user_code IS '作成ユーザコード';
