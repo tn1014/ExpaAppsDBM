@@ -21,7 +21,7 @@ BEGIN
 		,	product_code
 		,	inventory_seq
 		,	configuration_parts_div
-		,	lot_quantity
+		,	sales_unit_quantity
 		,	rank
 		,	created_user_code
 		,	created_terminal
@@ -41,7 +41,7 @@ BEGIN
 		,	NEW.product_code
 		,	NEW.inventory_seq
 		,	NEW.configuration_parts_div
-		,	NEW.lot_quantity
+		,	NEW.sales_unit_quantity
 		,	NEW.rank
 		,	NEW.created_user_code
 		,	NEW.created_terminal

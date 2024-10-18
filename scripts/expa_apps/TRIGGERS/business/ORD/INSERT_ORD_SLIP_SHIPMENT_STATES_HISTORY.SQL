@@ -7,7 +7,7 @@ BEGIN
 	SELECT	MAX(history_count)
 	INTO		historyCount
 	FROM	ord_slip_shipment_states_history
-	WHERE	order_id	=	NEW.id;
+	WHERE	order_id	=	NEW.order_id;
 	
 	IF historyCount IS NULL OR historyCount = 0 THEN
 		historyCount := 1;

@@ -21,7 +21,7 @@ BEGIN
 		,	sender_tel01
 		,	sender_tel02
 		,	sender_tel03
-		,	sender_zip01L
+		,	sender_zip01
 		,	sender_zip02
 		,	sender_pref_code
 		,	sender_pref
@@ -45,7 +45,7 @@ BEGIN
 		,	NEW.sender_tel01
 		,	NEW.sender_tel02
 		,	NEW.sender_tel03
-		,	NEW.sender_zip01L
+		,	NEW.sender_zip01
 		,	NEW.sender_zip02
 		,	NEW.sender_pref_code
 		,	NEW.sender_pref

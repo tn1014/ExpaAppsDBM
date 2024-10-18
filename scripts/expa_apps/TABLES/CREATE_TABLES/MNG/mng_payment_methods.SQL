@@ -19,6 +19,8 @@ CREATE TABLE IF NOT EXISTS mng_payment_methods
 	,	yahoo_payment_charge NUMERIC NOT NULL DEFAULT 0
 	,	fax_delivery_charge NUMERIC NOT NULL DEFAULT 0
 	,	fax_payment_charge NUMERIC NOT NULL DEFAULT 0
+	,	delivery_charge_tax_rate NUMERIC NOT NULL DEFAULT 0
+	,	payment_charge_tax_rate NUMERIC NOT NULL DEFAULT 0
 	,	is_cash_on_delivery BOOLEAN NOT NULL DEFAULT FALSE
 	,	is_directly_shippable BOOLEAN NOT NULL DEFAULT FALSE
 	,	is_preshipping_payment BOOLEAN NOT NULL DEFAULT FALSE
@@ -60,6 +62,8 @@ COMMENT ON COLUMN mng_payment_methods.yahoo_delivery_charge IS 'Yahoo!ショッ�
 COMMENT ON COLUMN mng_payment_methods.yahoo_payment_charge IS 'Yahoo!ショッピング決済手数料';
 COMMENT ON COLUMN mng_payment_methods.fax_delivery_charge IS 'FAX注文代引手数料';
 COMMENT ON COLUMN mng_payment_methods.fax_payment_charge IS 'FAX注文決済手数料';
+COMMENT ON COLUMN mng_payment_methods.delivery_charge_tax_rate IS '代引手数料消費税率';
+COMMENT ON COLUMN mng_payment_methods.payment_charge_tax_rate IS '決済手数料消費税率';
 COMMENT ON COLUMN mng_payment_methods.is_cash_on_delivery IS '代引フラグ';
 COMMENT ON COLUMN mng_payment_methods.is_directly_shippable IS '直送可能フラグ';
 COMMENT ON COLUMN mng_payment_methods.is_preshipping_payment IS '出荷前入金フラグ';

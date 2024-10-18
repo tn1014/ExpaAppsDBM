@@ -27,7 +27,6 @@ BEGIN
 		,	import_div
 		,	shipment_instructed_on
 		,	delivery_instructed_on
-		,	remarks
 		,	is_forced_cancel_invalid
 		,	is_several_sender
 		,	is_isolated_island
@@ -67,7 +66,7 @@ BEGIN
 		,	deleted_at
 		,	deleted_description
 	) VALUES (
-			NEW.order_id
+			NEW.id
 		,	historyCount
 		,	NEW.slip_no
 		,	NEW.store_code
@@ -77,7 +76,6 @@ BEGIN
 		,	NEW.import_div
 		,	NEW.shipment_instructed_on
 		,	NEW.delivery_instructed_on
-		,	NEW.remarks
 		,	NEW.is_forced_cancel_invalid
 		,	NEW.is_several_sender
 		,	NEW.is_isolated_island

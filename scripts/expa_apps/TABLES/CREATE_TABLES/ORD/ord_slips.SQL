@@ -15,7 +15,6 @@ CREATE TABLE IF NOT EXISTS ord_slips
 	,	import_div TEXT NOT NULL
 	,	shipment_instructed_on DATE
 	,	delivery_instructed_on DATE
-	,	remarks TEXT NOT NULL
 	,	is_forced_cancel_invalid BOOLEAN NOT NULL DEFAULT FALSE
 	,	is_several_sender BOOLEAN NOT NULL DEFAULT FALSE
 	,	is_isolated_island BOOLEAN NOT NULL DEFAULT FALSE
@@ -70,7 +69,6 @@ COMMENT ON COLUMN ord_slips.correction_slip_no IS '訂正元伝票No.';
 COMMENT ON COLUMN ord_slips.import_div IS '受注取込区分(自動・手動)';
 COMMENT ON COLUMN ord_slips.shipment_instructed_on IS '出荷日指定';
 COMMENT ON COLUMN ord_slips.delivery_instructed_on IS '着日指定';
-COMMENT ON COLUMN ord_slips.remarks IS '購入者備考';
 COMMENT ON COLUMN ord_slips.is_forced_cancel_invalid IS '強制キャンセル無効フラグ';
 COMMENT ON COLUMN ord_slips.is_several_sender IS '複数送付先フラグ';
 COMMENT ON COLUMN ord_slips.is_isolated_island IS '離島送付フラグ';
@@ -125,7 +123,6 @@ CREATE TABLE IF NOT EXISTS ord_slips_history
 	,	import_div TEXT NOT NULL
 	,	shipment_instructed_on DATE
 	,	delivery_instructed_on DATE
-	,	remarks TEXT NOT NULL
 	,	is_forced_cancel_invalid BOOLEAN NOT NULL DEFAULT FALSE
 	,	is_several_sender BOOLEAN NOT NULL DEFAULT FALSE
 	,	is_isolated_island BOOLEAN NOT NULL DEFAULT FALSE
@@ -182,7 +179,6 @@ COMMENT ON COLUMN ord_slips_history.correction_slip_no IS '訂正元伝票No.';
 COMMENT ON COLUMN ord_slips_history.import_div IS '受注取込区分(自動・手動)';
 COMMENT ON COLUMN ord_slips_history.shipment_instructed_on IS '出荷日指定';
 COMMENT ON COLUMN ord_slips_history.delivery_instructed_on IS '着日指定';
-COMMENT ON COLUMN ord_slips_history.remarks IS '購入者備考';
 COMMENT ON COLUMN ord_slips_history.is_forced_cancel_invalid IS '強制キャンセル無効フラグ';
 COMMENT ON COLUMN ord_slips_history.is_several_sender IS '複数送付先フラグ';
 COMMENT ON COLUMN ord_slips_history.is_isolated_island IS '離島送付フラグ';

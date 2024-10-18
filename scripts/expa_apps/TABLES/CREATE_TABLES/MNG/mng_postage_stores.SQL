@@ -8,6 +8,7 @@ CREATE TABLE IF NOT EXISTS mng_postage_stores
 	,	postage_delivery_id BIGINT
 	,	store_code TEXT NOT NULL
 	,	package_minimum_price NUMERIC NOT NULL DEFAULT 0
+	,	special_area_postage_price NUMERIC NOT NULL DEFAULT 0
 	,	created_user_code TEXT NOT NULL
 	,	created_terminal TEXT NOT NULL
 	,	created_function_code TEXT NOT NULL
@@ -33,6 +34,7 @@ COMMENT ON COLUMN mng_postage_stores.id IS '店舗別送料ID';
 COMMENT ON COLUMN mng_postage_stores.postage_delivery_id IS '配送方法別送料ID';
 COMMENT ON COLUMN mng_postage_stores.store_code IS '店舗コード';
 COMMENT ON COLUMN mng_postage_stores.package_minimum_price IS '送付先別最低購入金額';
+COMMENT ON COLUMN mng_postage_stores.special_area_postage_price IS '特別地域送料';
 COMMENT ON COLUMN mng_postage_stores.created_user_code IS '作成ユーザコード';
 COMMENT ON COLUMN mng_postage_stores.created_terminal IS '作成端末';
 COMMENT ON COLUMN mng_postage_stores.created_function_code IS '作成機能コード';

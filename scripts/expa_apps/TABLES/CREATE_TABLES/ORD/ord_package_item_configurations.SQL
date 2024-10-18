@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS ord_package_item_configurations
 	,	product_code TEXT NOT NULL
 	,	inventory_seq INTEGER NOT NULL
 	,	configuration_parts_div TEXT NOT NULL
-	,	lot_quantity NUMERIC NOT NULL DEFAULT 0
+	,	sales_unit_quantity NUMERIC NOT NULL DEFAULT 0
 	,	rank INTEGER NOT NULL DEFAULT 0
 	,	created_user_code TEXT NOT NULL
 	,	created_terminal TEXT NOT NULL
@@ -39,7 +39,7 @@ COMMENT ON COLUMN ord_package_item_configurations.item_code IS '商品コード'
 COMMENT ON COLUMN ord_package_item_configurations.product_code IS '製品コード';
 COMMENT ON COLUMN ord_package_item_configurations.inventory_seq IS '在庫管理番号';
 COMMENT ON COLUMN ord_package_item_configurations.configuration_parts_div IS '構成製品パーツ区分';
-COMMENT ON COLUMN ord_package_item_configurations.lot_quantity IS '入数';
+COMMENT ON COLUMN ord_package_item_configurations.sales_unit_quantity IS '販売入数';
 COMMENT ON COLUMN ord_package_item_configurations.rank IS '表示順';
 COMMENT ON COLUMN ord_package_item_configurations.created_user_code IS '作成ユーザコード';
 COMMENT ON COLUMN ord_package_item_configurations.created_terminal IS '作成端末';
@@ -64,7 +64,7 @@ CREATE TABLE IF NOT EXISTS ord_package_item_configurations_history
 	,	product_code TEXT NOT NULL
 	,	inventory_seq INTEGER NOT NULL
 	,	configuration_parts_div TEXT NOT NULL
-	,	lot_quantity NUMERIC NOT NULL DEFAULT 0
+	,	sales_unit_quantity NUMERIC NOT NULL DEFAULT 0
 	,	rank INTEGER NOT NULL DEFAULT 0
 	,	created_user_code TEXT NOT NULL
 	,	created_terminal TEXT NOT NULL
@@ -91,7 +91,7 @@ COMMENT ON COLUMN ord_package_item_configurations_history.item_code IS '商品�
 COMMENT ON COLUMN ord_package_item_configurations_history.product_code IS '製品コード';
 COMMENT ON COLUMN ord_package_item_configurations_history.inventory_seq IS '在庫管理番号';
 COMMENT ON COLUMN ord_package_item_configurations_history.configuration_parts_div IS '構成製品パーツ区分';
-COMMENT ON COLUMN ord_package_item_configurations_history.lot_quantity IS '入数';
+COMMENT ON COLUMN ord_package_item_configurations_history.sales_unit_quantity IS '入数';
 COMMENT ON COLUMN ord_package_item_configurations_history.rank IS '表示順';
 COMMENT ON COLUMN ord_package_item_configurations_history.created_user_code IS '作成ユーザコード';
 COMMENT ON COLUMN ord_package_item_configurations_history.created_terminal IS '作成端末';

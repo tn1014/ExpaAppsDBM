@@ -28,12 +28,6 @@ CREATE TABLE IF NOT EXISTS ord_slip_orderers
 	,	updated_terminal TEXT NOT NULL
 	,	updated_function_code TEXT NOT NULL
 	,	updated_at TIMESTAMP(3) WITHOUT TIME ZONE NOT NULL
-	,	is_deleted BOOLEAN NOT NULL DEFAULT FALSE
-	,	deleted_user_code TEXT
-	,	deleted_terminal TEXT
-	,	deleted_function_code TEXT
-	,	deleted_at TIMESTAMP(3) WITHOUT TIME ZONE
-	,	deleted_description TEXT
 	,	CONSTRAINT ord_slip_orderers_pkey PRIMARY KEY (id)
 );
 
