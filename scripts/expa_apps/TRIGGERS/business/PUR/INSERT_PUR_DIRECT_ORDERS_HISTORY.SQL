@@ -19,10 +19,12 @@ BEGIN
 	(
 			slip_no
 		,	history_count
-		,	direct_schedule_id
+		,	order_slip_no
+		,	package_shipment_id
 		,	purchase_on
-		,	delivery_instructed_on
-		,	delivery_time
+		,	delivery_scheduled_on
+		,	delivery_scheduled_time_code
+		,	delivery_scheduled_time
 		,	purchase_employee_code
 		,	supplier_code
 		,	delivery_destination_code
@@ -50,10 +52,12 @@ BEGIN
 	) VALUES (
 			NEW.slip_no
 		,	historyCount
-		,	NEW.direct_schedule_id
+		,	NEW.order_slip_no
+		,	NEW.package_shipment_id
 		,	NEW.purchase_on
-		,	NEW.delivery_instructed_on
-		,	NEW.delivery_time
+		,	NEW.delivery_scheduled_on
+		,	NEW.delivery_scheduled_time_code
+		,	NEW.delivery_scheduled_time
 		,	NEW.purchase_employee_code
 		,	NEW.supplier_code
 		,	NEW.delivery_destination_code

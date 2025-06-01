@@ -1,0 +1,2 @@
+DELETE FROM	shp_product_results;
+DELETE FROM	shp_product_results_history;

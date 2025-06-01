@@ -26,8 +26,6 @@ CREATE TABLE IF NOT EXISTS mng_store_informations
 	,	charge_name TEXT NOT NULL
 	,	business_time TEXT NOT NULL
 	,	invoice_register_no TEXT NOT NULL
-	,	included_tax_div TEXT NOT NULL
-	,	rounding_div TEXT NOT NULL
 	,	created_user_code TEXT NOT NULL
 	,	created_terminal TEXT NOT NULL
 	,	created_function_code TEXT NOT NULL
@@ -65,8 +63,6 @@ COMMENT ON COLUMN mng_store_informations.manager_name IS '運営者名';
 COMMENT ON COLUMN mng_store_informations.charge_name IS '責任者名';
 COMMENT ON COLUMN mng_store_informations.business_time IS '営業時間';
 COMMENT ON COLUMN mng_store_informations.invoice_register_no IS 'インボイス登録番号';
-COMMENT ON COLUMN mng_store_informations.included_tax_div IS '内税外税区分';
-COMMENT ON COLUMN mng_store_informations.rounding_div IS '端数処理区分';
 COMMENT ON COLUMN mng_store_informations.created_user_code IS '作成ユーザコード';
 COMMENT ON COLUMN mng_store_informations.created_terminal IS '作成端末';
 COMMENT ON COLUMN mng_store_informations.created_function_code IS '作成機能コード';

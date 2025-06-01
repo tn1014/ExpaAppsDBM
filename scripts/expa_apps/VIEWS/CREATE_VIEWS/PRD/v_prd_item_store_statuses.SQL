@@ -10,15 +10,15 @@ SELECT		DISTINCT prd_item_store_statuses.item_code
 FROM		prd_item_store_statuses
 LEFT JOIN		prd_item_store_statuses honten
 ON			prd_item_store_statuses.item_code	=	honten.item_code
-AND			honten.store_code				=	'01'
+AND			honten.store_code				=	'10'
 AND			honten.is_deleted				=	FALSE
 LEFT JOIN		prd_item_store_statuses rakuten
 ON			prd_item_store_statuses.item_code	=	rakuten.item_code
-AND			rakuten.store_code				=	'02'
+AND			rakuten.store_code				=	'20'
 AND			rakuten.is_deleted				=	FALSE
 LEFT JOIN		prd_item_store_statuses yahoo
 ON			prd_item_store_statuses.item_code	=	yahoo.item_code
-AND			yahoo.store_code				=	'03'
+AND			yahoo.store_code				=	'30'
 AND			yahoo.is_deleted					=	FALSE
 WHERE		prd_item_store_statuses.is_deleted	=	FALSE
 ORDER BY		item_code;

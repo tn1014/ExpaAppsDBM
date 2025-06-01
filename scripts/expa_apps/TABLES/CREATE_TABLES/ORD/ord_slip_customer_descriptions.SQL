@@ -7,8 +7,8 @@ CREATE TABLE IF NOT EXISTS ord_slip_customer_descriptions
 		order_id BIGINT
 	,	remarks TEXT NOT NULL
 	,	delivery_instructed_on DATE
-	,	delivery_time_code TEXT NOT NULL
-	,	delivery_time TEXT NOT NULL
+	,	delivery_instructed_time_code TEXT NOT NULL
+	,	delivery_instructed_time TEXT NOT NULL
 	,	is_required_slip_confirm BOOLEAN NOT NULL DEFAULT FALSE
 	,	slip_confirmed_at TIMESTAMP(3) WITHOUT TIME ZONE
 	,	created_user_code TEXT NOT NULL
@@ -29,8 +29,8 @@ COMMENT ON TABLE ord_slip_customer_descriptions
 COMMENT ON COLUMN ord_slip_customer_descriptions.order_id IS '受注伝票ID';
 COMMENT ON COLUMN ord_slip_customer_descriptions.remarks IS '購入者備考';
 COMMENT ON COLUMN ord_slip_customer_descriptions.delivery_instructed_on IS '購入者指定到着日';
-COMMENT ON COLUMN ord_slip_customer_descriptions.delivery_time_code IS '購入者指定配達時間帯コード';
-COMMENT ON COLUMN ord_slip_customer_descriptions.delivery_time IS '購入者指定配達時間帯';
+COMMENT ON COLUMN ord_slip_customer_descriptions.delivery_instructed_time_code IS '購入者指定配達時間帯コード';
+COMMENT ON COLUMN ord_slip_customer_descriptions.delivery_instructed_time IS '購入者指定配達時間帯';
 COMMENT ON COLUMN ord_slip_customer_descriptions.is_required_slip_confirm IS '受注伝票要確認フラグ';
 COMMENT ON COLUMN ord_slip_customer_descriptions.slip_confirmed_at IS '受注伝票確認日時';
 COMMENT ON COLUMN ord_slip_customer_descriptions.created_user_code IS '作成ユーザコード';

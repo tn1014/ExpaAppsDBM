@@ -75,17 +75,17 @@ BEGIN
 		LEFT JOIN		prd_item_sales_price_store_relations honten
 		ON			prd_item_sales_prices.item_code		=	honten.item_code
 		AND			prd_item_sales_prices.start_on		=	honten.start_on
-		AND			honten.store_code				=	'01'
+		AND			honten.store_code				=	'10'
 		AND			honten.is_deleted				=	FALSE
 		LEFT JOIN		prd_item_sales_price_store_relations rakuten
 		ON			prd_item_sales_prices.item_code		=	rakuten.item_code
 		AND			prd_item_sales_prices.start_on		=	rakuten.start_on
-		AND			rakuten.store_code				=	'02'
+		AND			rakuten.store_code				=	'20'
 		AND			rakuten.is_deleted				=	FALSE
 		LEFT JOIN		prd_item_sales_price_store_relations yahoo
 		ON			prd_item_sales_prices.item_code		=	yahoo.item_code
 		AND			prd_item_sales_prices.start_on		=	yahoo.start_on
-		AND			yahoo.store_code				=	'03'
+		AND			yahoo.store_code				=	'30'
 		AND			yahoo.is_deleted					=	FALSE
 		LEFT JOIN		prd_item_sales_price_store_relations fax
 		ON			prd_item_sales_prices.item_code		=	fax.item_code

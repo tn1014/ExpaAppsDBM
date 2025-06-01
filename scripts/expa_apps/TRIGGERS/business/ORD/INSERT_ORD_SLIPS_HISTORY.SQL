@@ -22,11 +22,14 @@ BEGIN
 		,	slip_no
 		,	store_code
 		,	store_order_no
+		,	pre_order_no
 		,	is_corrected
 		,	correction_slip_no
 		,	import_div
-		,	shipment_instructed_on
-		,	delivery_instructed_on
+		,	shipment_scheduled_on
+		,	delivery_scheduled_on
+		,	delivery_scheduled_time_code
+		,	delivery_scheduled_time
 		,	is_forced_cancel_invalid
 		,	is_several_sender
 		,	is_isolated_island
@@ -36,11 +39,11 @@ BEGIN
 		,	payment_method_code
 		,	payment_method
 		,	order_item_price
-		,	order_item_excluded_tax
 		,	order_postage_price
 		,	order_delivery_charge
 		,	order_payment_charge
 		,	order_payment_charge_tax_rate
+		,	order_payment_charge_tax_price
 		,	order_total_price
 		,	coupon_price
 		,	discount_price
@@ -48,6 +51,7 @@ BEGIN
 		,	payment_price
 		,	payment_price_ini
 		,	order_description
+		,	is_required_print_receipt
 		,	receipt_name
 		,	receipt_item
 		,	reply_message
@@ -71,11 +75,14 @@ BEGIN
 		,	NEW.slip_no
 		,	NEW.store_code
 		,	NEW.store_order_no
+		,	NEW.pre_order_no
 		,	NEW.is_corrected
 		,	NEW.correction_slip_no
 		,	NEW.import_div
-		,	NEW.shipment_instructed_on
-		,	NEW.delivery_instructed_on
+		,	NEW.shipment_scheduled_on
+		,	NEW.delivery_scheduled_on
+		,	NEW.delivery_scheduled_time_code
+		,	NEW.delivery_scheduled_time
 		,	NEW.is_forced_cancel_invalid
 		,	NEW.is_several_sender
 		,	NEW.is_isolated_island
@@ -85,11 +92,11 @@ BEGIN
 		,	NEW.payment_method_code
 		,	NEW.payment_method
 		,	NEW.order_item_price
-		,	NEW.order_item_excluded_tax
 		,	NEW.order_postage_price
 		,	NEW.order_delivery_charge
 		,	NEW.order_payment_charge
 		,	NEW.order_payment_charge_tax_rate
+		,	NEW.order_payment_charge_tax_price
 		,	NEW.order_total_price
 		,	NEW.coupon_price
 		,	NEW.discount_price
@@ -97,6 +104,7 @@ BEGIN
 		,	NEW.payment_price
 		,	NEW.payment_price_ini
 		,	NEW.order_description
+		,	NEW.is_required_print_receipt
 		,	NEW.receipt_name
 		,	NEW.receipt_item
 		,	NEW.reply_message

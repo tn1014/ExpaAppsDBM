@@ -15,8 +15,8 @@ BEGIN
 			slip_no
 		,	detail_no
 		,	history_count
+		,	package_shipment_product_id
 		,	product_code
-		,	inventory_seq
 		,	purchase_quantity
 		,	purchase_unit_code
 		,	purchase_unit_quantity
@@ -35,8 +35,8 @@ BEGIN
 			NEW.slip_no
 		,	NEW.detail_no
 		,	historyCount
+		,	NEW.package_shipment_product_id
 		,	NEW.product_code
-		,	NEW.inventory_seq
 		,	NEW.purchase_quantity
 		,	NEW.purchase_unit_code
 		,	NEW.purchase_unit_quantity

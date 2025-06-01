@@ -23,9 +23,8 @@ BEGIN
 		,	price
 		,	included_tax_div
 		,	tax_rate
+		,	tax_price
 		,	quantity
-		,	is_included_postage_price
-		,	is_included_delivery_charge
 		,	created_user_code
 		,	created_terminal
 		,	created_function_code
@@ -46,9 +45,8 @@ BEGIN
 		,	NEW.price
 		,	NEW.included_tax_div
 		,	NEW.tax_rate
+		,	NEW.tax_price
 		,	NEW.quantity
-		,	NEW.is_included_postage_price
-		,	NEW.is_included_delivery_charge
 		,	NEW.created_user_code
 		,	NEW.created_terminal
 		,	NEW.created_function_code

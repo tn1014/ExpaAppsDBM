@@ -10,17 +10,19 @@ CREATE TABLE IF NOT EXISTS ord_packages
 	,	order_id BIGINT
 	,	package_seq INTEGER NOT NULL DEFAULT 0
 	,	store_basket_id BIGINT
-	,	shipment_instructed_on DATE
-	,	delivery_instructed_on DATE
+	,	delivery_method_code TEXT NOT NULL
+	,	delivery_method TEXT NOT NULL
 	,	is_isolated_island BOOLEAN NOT NULL DEFAULT FALSE
 	,	package_postage_price NUMERIC NOT NULL DEFAULT 0
 	,	package_postage_tax_rate NUMERIC NOT NULL DEFAULT 0
+	,	package_postage_tax_price NUMERIC NOT NULL DEFAULT 0
 	,	package_delivery_charge NUMERIC NOT NULL DEFAULT 0
 	,	package_delivery_charge_tax_rate NUMERIC NOT NULL DEFAULT 0
+	,	package_delivery_charge_tax_price NUMERIC NOT NULL DEFAULT 0
 	,	package_item_price NUMERIC NOT NULL DEFAULT 0
-	,	package_item_excluded_tax NUMERIC NOT NULL DEFAULT 0
 	,	package_total_price NUMERIC NOT NULL DEFAULT 0
 	,	package_description TEXT NOT NULL
+	,	is_required_print_delivery_slip BOOLEAN NOT NULL DEFAULT FALSE
 	,	delivery_message01 TEXT NOT NULL
 	,	delivery_message02 TEXT NOT NULL
 	,	delivery_message03 TEXT NOT NULL
@@ -43,17 +45,19 @@ COMMENT ON COLUMN ord_packages.id IS '受注送付先ID';
 COMMENT ON COLUMN ord_packages.order_id IS '受注伝票ID';
 COMMENT ON COLUMN ord_packages.package_seq IS '送付先シーケンス';
 COMMENT ON COLUMN ord_packages.store_basket_id IS '店舗別送付先ID';
-COMMENT ON COLUMN ord_packages.shipment_instructed_on IS '出荷日指定';
-COMMENT ON COLUMN ord_packages.delivery_instructed_on IS '着日指定';
+COMMENT ON COLUMN ord_packages.delivery_method_code IS '配送方法コード';
+COMMENT ON COLUMN ord_packages.delivery_method IS '配送方法';
 COMMENT ON COLUMN ord_packages.is_isolated_island IS '離島送付先フラグ';
 COMMENT ON COLUMN ord_packages.package_postage_price IS '送料';
 COMMENT ON COLUMN ord_packages.package_postage_tax_rate IS '送料税率';
+COMMENT ON COLUMN ord_packages.package_postage_tax_price IS '送料税額';
 COMMENT ON COLUMN ord_packages.package_delivery_charge IS '代引き手数料';
 COMMENT ON COLUMN ord_packages.package_delivery_charge_tax_rate IS '代引き手数料税率';
+COMMENT ON COLUMN ord_packages.package_delivery_charge_tax_price IS '代引き手数料税額';
 COMMENT ON COLUMN ord_packages.package_item_price IS '商品合計金額';
-COMMENT ON COLUMN ord_packages.package_item_excluded_tax IS '商品消費税額(外税)';
 COMMENT ON COLUMN ord_packages.package_total_price IS '合計金額';
 COMMENT ON COLUMN ord_packages.package_description IS '送付先備考';
+COMMENT ON COLUMN ord_packages.is_required_print_delivery_slip IS '納品書発行要否';
 COMMENT ON COLUMN ord_packages.delivery_message01 IS '送り状メッセージ1';
 COMMENT ON COLUMN ord_packages.delivery_message02 IS '送り状メッセージ2';
 COMMENT ON COLUMN ord_packages.delivery_message03 IS '送り状メッセージ3';
@@ -75,17 +79,19 @@ CREATE TABLE IF NOT EXISTS ord_packages_history
 	,	history_count INTEGER NOT NULL DEFAULT 0
 	,	package_seq INTEGER NOT NULL DEFAULT 0
 	,	store_basket_id BIGINT
-	,	shipment_instructed_on DATE
-	,	delivery_instructed_on DATE
+	,	delivery_method_code TEXT NOT NULL
+	,	delivery_method TEXT NOT NULL
 	,	is_isolated_island BOOLEAN NOT NULL DEFAULT FALSE
 	,	package_postage_price NUMERIC NOT NULL DEFAULT 0
 	,	package_postage_tax_rate NUMERIC NOT NULL DEFAULT 0
+	,	package_postage_tax_price NUMERIC NOT NULL DEFAULT 0
 	,	package_delivery_charge NUMERIC NOT NULL DEFAULT 0
 	,	package_delivery_charge_tax_rate NUMERIC NOT NULL DEFAULT 0
+	,	package_delivery_charge_tax_price NUMERIC NOT NULL DEFAULT 0
 	,	package_item_price NUMERIC NOT NULL DEFAULT 0
-	,	package_item_excluded_tax NUMERIC NOT NULL DEFAULT 0
 	,	package_total_price NUMERIC NOT NULL DEFAULT 0
 	,	package_description TEXT NOT NULL
+	,	is_required_print_delivery_slip BOOLEAN NOT NULL DEFAULT FALSE
 	,	delivery_message01 TEXT NOT NULL
 	,	delivery_message02 TEXT NOT NULL
 	,	delivery_message03 TEXT NOT NULL
@@ -110,17 +116,19 @@ COMMENT ON COLUMN ord_packages_history.package_id IS '受注送付先ID';
 COMMENT ON COLUMN ord_packages_history.history_count IS '更新回数';
 COMMENT ON COLUMN ord_packages_history.package_seq IS '送付先シーケンス';
 COMMENT ON COLUMN ord_packages_history.store_basket_id IS '店舗別送付先ID';
-COMMENT ON COLUMN ord_packages_history.shipment_instructed_on IS '出荷日指定';
-COMMENT ON COLUMN ord_packages_history.delivery_instructed_on IS '着日指定';
+COMMENT ON COLUMN ord_packages_history.delivery_method_code IS '配送方法コード';
+COMMENT ON COLUMN ord_packages_history.delivery_method IS '配送方法';
 COMMENT ON COLUMN ord_packages_history.is_isolated_island IS '離島送付先フラグ';
 COMMENT ON COLUMN ord_packages_history.package_postage_price IS '送料';
 COMMENT ON COLUMN ord_packages_history.package_postage_tax_rate IS '送料税率';
+COMMENT ON COLUMN ord_packages_history.package_postage_tax_price IS '送料税額';
 COMMENT ON COLUMN ord_packages_history.package_delivery_charge IS '代引き手数料';
 COMMENT ON COLUMN ord_packages_history.package_delivery_charge_tax_rate IS '代引き手数料税率';
+COMMENT ON COLUMN ord_packages_history.package_delivery_charge_tax_price IS '代引き手数料税額';
 COMMENT ON COLUMN ord_packages_history.package_item_price IS '商品合計金額';
-COMMENT ON COLUMN ord_packages_history.package_item_excluded_tax IS '商品消費税額(外税)';
 COMMENT ON COLUMN ord_packages_history.package_total_price IS '合計金額';
 COMMENT ON COLUMN ord_packages_history.package_description IS '送付先備考';
+COMMENT ON COLUMN ord_packages_history.is_required_print_delivery_slip IS '納品書発行要否';
 COMMENT ON COLUMN ord_packages_history.delivery_message01 IS '送り状メッセージ1';
 COMMENT ON COLUMN ord_packages_history.delivery_message02 IS '送り状メッセージ2';
 COMMENT ON COLUMN ord_packages_history.delivery_message03 IS '送り状メッセージ3';

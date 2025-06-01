@@ -17,17 +17,19 @@ BEGIN
 		,	history_count
 		,	package_seq
 		,	store_basket_id
-		,	shipment_instructed_on
-		,	delivery_instructed_on
+		,	delivery_method_code
+		,	delivery_method
 		,	is_isolated_island
 		,	package_postage_price
 		,	package_postage_tax_rate
+		,	package_postage_tax_price
 		,	package_delivery_charge
 		,	package_delivery_charge_tax_rate
+		,	package_delivery_charge_tax_price
 		,	package_item_price
-		,	package_item_excluded_tax
 		,	package_total_price
 		,	package_description
+		,	is_required_print_delivery_slip
 		,	delivery_message01
 		,	delivery_message02
 		,	delivery_message03
@@ -45,17 +47,19 @@ BEGIN
 		,	historyCount
 		,	NEW.package_seq
 		,	NEW.store_basket_id
-		,	NEW.shipment_instructed_on
-		,	NEW.delivery_instructed_on
+		,	NEW.delivery_method_code
+		,	NEW.delivery_method
 		,	NEW.is_isolated_island
 		,	NEW.package_postage_price
 		,	NEW.package_postage_tax_rate
+		,	NEW.package_postage_tax_price
 		,	NEW.package_delivery_charge
 		,	NEW.package_delivery_charge_tax_rate
+		,	NEW.package_delivery_charge_tax_price
 		,	NEW.package_item_price
-		,	NEW.package_item_excluded_tax
 		,	NEW.package_total_price
 		,	NEW.package_description
+		,	NEW.is_required_print_delivery_slip
 		,	NEW.delivery_message01
 		,	NEW.delivery_message02
 		,	NEW.delivery_message03

@@ -7,10 +7,12 @@ DROP TABLE IF EXISTS pur_direct_orders_history;
 CREATE TABLE IF NOT EXISTS pur_direct_orders
 (
 		slip_no TEXT NOT NULL
-	,	direct_schedule_id BIGINT NOT NULL
+	,	order_slip_no TEXT NOT NULL
+	,	package_shipment_id BIGINT NOT NULL
 	,	purchase_on DATE NOT NULL
-	,	delivery_instructed_on DATE NOT NULL
-	,	delivery_time TEXT NOT NULL
+	,	delivery_scheduled_on DATE
+	,	delivery_scheduled_time_code TEXT NOT NULL
+	,	delivery_scheduled_time TEXT NOT NULL
 	,	purchase_employee_code TEXT NOT NULL
 	,	supplier_code TEXT NOT NULL
 	,	delivery_destination_code TEXT NOT NULL
@@ -43,13 +45,15 @@ ALTER TABLE IF EXISTS pur_direct_orders OWNER to expa_apps;
 COMMENT ON TABLE pur_direct_orders
 	IS '直送発注テーブル';
 COMMENT ON COLUMN pur_direct_orders.slip_no IS '伝票番号';
-COMMENT ON COLUMN pur_direct_orders.direct_schedule_id IS '直送出荷予定ID';
+COMMENT ON COLUMN pur_direct_orders.order_slip_no IS '受注伝票番号';
+COMMENT ON COLUMN pur_direct_orders.package_shipment_id IS '受注送付先出荷ID';
 COMMENT ON COLUMN pur_direct_orders.purchase_on IS '発注日';
-COMMENT ON COLUMN pur_direct_orders.delivery_instructed_on IS '到着指定日';
-COMMENT ON COLUMN pur_direct_orders.delivery_time IS '到着指定時間';
+COMMENT ON COLUMN pur_direct_orders.delivery_scheduled_on IS '納品予定日';
+COMMENT ON COLUMN pur_direct_orders.delivery_scheduled_time_code IS '納品予定時間帯コード';
+COMMENT ON COLUMN pur_direct_orders.delivery_scheduled_time IS '納品時間帯';
 COMMENT ON COLUMN pur_direct_orders.purchase_employee_code IS '発注社員コード';
 COMMENT ON COLUMN pur_direct_orders.supplier_code IS '仕入先コード';
-COMMENT ON COLUMN pur_direct_orders.delivery_destination_code IS '直送納品先コード';
+COMMENT ON COLUMN pur_direct_orders.delivery_destination_code IS '納品先コード';
 COMMENT ON COLUMN pur_direct_orders.slip_description IS '伝票備考';
 COMMENT ON COLUMN pur_direct_orders.internal_description IS '社内備考';
 COMMENT ON COLUMN pur_direct_orders.supplier_slip_no01 IS '相手先伝票番号1';
@@ -78,10 +82,12 @@ CREATE TABLE IF NOT EXISTS pur_direct_orders_history
 		id BIGSERIAL
 	,	slip_no TEXT NOT NULL
 	,	history_count INTEGER NOT NULL DEFAULT 0
-	,	direct_schedule_id BIGINT NOT NULL
+	,	order_slip_no TEXT NOT NULL
+	,	package_shipment_id BIGINT NOT NULL
 	,	purchase_on DATE NOT NULL
-	,	delivery_instructed_on DATE NOT NULL
-	,	delivery_time TEXT NOT NULL
+	,	delivery_scheduled_on DATE
+	,	delivery_scheduled_time_code TEXT NOT NULL
+	,	delivery_scheduled_time TEXT NOT NULL
 	,	purchase_employee_code TEXT NOT NULL
 	,	supplier_code TEXT NOT NULL
 	,	delivery_destination_code TEXT NOT NULL
@@ -117,13 +123,15 @@ COMMENT ON TABLE pur_direct_orders_history
 COMMENT ON COLUMN pur_direct_orders_history.id IS '履歴ID';	
 COMMENT ON COLUMN pur_direct_orders_history.slip_no IS '伝票番号';
 COMMENT ON COLUMN pur_direct_orders_history.history_count IS '更新回数';
-COMMENT ON COLUMN pur_direct_orders_history.direct_schedule_id IS '直送出荷予定ID';
+COMMENT ON COLUMN pur_direct_orders_history.order_slip_no IS '受注伝票番号';
+COMMENT ON COLUMN pur_direct_orders_history.package_shipment_id IS '受注送付先出荷ID';
 COMMENT ON COLUMN pur_direct_orders_history.purchase_on IS '発注日';
-COMMENT ON COLUMN pur_direct_orders_history.delivery_instructed_on IS '到着指定日';
-COMMENT ON COLUMN pur_direct_orders_history.delivery_time IS '到着指定時間';
+COMMENT ON COLUMN pur_direct_orders_history.delivery_scheduled_on IS '納品予定日';
+COMMENT ON COLUMN pur_direct_orders_history.delivery_scheduled_time_code IS '納品予定時間帯コード';
+COMMENT ON COLUMN pur_direct_orders_history.delivery_scheduled_time IS '納品時間帯';
 COMMENT ON COLUMN pur_direct_orders_history.purchase_employee_code IS '発注社員コード';
 COMMENT ON COLUMN pur_direct_orders_history.supplier_code IS '仕入先コード';
-COMMENT ON COLUMN pur_direct_orders_history.delivery_destination_code IS '直送納品先コード';
+COMMENT ON COLUMN pur_direct_orders_history.delivery_destination_code IS '納品先コード';
 COMMENT ON COLUMN pur_direct_orders_history.slip_description IS '伝票備考';
 COMMENT ON COLUMN pur_direct_orders_history.internal_description IS '社内備考';
 COMMENT ON COLUMN pur_direct_orders_history.supplier_slip_no01 IS '相手先伝票番号1';

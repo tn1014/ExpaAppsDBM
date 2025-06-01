@@ -8,8 +8,8 @@ CREATE TABLE IF NOT EXISTS pur_direct_order_details
 (
 		slip_no TEXT NOT NULL
 	,	detail_no SMALLINT NOT NULL
+	,	package_shipment_product_id BIGINT NOT NULL
 	,	product_code TEXT NOT NULL
-	,	inventory_seq INTEGER NOT NULL DEFAULT 0
 	,	purchase_quantity NUMERIC NOT NULL DEFAULT 0
 	,	purchase_unit_code TEXT NOT NULL
 	,	purchase_unit_quantity NUMERIC NOT NULL DEFAULT 0
@@ -33,8 +33,8 @@ COMMENT ON TABLE pur_direct_order_details
 	IS '直送発注明細テーブル';
 COMMENT ON COLUMN pur_direct_order_details.slip_no IS '伝票番号';
 COMMENT ON COLUMN pur_direct_order_details.detail_no IS '明細No.';
+COMMENT ON COLUMN pur_direct_order_details.package_shipment_product_id IS '受注送付先出荷製品ID';
 COMMENT ON COLUMN pur_direct_order_details.product_code IS '製品コード';
-COMMENT ON COLUMN pur_direct_order_details.inventory_seq IS '在庫管理番号';
 COMMENT ON COLUMN pur_direct_order_details.purchase_quantity IS '発注数';
 COMMENT ON COLUMN pur_direct_order_details.purchase_unit_code IS '発注単位コード';
 COMMENT ON COLUMN pur_direct_order_details.purchase_unit_quantity IS '発注単位数';
@@ -57,6 +57,7 @@ CREATE TABLE IF NOT EXISTS pur_direct_order_details_history
 	,	slip_no TEXT NOT NULL
 	,	detail_no SMALLINT NOT NULL
 	,	history_count INTEGER NOT NULL DEFAULT 0
+	,	package_shipment_product_id BIGINT NOT NULL
 	,	product_code TEXT NOT NULL
 	,	inventory_seq INTEGER NOT NULL DEFAULT 0
 	,	purchase_quantity NUMERIC NOT NULL DEFAULT 0
@@ -84,8 +85,8 @@ COMMENT ON COLUMN pur_direct_order_details_history.id IS '履歴ID';
 COMMENT ON COLUMN pur_direct_order_details_history.slip_no IS '伝票番号';
 COMMENT ON COLUMN pur_direct_order_details_history.detail_no IS '明細No.';
 COMMENT ON COLUMN pur_direct_order_details_history.history_count IS '更新回数';
+COMMENT ON COLUMN pur_direct_order_details_history.package_shipment_product_id IS '受注送付先出荷製品ID';
 COMMENT ON COLUMN pur_direct_order_details_history.product_code IS '製品コード';
-COMMENT ON COLUMN pur_direct_order_details_history.inventory_seq IS '在庫管理番号';
 COMMENT ON COLUMN pur_direct_order_details_history.purchase_quantity IS '発注数';
 COMMENT ON COLUMN pur_direct_order_details_history.purchase_unit_code IS '発注単位コード';
 COMMENT ON COLUMN pur_direct_order_details_history.purchase_unit_quantity IS '発注単位数';

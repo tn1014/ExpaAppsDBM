@@ -16,9 +16,8 @@ CREATE TABLE IF NOT EXISTS ord_package_items
 	,	price NUMERIC NOT NULL DEFAULT 0
 	,	included_tax_div TEXT NOT NULL
 	,	tax_rate NUMERIC NOT NULL DEFAULT 0
+	,	tax_price NUMERIC NOT NULL DEFAULT 0
 	,	quantity NUMERIC NOT NULL DEFAULT 0
-	,	is_included_postage_price BOOLEAN NOT NULL DEFAULT FALSE
-	,	is_included_delivery_charge BOOLEAN NOT NULL DEFAULT FALSE
 	,	created_user_code TEXT NOT NULL
 	,	created_terminal TEXT NOT NULL
 	,	created_function_code TEXT NOT NULL
@@ -44,9 +43,8 @@ COMMENT ON COLUMN ord_package_items.item_name IS '商品名';
 COMMENT ON COLUMN ord_package_items.price IS '受注単価';
 COMMENT ON COLUMN ord_package_items.included_tax_div IS '内税外税区分';
 COMMENT ON COLUMN ord_package_items.tax_rate IS '消費税率';
+COMMENT ON COLUMN ord_package_items.tax_price IS '消費税額';
 COMMENT ON COLUMN ord_package_items.quantity IS '受注数';
-COMMENT ON COLUMN ord_package_items.is_included_postage_price IS '送料込フラグ';
-COMMENT ON COLUMN ord_package_items.is_included_delivery_charge IS '代引き手数料込フラグ';
 COMMENT ON COLUMN ord_package_items.created_user_code IS '作成ユーザコード';
 COMMENT ON COLUMN ord_package_items.created_terminal IS '作成端末';
 COMMENT ON COLUMN ord_package_items.created_function_code IS '作成機能コード';
@@ -71,9 +69,8 @@ CREATE TABLE IF NOT EXISTS ord_package_items_history
 	,	price NUMERIC NOT NULL DEFAULT 0
 	,	included_tax_div TEXT NOT NULL
 	,	tax_rate NUMERIC NOT NULL DEFAULT 0
+	,	tax_price NUMERIC NOT NULL DEFAULT 0
 	,	quantity NUMERIC NOT NULL DEFAULT 0
-	,	is_included_postage_price BOOLEAN NOT NULL DEFAULT FALSE
-	,	is_included_delivery_charge BOOLEAN NOT NULL DEFAULT FALSE
 	,	created_user_code TEXT NOT NULL
 	,	created_terminal TEXT NOT NULL
 	,	created_function_code TEXT NOT NULL
@@ -101,9 +98,8 @@ COMMENT ON COLUMN ord_package_items_history.item_name IS '商品名';
 COMMENT ON COLUMN ord_package_items_history.price IS '受注単価';
 COMMENT ON COLUMN ord_package_items_history.included_tax_div IS '内税外税区分';
 COMMENT ON COLUMN ord_package_items_history.tax_rate IS '消費税率';
+COMMENT ON COLUMN ord_package_items_history.tax_price IS '消費税額';
 COMMENT ON COLUMN ord_package_items_history.quantity IS '受注数';
-COMMENT ON COLUMN ord_package_items_history.is_included_postage_price IS '送料込フラグ';
-COMMENT ON COLUMN ord_package_items_history.is_included_delivery_charge IS '代引き手数料込フラグ';
 COMMENT ON COLUMN ord_package_items_history.created_user_code IS '作成ユーザコード';
 COMMENT ON COLUMN ord_package_items_history.created_terminal IS '作成端末';
 COMMENT ON COLUMN ord_package_items_history.created_function_code IS '作成機能コード';

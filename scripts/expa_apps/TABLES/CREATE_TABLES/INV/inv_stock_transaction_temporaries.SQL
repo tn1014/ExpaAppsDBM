@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS inv_stock_transaction_temporaries
 	,	product_code TEXT NOT NULL
 	,	inventory_seq INTEGER NOT NULL DEFAULT 0
 	,	scheduled_on DATE
-	,	confirmed_at TIMESTAMP(3) WITHOUT TIME ZONE
+	,	approved_at TIMESTAMP(3) WITHOUT TIME ZONE
 	,	inout_div TEXT NOT NULL
 	,	transaction_div TEXT NOT NULL
 	,	transaction_quantity NUMERIC NOT NULL
@@ -35,7 +35,7 @@ COMMENT ON COLUMN inv_stock_transaction_temporaries.location_code IS '在庫場�
 COMMENT ON COLUMN inv_stock_transaction_temporaries.product_code IS '製品コード';
 COMMENT ON COLUMN inv_stock_transaction_temporaries.inventory_seq IS '在庫管理番号';
 COMMENT ON COLUMN inv_stock_transaction_temporaries.scheduled_on IS '受払予定日';
-COMMENT ON COLUMN inv_stock_transaction_temporaries.confirmed_at IS '受払確定日時';
+COMMENT ON COLUMN inv_stock_transaction_temporaries.approved_at IS '受払承認日時';
 COMMENT ON COLUMN inv_stock_transaction_temporaries.inout_div IS '入出庫区分';
 COMMENT ON COLUMN inv_stock_transaction_temporaries.transaction_div IS '受払区分';
 COMMENT ON COLUMN inv_stock_transaction_temporaries.transaction_quantity IS '受払数';

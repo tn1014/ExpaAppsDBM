@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS ord_slip_timestamps
 ALTER TABLE IF EXISTS ord_slip_timestamps OWNER to expa_apps;
 
 COMMENT ON TABLE ord_slip_timestamps
-	IS '受注伝票テーブル';
+	IS '受注伝票タイムスタンプテーブル';
 COMMENT ON COLUMN ord_slip_timestamps.order_id IS '受注伝票ID';
 COMMENT ON COLUMN ord_slip_timestamps.ordered_at IS '受注日時';
 COMMENT ON COLUMN ord_slip_timestamps.confirmed_at IS '受注確認日時';
@@ -34,6 +34,7 @@ COMMENT ON COLUMN ord_slip_timestamps.approved_at IS '出荷承認日時';
 COMMENT ON COLUMN ord_slip_timestamps.completed_on IS '全商品出荷完了日';
 COMMENT ON COLUMN ord_slip_timestamps.payment_confirmed_at IS '入金確認日時';
 COMMENT ON COLUMN ord_slip_timestamps.paymented_on IS '入金日';
+COMMENT ON COLUMN ord_slip_timestamps.canceled_at IS 'キャンセル日時';
 COMMENT ON COLUMN ord_slip_timestamps.created_user_code IS '作成ユーザコード';
 COMMENT ON COLUMN ord_slip_timestamps.created_terminal IS '作成端末';
 COMMENT ON COLUMN ord_slip_timestamps.created_function_code IS '作成機能コード';
