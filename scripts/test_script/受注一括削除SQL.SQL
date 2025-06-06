@@ -12,6 +12,7 @@ DELETE FROM	ord_slip_payment_states_history;
 DELETE FROM	ord_slip_orderers;
 DELETE FROM	ord_slip_orderers_history;
 
+DELETE FROM	ord_slip_descriptions;
 DELETE FROM	ord_slip_customer_descriptions;
 
 DELETE FROM	ord_senders;

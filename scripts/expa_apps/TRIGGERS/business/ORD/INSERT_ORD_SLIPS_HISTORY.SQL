@@ -34,6 +34,10 @@ BEGIN
 		,	is_several_sender
 		,	is_isolated_island
 		,	is_sent_fax_invoice
+		,	is_required_print_receipt
+		,	receipt_name
+		,	receipt_item
+		,	reply_message
 		,	fax_email
 		,	store_member_no
 		,	payment_method_code
@@ -50,11 +54,6 @@ BEGIN
 		,	use_point
 		,	payment_price
 		,	payment_price_ini
-		,	order_description
-		,	is_required_print_receipt
-		,	receipt_name
-		,	receipt_item
-		,	reply_message
 		,	created_user_code
 		,	created_terminal
 		,	created_function_code
@@ -87,6 +86,10 @@ BEGIN
 		,	NEW.is_several_sender
 		,	NEW.is_isolated_island
 		,	NEW.is_sent_fax_invoice
+		,	NEW.is_required_print_receipt
+		,	NEW.receipt_name
+		,	NEW.receipt_item
+		,	NEW.reply_message
 		,	NEW.fax_email
 		,	NEW.store_member_no
 		,	NEW.payment_method_code
@@ -103,11 +106,6 @@ BEGIN
 		,	NEW.use_point
 		,	NEW.payment_price
 		,	NEW.payment_price_ini
-		,	NEW.order_description
-		,	NEW.is_required_print_receipt
-		,	NEW.receipt_name
-		,	NEW.receipt_item
-		,	NEW.reply_message
 		,	NEW.created_user_code
 		,	NEW.created_terminal
 		,	NEW.created_function_code

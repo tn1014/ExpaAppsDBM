@@ -25,7 +25,6 @@ CREATE TABLE IF NOT EXISTS pur_orders
 	,	correct_slip_no TEXT NOT NULL
 	,	is_required_print_purchase_form BOOLEAN NOT NULL DEFAULT FALSE
 	,	is_required_print_transfer_request_form BOOLEAN NOT NULL DEFAULT FALSE
-	,	slip_printed_count SMALLINT NOT NULL DEFAULT 0
 	,	created_user_code TEXT NOT NULL
 	,	created_terminal TEXT NOT NULL
 	,	created_function_code TEXT NOT NULL
@@ -60,7 +59,6 @@ COMMENT ON COLUMN pur_orders.is_correction_slip IS '訂正伝票フラグ';
 COMMENT ON COLUMN pur_orders.correct_slip_no IS '訂正元伝票番号';
 COMMENT ON COLUMN pur_orders.is_required_print_purchase_form IS '発注書印刷要否';
 COMMENT ON COLUMN pur_orders.is_required_print_transfer_request_form IS '移動依頼書印刷要否';
-COMMENT ON COLUMN pur_orders.slip_printed_count IS '伝票印刷回数';
 COMMENT ON COLUMN pur_orders.created_user_code IS '作成ユーザコード';
 COMMENT ON COLUMN pur_orders.created_terminal IS '作成端末';
 COMMENT ON COLUMN pur_orders.created_function_code IS '作成機能コード';
@@ -95,7 +93,6 @@ CREATE TABLE IF NOT EXISTS pur_orders_history
 	,	is_slip_closing_on DATE
 	,	is_required_print_purchase_form BOOLEAN NOT NULL DEFAULT FALSE
 	,	is_required_print_transfer_request_form BOOLEAN NOT NULL DEFAULT FALSE
-	,	slip_printed_count SMALLINT NOT NULL DEFAULT 0
 	,	created_user_code TEXT NOT NULL
 	,	created_terminal TEXT NOT NULL
 	,	created_function_code TEXT NOT NULL
@@ -133,7 +130,6 @@ COMMENT ON COLUMN pur_orders_history.is_correction_slip IS '訂正伝票フラ�
 COMMENT ON COLUMN pur_orders_history.correct_slip_no IS '訂正元伝票番号';
 COMMENT ON COLUMN pur_orders_history.is_required_print_purchase_form IS '発注書印刷要否';
 COMMENT ON COLUMN pur_orders_history.is_required_print_transfer_request_form IS '移動依頼書印刷要否';
-COMMENT ON COLUMN pur_orders_history.slip_printed_count IS '伝票印刷回数';
 COMMENT ON COLUMN pur_orders_history.created_user_code IS '作成ユーザコード';
 COMMENT ON COLUMN pur_orders_history.created_terminal IS '作成端末';
 COMMENT ON COLUMN pur_orders_history.created_function_code IS '作成機能コード';

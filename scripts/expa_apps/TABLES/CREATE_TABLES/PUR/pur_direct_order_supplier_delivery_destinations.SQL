@@ -8,6 +8,7 @@ CREATE TABLE IF NOT EXISTS pur_direct_order_supplier_delivery_destinations
 	,	delivery_destination_code TEXT NOT NULL
 	,	supplier_code TEXT NOT NULL
 	,	first_used_on DATE
+	,	latest_used_on DATE
 	,	created_user_code TEXT NOT NULL
 	,	created_terminal TEXT NOT NULL
 	,	created_function_code TEXT NOT NULL
@@ -27,6 +28,7 @@ COMMENT ON COLUMN pur_direct_order_supplier_delivery_destinations.id IS '仕入�
 COMMENT ON COLUMN pur_direct_order_supplier_delivery_destinations.delivery_destination_code IS 'メーカー直送納品先コード';
 COMMENT ON COLUMN pur_direct_order_supplier_delivery_destinations.supplier_code IS '仕入先コード';
 COMMENT ON COLUMN pur_direct_order_supplier_delivery_destinations.first_used_on IS '初回使用日';
+COMMENT ON COLUMN pur_direct_order_supplier_delivery_destinations.latest_used_on IS '最新使用日';
 COMMENT ON COLUMN pur_direct_order_supplier_delivery_destinations.created_user_code IS '作成ユーザコード';
 COMMENT ON COLUMN pur_direct_order_supplier_delivery_destinations.created_terminal IS '作成端末';
 COMMENT ON COLUMN pur_direct_order_supplier_delivery_destinations.created_function_code IS '作成機能コード';

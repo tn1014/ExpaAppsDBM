@@ -10,6 +10,7 @@ CREATE TABLE IF NOT EXISTS user_message_notifications
 	,	message_type TEXT NOT NULL
 	,	display_duration INTEGER
 	,	download_file_path TEXT NOT NULL
+	,	download_file_name TEXT NOT NULL
 	,	title TEXT NOT NULL
 	,	message TEXT NOT NULL
 	,	confirmed_at TIMESTAMP(3) WITHOUT TIME ZONE
@@ -40,6 +41,7 @@ COMMENT ON COLUMN user_message_notifications.notify_type IS '通知タイプ';
 COMMENT ON COLUMN user_message_notifications.message_type IS 'メッセージタイプ';
 COMMENT ON COLUMN user_message_notifications.display_duration IS '表示時間(ミリ秒)';
 COMMENT ON COLUMN user_message_notifications.download_file_path IS 'ダウンロードファイルパス';
+COMMENT ON COLUMN user_message_notifications.download_file_name IS 'ダウンロードファイル名(表示名)';
 COMMENT ON COLUMN user_message_notifications.title IS '通知タイトル';
 COMMENT ON COLUMN user_message_notifications.message IS '通知メッセージ';
 COMMENT ON COLUMN user_message_notifications.confirmed_at IS '確認日時';

@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS shp_product_results
 (
 		id BIGSERIAL
 	,	package_shipment_product_id BIGINT NOT NULL
-	,	stock_transaction_id BIGINT NOT NULL
+	,	stock_transaction_id BIGINT
 	,	shipped_at TIMESTAMP(3) WITHOUT TIME ZONE
 	,	shipped_unit_quantity NUMERIC NOT NULL DEFAULT 0
 	,	shipped_lot_quantity NUMERIC NOT NULL DEFAULT 0

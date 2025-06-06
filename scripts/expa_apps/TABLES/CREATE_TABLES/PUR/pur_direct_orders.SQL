@@ -7,13 +7,17 @@ DROP TABLE IF EXISTS pur_direct_orders_history;
 CREATE TABLE IF NOT EXISTS pur_direct_orders
 (
 		slip_no TEXT NOT NULL
-	,	order_slip_no TEXT NOT NULL
+	,	order_id BIGINT NOT NULL
 	,	package_shipment_id BIGINT NOT NULL
 	,	purchase_on DATE NOT NULL
+	,	response_shipment_on DATE
+	,	response_delivery_on DATE
 	,	delivery_scheduled_on DATE
 	,	delivery_scheduled_time_code TEXT NOT NULL
 	,	delivery_scheduled_time TEXT NOT NULL
 	,	purchase_employee_code TEXT NOT NULL
+	,	purchase_charge_code TEXT NOT NULL
+	,	purchase_charge_name TEXT NOT NULL
 	,	supplier_code TEXT NOT NULL
 	,	delivery_destination_code TEXT NOT NULL
 	,	slip_description TEXT NOT NULL
@@ -26,9 +30,6 @@ CREATE TABLE IF NOT EXISTS pur_direct_orders
 	,	is_correction_slip BOOLEAN NOT NULL DEFAULT FALSE
 	,	correct_slip_no TEXT NOT NULL
 	,	is_required_print_purchase_form BOOLEAN NOT NULL DEFAULT FALSE
-	,	is_required_print_request_form BOOLEAN NOT NULL DEFAULT FALSE
-	,	purchase_slip_printed_count SMALLINT NOT NULL DEFAULT 0
-	,	request_slip_printed_count SMALLINT NOT NULL DEFAULT 0
 	,	created_user_code TEXT NOT NULL
 	,	created_terminal TEXT NOT NULL
 	,	created_function_code TEXT NOT NULL
@@ -45,13 +46,17 @@ ALTER TABLE IF EXISTS pur_direct_orders OWNER to expa_apps;
 COMMENT ON TABLE pur_direct_orders
 	IS '直送発注テーブル';
 COMMENT ON COLUMN pur_direct_orders.slip_no IS '伝票番号';
-COMMENT ON COLUMN pur_direct_orders.order_slip_no IS '受注伝票番号';
+COMMENT ON COLUMN pur_direct_orders.order_id IS '受注伝票ID';
 COMMENT ON COLUMN pur_direct_orders.package_shipment_id IS '受注送付先出荷ID';
 COMMENT ON COLUMN pur_direct_orders.purchase_on IS '発注日';
+COMMENT ON COLUMN pur_direct_orders.response_shipment_on IS '回答出荷日';
+COMMENT ON COLUMN pur_direct_orders.response_delivery_on IS '回答納品日';
 COMMENT ON COLUMN pur_direct_orders.delivery_scheduled_on IS '納品予定日';
 COMMENT ON COLUMN pur_direct_orders.delivery_scheduled_time_code IS '納品予定時間帯コード';
 COMMENT ON COLUMN pur_direct_orders.delivery_scheduled_time IS '納品時間帯';
 COMMENT ON COLUMN pur_direct_orders.purchase_employee_code IS '発注社員コード';
+COMMENT ON COLUMN pur_direct_orders.purchase_charge_code IS '発注担当者コード';
+COMMENT ON COLUMN pur_direct_orders.purchase_charge_name IS '発注担当者名';
 COMMENT ON COLUMN pur_direct_orders.supplier_code IS '仕入先コード';
 COMMENT ON COLUMN pur_direct_orders.delivery_destination_code IS '納品先コード';
 COMMENT ON COLUMN pur_direct_orders.slip_description IS '伝票備考';
@@ -64,9 +69,6 @@ COMMENT ON COLUMN pur_direct_orders.slip_closing_on IS '伝票締め日';
 COMMENT ON COLUMN pur_direct_orders.is_correction_slip IS '訂正伝票フラグ';
 COMMENT ON COLUMN pur_direct_orders.correct_slip_no IS '訂正元伝票番号';
 COMMENT ON COLUMN pur_direct_orders.is_required_print_purchase_form IS '発注書印刷要否';
-COMMENT ON COLUMN pur_direct_orders.is_required_print_request_form IS '発注依頼書印刷要否';
-COMMENT ON COLUMN pur_direct_orders.purchase_slip_printed_count IS '発注伝票印刷回数';
-COMMENT ON COLUMN pur_direct_orders.request_slip_printed_count IS '発注依頼伝票印刷回数';
 COMMENT ON COLUMN pur_direct_orders.created_user_code IS '作成ユーザコード';
 COMMENT ON COLUMN pur_direct_orders.created_terminal IS '作成端末';
 COMMENT ON COLUMN pur_direct_orders.created_function_code IS '作成機能コード';
@@ -82,13 +84,17 @@ CREATE TABLE IF NOT EXISTS pur_direct_orders_history
 		id BIGSERIAL
 	,	slip_no TEXT NOT NULL
 	,	history_count INTEGER NOT NULL DEFAULT 0
-	,	order_slip_no TEXT NOT NULL
+	,	order_id BIGINT NOT NULL
 	,	package_shipment_id BIGINT NOT NULL
 	,	purchase_on DATE NOT NULL
+	,	response_shipment_on DATE
+	,	response_delivery_on DATE
 	,	delivery_scheduled_on DATE
 	,	delivery_scheduled_time_code TEXT NOT NULL
 	,	delivery_scheduled_time TEXT NOT NULL
 	,	purchase_employee_code TEXT NOT NULL
+	,	purchase_charge_code TEXT NOT NULL
+	,	purchase_charge_name TEXT NOT NULL
 	,	supplier_code TEXT NOT NULL
 	,	delivery_destination_code TEXT NOT NULL
 	,	slip_description TEXT NOT NULL
@@ -101,9 +107,6 @@ CREATE TABLE IF NOT EXISTS pur_direct_orders_history
 	,	is_correction_slip BOOLEAN NOT NULL DEFAULT FALSE
 	,	correct_slip_no TEXT NOT NULL
 	,	is_required_print_purchase_form BOOLEAN NOT NULL DEFAULT FALSE
-	,	is_required_print_request_form BOOLEAN NOT NULL DEFAULT FALSE
-	,	purchase_slip_printed_count SMALLINT NOT NULL DEFAULT 0
-	,	request_slip_printed_count SMALLINT NOT NULL DEFAULT 0
 	,	created_user_code TEXT NOT NULL
 	,	created_terminal TEXT NOT NULL
 	,	created_function_code TEXT NOT NULL
@@ -123,13 +126,17 @@ COMMENT ON TABLE pur_direct_orders_history
 COMMENT ON COLUMN pur_direct_orders_history.id IS '履歴ID';	
 COMMENT ON COLUMN pur_direct_orders_history.slip_no IS '伝票番号';
 COMMENT ON COLUMN pur_direct_orders_history.history_count IS '更新回数';
-COMMENT ON COLUMN pur_direct_orders_history.order_slip_no IS '受注伝票番号';
+COMMENT ON COLUMN pur_direct_orders_history.order_id IS '受注伝票ID';
 COMMENT ON COLUMN pur_direct_orders_history.package_shipment_id IS '受注送付先出荷ID';
 COMMENT ON COLUMN pur_direct_orders_history.purchase_on IS '発注日';
+COMMENT ON COLUMN pur_direct_orders_history.response_shipment_on IS '回答出荷日';
+COMMENT ON COLUMN pur_direct_orders_history.response_delivery_on IS '回答納品日';
 COMMENT ON COLUMN pur_direct_orders_history.delivery_scheduled_on IS '納品予定日';
 COMMENT ON COLUMN pur_direct_orders_history.delivery_scheduled_time_code IS '納品予定時間帯コード';
 COMMENT ON COLUMN pur_direct_orders_history.delivery_scheduled_time IS '納品時間帯';
 COMMENT ON COLUMN pur_direct_orders_history.purchase_employee_code IS '発注社員コード';
+COMMENT ON COLUMN pur_direct_orders_history.purchase_charge_code IS '発注担当者コード';
+COMMENT ON COLUMN pur_direct_orders_history.purchase_charge_name IS '発注担当者名';
 COMMENT ON COLUMN pur_direct_orders_history.supplier_code IS '仕入先コード';
 COMMENT ON COLUMN pur_direct_orders_history.delivery_destination_code IS '納品先コード';
 COMMENT ON COLUMN pur_direct_orders_history.slip_description IS '伝票備考';
@@ -142,9 +149,6 @@ COMMENT ON COLUMN pur_direct_orders_history.slip_closing_on IS '伝票締め日'
 COMMENT ON COLUMN pur_direct_orders_history.is_correction_slip IS '訂正伝票フラグ';
 COMMENT ON COLUMN pur_direct_orders_history.correct_slip_no IS '訂正元伝票番号';
 COMMENT ON COLUMN pur_direct_orders_history.is_required_print_purchase_form IS '発注書印刷要否';
-COMMENT ON COLUMN pur_direct_orders_history.is_required_print_request_form IS '発注依頼書印刷要否';
-COMMENT ON COLUMN pur_direct_orders_history.purchase_slip_printed_count IS '発注伝票印刷回数';
-COMMENT ON COLUMN pur_direct_orders_history.request_slip_printed_count IS '発注依頼伝票印刷回数';
 COMMENT ON COLUMN pur_direct_orders_history.created_user_code IS '作成ユーザコード';
 COMMENT ON COLUMN pur_direct_orders_history.created_terminal IS '作成端末';
 COMMENT ON COLUMN pur_direct_orders_history.created_function_code IS '作成機能コード';

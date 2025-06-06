@@ -19,13 +19,17 @@ BEGIN
 	(
 			slip_no
 		,	history_count
-		,	order_slip_no
+		,	order_id
 		,	package_shipment_id
 		,	purchase_on
+		,	response_shipment_on
+		,	response_delivery_on
 		,	delivery_scheduled_on
 		,	delivery_scheduled_time_code
 		,	delivery_scheduled_time
 		,	purchase_employee_code
+		,	purchase_charge_code
+		,	purchase_charge_name
 		,	supplier_code
 		,	delivery_destination_code
 		,	slip_description
@@ -38,9 +42,6 @@ BEGIN
 		,	is_correction_slip
 		,	correct_slip_no
 		,	is_required_print_purchase_form
-		,	is_required_print_request_form
-		,	purchase_slip_printed_count
-		,	request_slip_printed_count
 		,	created_user_code
 		,	created_terminal
 		,	created_function_code
@@ -52,13 +53,17 @@ BEGIN
 	) VALUES (
 			NEW.slip_no
 		,	historyCount
-		,	NEW.order_slip_no
+		,	NEW.order_id
 		,	NEW.package_shipment_id
 		,	NEW.purchase_on
+		,	NEW.response_shipment_on
+		,	NEW.response_delivery_on
 		,	NEW.delivery_scheduled_on
 		,	NEW.delivery_scheduled_time_code
 		,	NEW.delivery_scheduled_time
 		,	NEW.purchase_employee_code
+		,	NEW.purchase_charge_code
+		,	NEW.purchase_charge_name
 		,	NEW.supplier_code
 		,	NEW.delivery_destination_code
 		,	NEW.slip_description
@@ -71,9 +76,6 @@ BEGIN
 		,	NEW.is_correction_slip
 		,	NEW.correct_slip_no
 		,	NEW.is_required_print_purchase_form
-		,	NEW.is_required_print_request_form
-		,	NEW.purchase_slip_printed_count
-		,	NEW.request_slip_printed_count
 		,	NEW.created_user_code
 		,	NEW.created_terminal
 		,	NEW.created_function_code

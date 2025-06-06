@@ -37,7 +37,6 @@ BEGIN
 		,	correct_slip_no
 		,	is_required_print_purchase_form
 		,	is_required_print_transfer_request_form
-		,	slip_printed_count
 		,	created_user_code
 		,	created_terminal
 		,	created_function_code
@@ -67,7 +66,6 @@ BEGIN
 		,	NEW.correct_slip_no
 		,	NEW.is_required_print_purchase_form
 		,	NEW.is_required_print_transfer_request_form
-		,	NEW.slip_printed_count
 		,	NEW.created_user_code
 		,	NEW.created_terminal
 		,	NEW.created_function_code

@@ -22,6 +22,10 @@ CREATE TABLE IF NOT EXISTS ord_slips
 	,	is_several_sender BOOLEAN NOT NULL DEFAULT FALSE
 	,	is_isolated_island BOOLEAN NOT NULL DEFAULT FALSE
 	,	is_sent_fax_invoice BOOLEAN NOT NULL DEFAULT FALSE
+	,	is_required_print_receipt BOOLEAN NOT NULL DEFAULT FALSE
+	,	receipt_name TEXT NOT NULL
+	,	receipt_item TEXT NOT NULL
+	,	reply_message TEXT NOT NULL
 	,	fax_email TEXT NOT NULL
 	,	store_member_no TEXT
 	,	payment_method_code TEXT NOT NULL
@@ -38,11 +42,6 @@ CREATE TABLE IF NOT EXISTS ord_slips
 	,	use_point NUMERIC NOT NULL DEFAULT 0
 	,	payment_price NUMERIC NOT NULL DEFAULT 0
 	,	payment_price_ini NUMERIC NOT NULL DEFAULT 0
-	,	order_description TEXT NOT NULL
-	,	is_required_print_receipt BOOLEAN NOT NULL DEFAULT FALSE
-	,	receipt_name TEXT NOT NULL
-	,	receipt_item TEXT NOT NULL
-	,	reply_message TEXT NOT NULL
 	,	created_user_code TEXT NOT NULL
 	,	created_terminal TEXT NOT NULL
 	,	created_function_code TEXT NOT NULL
@@ -80,6 +79,10 @@ COMMENT ON COLUMN ord_slips.is_forced_cancel_invalid IS '強制キャンセル�
 COMMENT ON COLUMN ord_slips.is_several_sender IS '複数送付先フラグ';
 COMMENT ON COLUMN ord_slips.is_isolated_island IS '離島送付フラグ';
 COMMENT ON COLUMN ord_slips.is_sent_fax_invoice IS '注文請書FAX送信フラグ';
+COMMENT ON COLUMN ord_slips.is_required_print_receipt IS '領収書発行要否';
+COMMENT ON COLUMN ord_slips.receipt_name IS '領収書宛名';
+COMMENT ON COLUMN ord_slips.receipt_item IS '領収書但書';
+COMMENT ON COLUMN ord_slips.reply_message IS '返信メッセージ';
 COMMENT ON COLUMN ord_slips.fax_email IS 'FAX送信先メールアドレス';
 COMMENT ON COLUMN ord_slips.store_member_no IS '店舗別会員No.';
 COMMENT ON COLUMN ord_slips.payment_method_code IS '支払方法コード';
@@ -96,11 +99,6 @@ COMMENT ON COLUMN ord_slips.discount_price IS '値引金額';
 COMMENT ON COLUMN ord_slips.use_point IS 'ポイント利用額';
 COMMENT ON COLUMN ord_slips.payment_price IS '請求金額';
 COMMENT ON COLUMN ord_slips.payment_price_ini IS '購入時請求金額';
-COMMENT ON COLUMN ord_slips.order_description IS '受注備考';
-COMMENT ON COLUMN ord_slips.is_required_print_receipt IS '領収書発行要否';
-COMMENT ON COLUMN ord_slips.receipt_name IS '領収書宛名';
-COMMENT ON COLUMN ord_slips.receipt_item IS '領収書但書';
-COMMENT ON COLUMN ord_slips.reply_message IS '返信メッセージ';
 COMMENT ON COLUMN ord_slips.created_user_code IS '作成ユーザコード';
 COMMENT ON COLUMN ord_slips.created_terminal IS '作成端末';
 COMMENT ON COLUMN ord_slips.created_function_code IS '作成機能コード';
@@ -138,6 +136,10 @@ CREATE TABLE IF NOT EXISTS ord_slips_history
 	,	is_several_sender BOOLEAN NOT NULL DEFAULT FALSE
 	,	is_isolated_island BOOLEAN NOT NULL DEFAULT FALSE
 	,	is_sent_fax_invoice BOOLEAN NOT NULL DEFAULT FALSE
+	,	is_required_print_receipt BOOLEAN NOT NULL DEFAULT FALSE
+	,	receipt_name TEXT NOT NULL
+	,	receipt_item TEXT NOT NULL
+	,	reply_message TEXT NOT NULL
 	,	fax_email TEXT NOT NULL
 	,	store_member_no TEXT
 	,	payment_method_code TEXT NOT NULL
@@ -154,11 +156,6 @@ CREATE TABLE IF NOT EXISTS ord_slips_history
 	,	use_point NUMERIC NOT NULL DEFAULT 0
 	,	payment_price NUMERIC NOT NULL DEFAULT 0
 	,	payment_price_ini NUMERIC NOT NULL DEFAULT 0
-	,	order_description TEXT NOT NULL
-	,	is_required_print_receipt BOOLEAN NOT NULL DEFAULT FALSE
-	,	receipt_name TEXT NOT NULL
-	,	receipt_item TEXT NOT NULL
-	,	reply_message TEXT NOT NULL
 	,	created_user_code TEXT NOT NULL
 	,	created_terminal TEXT NOT NULL
 	,	created_function_code TEXT NOT NULL
@@ -198,6 +195,10 @@ COMMENT ON COLUMN ord_slips_history.is_forced_cancel_invalid IS '強制キャン
 COMMENT ON COLUMN ord_slips_history.is_several_sender IS '複数送付先フラグ';
 COMMENT ON COLUMN ord_slips_history.is_isolated_island IS '離島送付フラグ';
 COMMENT ON COLUMN ord_slips_history.is_sent_fax_invoice IS '注文請書FAX送信フラグ';
+COMMENT ON COLUMN ord_slips_history.is_required_print_receipt IS '領収書発行要否';
+COMMENT ON COLUMN ord_slips_history.receipt_name IS '領収書宛名';
+COMMENT ON COLUMN ord_slips_history.receipt_item IS '領収書但書';
+COMMENT ON COLUMN ord_slips_history.reply_message IS '返信メッセージ';
 COMMENT ON COLUMN ord_slips_history.fax_email IS 'FAX送信先メールアドレス';
 COMMENT ON COLUMN ord_slips_history.store_member_no IS '店舗別会員No.';
 COMMENT ON COLUMN ord_slips_history.payment_method_code IS '支払方法コード';
@@ -214,11 +215,6 @@ COMMENT ON COLUMN ord_slips_history.discount_price IS '値引金額';
 COMMENT ON COLUMN ord_slips_history.use_point IS 'ポイント利用額';
 COMMENT ON COLUMN ord_slips_history.payment_price IS '請求金額';
 COMMENT ON COLUMN ord_slips_history.payment_price_ini IS '購入時請求金額';
-COMMENT ON COLUMN ord_slips_history.order_description IS '受注備考';
-COMMENT ON COLUMN ord_slips_history.is_required_print_receipt IS '領収書発行要否';
-COMMENT ON COLUMN ord_slips_history.receipt_name IS '領収書宛名';
-COMMENT ON COLUMN ord_slips_history.receipt_item IS '領収書但書';
-COMMENT ON COLUMN ord_slips_history.reply_message IS '返信メッセージ';
 COMMENT ON COLUMN ord_slips_history.created_user_code IS '作成ユーザコード';
 COMMENT ON COLUMN ord_slips_history.created_terminal IS '作成端末';
 COMMENT ON COLUMN ord_slips_history.created_function_code IS '作成機能コード';

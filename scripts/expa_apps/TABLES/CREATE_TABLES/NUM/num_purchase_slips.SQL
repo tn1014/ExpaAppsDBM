@@ -17,15 +17,15 @@ COMMENT ON COLUMN num_purchase_slips.no IS '発注番号';
 
 INSERT INTO num_purchase_slips VALUES(
 	'PURCHASE'
-,	2000000001
+,	20000001
 );
 
 INSERT INTO num_purchase_slips VALUES(
 	'DIRECTLY_DELIV_PURCHASE'
-,	5000000001
+,	50000001
 );
 
 INSERT INTO num_purchase_slips VALUES(
 	'USE_REQUEST_PURCHASE'
-,	3000000001
+,	80000001
 );
