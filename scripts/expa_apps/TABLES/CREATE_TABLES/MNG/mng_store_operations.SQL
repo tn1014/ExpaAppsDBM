@@ -24,6 +24,14 @@ CREATE TABLE IF NOT EXISTS mng_store_operations
 	,	tax_rounding_div TEXT NOT NULL
 	,	kiracs_purchase_charge_name TEXT NOT NULL
 	,	kiracs_purchase_charge_code TEXT NOT NULL
+	,	contact_company_name TEXT NOT NULL
+	,	contact_tel01 TEXT NOT NULL
+	,	contact_tel02 TEXT NOT NULL
+	,	contact_tel03 TEXT NOT NULL
+	,	contact_fax01 TEXT NOT NULL
+	,	contact_fax02 TEXT NOT NULL
+	,	contact_fax03 TEXT NOT NULL
+	,	contact_email TEXT NOT NULL
 	,	is_required_print_receipt_honten BOOLEAN NOT NULL DEFAULT FALSE
 	,	is_required_print_delivery_slip_honten BOOLEAN NOT NULL DEFAULT FALSE
 	,	is_required_print_receipt_rakuten BOOLEAN NOT NULL DEFAULT FALSE
@@ -67,6 +75,14 @@ COMMENT ON COLUMN mng_store_operations.included_tax_div IS '内税・外税区�
 COMMENT ON COLUMN mng_store_operations.tax_rounding_div IS '消費税端数処理区分';
 COMMENT ON COLUMN mng_store_operations.kiracs_purchase_charge_name IS 'キラックス発注担当者名';
 COMMENT ON COLUMN mng_store_operations.kiracs_purchase_charge_code IS 'キラックス発注担当者コード';
+COMMENT ON COLUMN mng_store_operations.contact_company_name IS '発注書用会社名';
+COMMENT ON COLUMN mng_store_operations.contact_tel01 IS '発注書用連絡先電話番号01';
+COMMENT ON COLUMN mng_store_operations.contact_tel02 IS '発注書用連絡先電話番号02';
+COMMENT ON COLUMN mng_store_operations.contact_tel03 IS '発注書用連絡先電話番号03';
+COMMENT ON COLUMN mng_store_operations.contact_fax01 IS '発注書用連絡先FAX番号01';
+COMMENT ON COLUMN mng_store_operations.contact_fax02 IS '発注書用連絡先FAX番号02';
+COMMENT ON COLUMN mng_store_operations.contact_fax03 IS '発注書用連絡先FAX番号03';
+COMMENT ON COLUMN mng_store_operations.contact_email IS '発注書用連絡先メールアドレス';
 COMMENT ON COLUMN mng_store_operations.is_required_print_receipt_honten IS '本店領収書発行要否';
 COMMENT ON COLUMN mng_store_operations.is_required_print_delivery_slip_honten IS '本店納品書発行要否';
 COMMENT ON COLUMN mng_store_operations.is_required_print_receipt_rakuten IS '楽天市場領収書発行要否';
