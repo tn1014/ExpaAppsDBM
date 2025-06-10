@@ -43,6 +43,12 @@ CREATE TABLE IF NOT EXISTS pur_output_delivery_destination_slips
 	,	updated_terminal TEXT NOT NULL
 	,	updated_function_code TEXT NOT NULL
 	,	updated_at TIMESTAMP(3) WITHOUT TIME ZONE NOT NULL
+	,	is_deleted BOOLEAN NOT NULL DEFAULT FALSE
+	,	deleted_user_code TEXT
+	,	deleted_terminal TEXT
+	,	deleted_function_code TEXT
+	,	deleted_at TIMESTAMP(3) WITHOUT TIME ZONE
+	,	deleted_description TEXT
 	,	CONSTRAINT pur_output_delivery_destination_slips_pkey PRIMARY KEY (id)
 );
 
@@ -89,6 +95,12 @@ COMMENT ON COLUMN pur_output_delivery_destination_slips.updated_user_code IS '�
 COMMENT ON COLUMN pur_output_delivery_destination_slips.updated_terminal IS '更新端末';
 COMMENT ON COLUMN pur_output_delivery_destination_slips.updated_function_code IS '更新機能コード';
 COMMENT ON COLUMN pur_output_delivery_destination_slips.updated_at IS '更新日時';
+COMMENT ON COLUMN pur_output_delivery_destination_slips.is_deleted IS '削除区分';
+COMMENT ON COLUMN pur_output_delivery_destination_slips.deleted_description IS '削除備考';
+COMMENT ON COLUMN pur_output_delivery_destination_slips.deleted_user_code IS '削除ユーザコード';
+COMMENT ON COLUMN pur_output_delivery_destination_slips.deleted_terminal IS '削除端末';
+COMMENT ON COLUMN pur_output_delivery_destination_slips.deleted_function_code IS '削除機能コード';
+COMMENT ON COLUMN pur_output_delivery_destination_slips.deleted_at IS '削除日時';
 
 --更新日時更新トリガー
 CREATE TRIGGER set_updated_at_trigger BEFORE INSERT OR UPDATE ON pur_output_delivery_destination_slips FOR EACH ROW EXECUTE FUNCTION set_updated_at();
