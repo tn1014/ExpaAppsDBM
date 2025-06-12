@@ -29,7 +29,6 @@ CREATE TABLE IF NOT EXISTS pur_direct_orders
 	,	slip_closing_on DATE
 	,	is_correction_slip BOOLEAN NOT NULL DEFAULT FALSE
 	,	correct_slip_no TEXT NOT NULL
-	,	is_required_print_purchase_form BOOLEAN NOT NULL DEFAULT FALSE
 	,	created_user_code TEXT NOT NULL
 	,	created_terminal TEXT NOT NULL
 	,	created_function_code TEXT NOT NULL
@@ -68,7 +67,6 @@ COMMENT ON COLUMN pur_direct_orders.cancel_reason IS '伝票キャンセルフ�
 COMMENT ON COLUMN pur_direct_orders.slip_closing_on IS '伝票締め日';
 COMMENT ON COLUMN pur_direct_orders.is_correction_slip IS '訂正伝票フラグ';
 COMMENT ON COLUMN pur_direct_orders.correct_slip_no IS '訂正元伝票番号';
-COMMENT ON COLUMN pur_direct_orders.is_required_print_purchase_form IS '発注書印刷要否';
 COMMENT ON COLUMN pur_direct_orders.created_user_code IS '作成ユーザコード';
 COMMENT ON COLUMN pur_direct_orders.created_terminal IS '作成端末';
 COMMENT ON COLUMN pur_direct_orders.created_function_code IS '作成機能コード';
@@ -106,7 +104,6 @@ CREATE TABLE IF NOT EXISTS pur_direct_orders_history
 	,	slip_closing_on DATE
 	,	is_correction_slip BOOLEAN NOT NULL DEFAULT FALSE
 	,	correct_slip_no TEXT NOT NULL
-	,	is_required_print_purchase_form BOOLEAN NOT NULL DEFAULT FALSE
 	,	created_user_code TEXT NOT NULL
 	,	created_terminal TEXT NOT NULL
 	,	created_function_code TEXT NOT NULL
@@ -148,7 +145,6 @@ COMMENT ON COLUMN pur_direct_orders_history.cancel_reason IS '伝票キャンセ
 COMMENT ON COLUMN pur_direct_orders_history.slip_closing_on IS '伝票締め日';
 COMMENT ON COLUMN pur_direct_orders_history.is_correction_slip IS '訂正伝票フラグ';
 COMMENT ON COLUMN pur_direct_orders_history.correct_slip_no IS '訂正元伝票番号';
-COMMENT ON COLUMN pur_direct_orders_history.is_required_print_purchase_form IS '発注書印刷要否';
 COMMENT ON COLUMN pur_direct_orders_history.created_user_code IS '作成ユーザコード';
 COMMENT ON COLUMN pur_direct_orders_history.created_terminal IS '作成端末';
 COMMENT ON COLUMN pur_direct_orders_history.created_function_code IS '作成機能コード';

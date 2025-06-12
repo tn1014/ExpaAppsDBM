@@ -41,7 +41,6 @@ BEGIN
 		,	slip_closing_on
 		,	is_correction_slip
 		,	correct_slip_no
-		,	is_required_print_purchase_form
 		,	created_user_code
 		,	created_terminal
 		,	created_function_code
@@ -75,7 +74,6 @@ BEGIN
 		,	NEW.slip_closing_on
 		,	NEW.is_correction_slip
 		,	NEW.correct_slip_no
-		,	NEW.is_required_print_purchase_form
 		,	NEW.created_user_code
 		,	NEW.created_terminal
 		,	NEW.created_function_code
