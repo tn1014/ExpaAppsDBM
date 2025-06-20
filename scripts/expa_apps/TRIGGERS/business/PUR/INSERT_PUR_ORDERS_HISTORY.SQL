@@ -23,6 +23,8 @@ BEGIN
 		,	arrival_scheduled_on
 		,	purchase_employee_code
 		,	purchase_pattern_id
+		,	purchase_charge_code
+		,	purchase_charge_name
 		,	supplier_code
 		,	location_code
 		,	purchase_method_div
@@ -50,6 +52,8 @@ BEGIN
 		,	NEW.arrival_scheduled_on
 		,	NEW.purchase_employee_code
 		,	NEW.purchase_pattern_id
+		,	NEW.purchase_charge_code
+		,	NEW.purchase_charge_name
 		,	NEW.supplier_code
 		,	NEW.location_code
 		,	NEW.purchase_method_div

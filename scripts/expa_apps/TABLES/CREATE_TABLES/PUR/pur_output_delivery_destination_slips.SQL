@@ -35,7 +35,6 @@ CREATE TABLE IF NOT EXISTS pur_output_delivery_destination_slips
 	,	first_outputed_at TIMESTAMP(3) WITHOUT TIME ZONE
 	,	latest_outputed_at TIMESTAMP(3) WITHOUT TIME ZONE
 	,	outputed_count SMALLINT NOT NULL DEFAULT 0
-	,	is_output_required BOOLEAN NOT NULL DEFAULT FALSE
 	,	created_user_code TEXT NOT NULL
 	,	created_terminal TEXT NOT NULL
 	,	created_function_code TEXT NOT NULL
@@ -88,7 +87,6 @@ COMMENT ON COLUMN pur_output_delivery_destination_slips.registration_employee_co
 COMMENT ON COLUMN pur_output_delivery_destination_slips.first_outputed_at IS '初回出力日時';
 COMMENT ON COLUMN pur_output_delivery_destination_slips.latest_outputed_at IS '最新出力日時';
 COMMENT ON COLUMN pur_output_delivery_destination_slips.outputed_count IS '出力回数';
-COMMENT ON COLUMN pur_output_delivery_destination_slips.is_output_required IS '出力必須フラグ';
 COMMENT ON COLUMN pur_output_delivery_destination_slips.created_user_code IS '作成ユーザコード';
 COMMENT ON COLUMN pur_output_delivery_destination_slips.created_terminal IS '作成端末';
 COMMENT ON COLUMN pur_output_delivery_destination_slips.created_function_code IS '作成機能コード';

@@ -16,6 +16,7 @@ CREATE TABLE IF NOT EXISTS mng_store_operations
 	,	inventory_closing_date TEXT NOT NULL
 	,	monthly_inventory_closing_date TEXT NOT NULL
 	,	inventory_location_code TEXT NOT NULL
+	,	inventory_delivery_destination_code TEXT NOT NULL
 	,	order_closing_time INTEGER NOT NULL
 	,	confirmed_order_closing_time INTEGER NOT NULL
 	,	picking_closing_time INTEGER NOT NULL
@@ -67,6 +68,7 @@ COMMENT ON COLUMN mng_store_operations.inventory_closing_month IS '棚卸月';
 COMMENT ON COLUMN mng_store_operations.inventory_closing_date IS '棚卸日';
 COMMENT ON COLUMN mng_store_operations.monthly_inventory_closing_date IS '月次在庫締日';
 COMMENT ON COLUMN mng_store_operations.inventory_location_code IS '在庫場所コード';
+COMMENT ON COLUMN mng_store_operations.inventory_delivery_destination_code IS '在庫場所納品先番号';
 COMMENT ON COLUMN mng_store_operations.order_closing_time IS '発注締時間';
 COMMENT ON COLUMN mng_store_operations.confirmed_order_closing_time IS '受注確認締時間';
 COMMENT ON COLUMN mng_store_operations.picking_closing_time IS 'ピッキング作業締時間';
